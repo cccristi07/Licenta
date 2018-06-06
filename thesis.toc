@@ -1,0 +1,36 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {romanian}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List\u {a} de figuri}{ii}{chapter*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List\u {a} de tabele}{iii}{chapter*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List\u a de algoritmi}{iv}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introducere}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Motivația alegerii temei}{1}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Expunerea problemei}{1}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Introducere}{1}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Formatare}{2}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Dimensiune}{2}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}Cuprins}{2}{section.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.7}Figuri, grafice și tabele}{3}{section.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.8}Ecuaţii}{3}{section.1.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.9}Bibliografie}{3}{section.1.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Anexe}{5}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Notaţii matematice consacrate}{5}{Anexa.a.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Fișiere sursă}{8}{Anexa.a.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliografie}{9}{chapter*.6}

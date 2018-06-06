@@ -1,0 +1,320 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{bellingham2002receding}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BJ}{%
+         family={Bellingham},
+         familyi={B\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Richards},
+         familyi={R\bibinitperiod},
+         given={Arthur},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HJP}{%
+         family={How},
+         familyi={H\bibinitperiod},
+         given={Jonathan\bibnamedelima P},
+         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{BJRAHJP1}
+    \strng{fullhash}{BJRAHJP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2002}
+    \field{labeldatesource}{year}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{American Control Conference, 2002. Proceedings of the
+  2002}
+    \field{pages}{3741\bibrangedash 3746}
+    \field{title}{Receding horizon control of autonomous aerial vehicles}
+    \field{volume}{5}
+    \field{year}{2002}
+  \endentry
+
+  \entry{bitsoris2006invariance}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BG}{%
+         family={Bitsoris},
+         familyi={B\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TL}{%
+         family={Truffet},
+         familyi={T\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BGTL1}
+    \strng{fullhash}{BGTL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{labeldatesource}{year}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{407}
+    \field{title}{{Invariance and monotonicity of nonlinear iterated systems}}
+    \field{volume}{341}
+    \field{journaltitle}{Lecture notes in control and information sciences}
+    \field{year}{2006}
+  \endentry
+
+  \entry{camponogara2002distributed}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CE}{%
+         family={Camponogara},
+         familyi={C\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Jia},
+         familyi={J\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KB}{%
+         family={Krogh},
+         familyi={K\bibinitperiod},
+         given={B.H.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=TS}{%
+         family={Talukdar},
+         familyi={T\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{CE+1}
+    \strng{fullhash}{CEJDKBTS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2002}
+    \field{labeldatesource}{year}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{1}
+    \field{pages}{44\bibrangedash 52}
+    \field{title}{Distributed model predictive control}
+    \field{volume}{22}
+    \field{journaltitle}{Control Systems Magazine, IEEE}
+    \field{year}{2002}
+  \endentry
+
+  \entry{garey1979computers}{book}{}
+    \name{author}{2}{}{%
+      {{hash=GM}{%
+         family={Garey},
+         familyi={G\bibinitperiod},
+         given={M.R.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Johnson},
+         familyi={J\bibinitperiod},
+         given={D.S.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {WH Freeman}%
+      {Company, San Francisco, Calif}%
+    }
+    \strng{namehash}{GMJD1}
+    \strng{fullhash}{GMJD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1979}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{{Computers and intractability. A guide to the theory of
+  NP-completeness. A Series of Books in the Mathematical Sciences}}
+    \field{year}{1979}
+  \endentry
+
+  \entry{gilbert1991linear}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GE}{%
+         family={Gilbert},
+         familyi={G\bibinitperiod},
+         given={EG},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=TK}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={KT},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GETK1}
+    \strng{fullhash}{GETK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1991}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{9}
+    \field{pages}{1008\bibrangedash 1020}
+    \field{title}{{Linear systems with state and control constraints: the
+  theory and application of maximal output admissible sets}}
+    \field{volume}{36}
+    \field{journaltitle}{IEEE Transactions on Automatic Control}
+    \field{year}{1991}
+  \endentry
+
+  \entry{loechner1999polylib}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=LV}{%
+         family={Loechner},
+         familyi={L\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{LV1}
+    \strng{fullhash}{LV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1999}
+    \field{labeldatesource}{year}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{PolyLib: A library for manipulating parameterized polyhedra}
+    \field{year}{1999}
+  \endentry
+
+  \entry{mairal2009online}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=MJ}{%
+         family={Mairal},
+         familyi={M\bibinitperiod},
+         given={Julien},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BF}{%
+         family={Bach},
+         familyi={B\bibinitperiod},
+         given={Francis},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Ponce},
+         familyi={P\bibinitperiod},
+         given={Jean},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SG}{%
+         family={Sapiro},
+         familyi={S\bibinitperiod},
+         given={Guillermo},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{MJ+1}
+    \strng{fullhash}{MJBFPJSG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Proceedings of the 26th annual international conference
+  on machine learning}
+    \field{pages}{689\bibrangedash 696}
+    \field{title}{Online dictionary learning for sparse coding}
+    \field{year}{2009}
+  \endentry
+
+  \entry{vitus_tunnel-milp:_2008}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=VM}{%
+         family={Vitus},
+         familyi={V\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PV}{%
+         family={Pradeep},
+         familyi={P\bibinitperiod},
+         given={Vijay},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=HG}{%
+         family={Hoffmann},
+         familyi={H\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Waslander},
+         familyi={W\bibinitperiod},
+         given={Steven},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=TC}{%
+         family={Tomlin},
+         familyi={T\bibinitperiod},
+         given={Claire},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VM+1}
+    \strng{fullhash}{VMPVHGWSTC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{year}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{booktitle}{AIAA guidance, navigation and control conference and
+  exhibit}
+    \field{pages}{7132}
+    \field{title}{Tunnel-milp: Path planning with sequential convex polytopes}
+    \field{year}{2008}
+  \endentry
+\enddatalist
+\endinput

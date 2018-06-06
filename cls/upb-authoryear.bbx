@@ -1,0 +1,148 @@
+\ProvidesFile{upb-authoryear.bbx}[2013/06/05 v1.0 biblatex bibliography style]
+
+\RequireBibliographyStyle{authoryear}
+
+\DeclareLanguageMapping{romanian}{\cls/romanian}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished,conference]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished,conference]{journaltitle}{#1\addcomma}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished,conference]{booktitle}{#1\addcomma}
+
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished,conference]{volume}{vol. #1\iffieldundef{number}{\addcomma}{\nopunct}}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished,conference]{number}{\mkbibparens{#1}}
+
+
+
+\DeclareFieldFormat{bibentrysetcount}{\mkbibparens{\mknumalph{#1}}}
+\DeclareFieldFormat{labelnumberwidth}{#1}
+
+\setlength{\bibparsep}{1em}
+
+
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{}}
+  \ifentrytype{inproceedings}{}{%
+  \printtext{}}
+  \ifentrytype{conference}{}{%
+  \printtext{}}}
+  
+
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{%
+    \hspace{1.5em}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+
+\DeclareNameAlias{sortname}{last-first}
+
+\def\bbx@opt@mergedate@true{\bbx@opt@mergedate@compact}
+
+\def\bbx@opt@mergedate@maximum{%
+  \renewbibmacro*{date+extrayear}{%
+    \iffieldundef{year}
+      {}
+      {\printtext{%
+         \printfield{issue}%
+	 \setunit*{\addspace}%
+	 \printdateextra}}}%
+  \renewbibmacro*{date}{}%
+  \renewbibmacro*{issue+date}{}%
+}
+
+\def\bbx@opt@mergedate@compact{%
+  \renewbibmacro*{date+extrayear}{%
+    \iffieldundef{year}
+      {}
+      {\printtext{\printdateextra}}}%
+  \renewbibmacro*{date}{}%
+  \renewbibmacro*{issue+date}{%
+    \iffieldundef{issue}
+      {}
+      {\printtext[parens]{\printfield{issue}}}%
+    \newunit}%
+}
+
+\def\bbx@opt@mergedate@basic{%
+  \renewbibmacro*{date+extrayear}{%
+    \iffieldundef{year}
+      {}
+      {\printtext{%
+	  \addperiod\space
+     \printfield{labeldate}%
+     \printfield{extrayear}}}}%
+  \renewbibmacro*{date}{%
+    \iffieldundef{month}
+      {}
+      {\printdate}}%
+  \renewbibmacro*{issue+date}{%
+    \ifboolexpr{
+      test {\iffieldundef{issue}}
+      and
+      test {\iffieldundef{month}}
+    }
+      {}
+      {\printtext[parens]{%
+     \printfield{issue}%
+     \setunit*{\addspace}%
+     \printdate}}%
+    \newunit}%
+}
+
+\def\bbx@opt@mergedate@minimum{%
+  \renewbibmacro*{date+extrayear}{%
+    \iffieldundef{labeldate}
+      {}
+      {\printtext{%
+	  \addperiod\space
+	 \printfield{labeldate}%
+	 \printfield{extrayear}}}}%
+  \renewbibmacro*{date}{%
+    \ifboolexpr{
+      test {\iffieldundef{month}}
+      and
+      test {\iffieldundef{extrayear}}
+    }
+      {}
+      {\printdate}}%
+  \renewbibmacro*{issue+date}{%
+    \ifboolexpr{
+      test {\iffieldundef{issue}}
+      and
+      test {\iffieldundef{month}}
+      and
+      test {\iffieldundef{extrayear}}
+    }
+      {}
+      {\printtext[parens]{%
+	 \printfield{issue}%
+	 \setunit*{\addspace}%
+	 \printdate}}%
+    \newunit}%
+}
+
+\def\bbx@opt@mergedate@false{%
+  \renewbibmacro*{date+extrayear}{%
+    \iffieldundef{labeldate}
+      {}
+      {\printtext{%
+	  \addperiod\space
+	 \printfield{labeldate}%
+	 \printfield{extrayear}}}}%
+  \renewbibmacro*{date}{\printdate}%
+  \renewbibmacro*{issue+date}{%
+    \printtext[parens]{%
+      \printfield{issue}%
+      \setunit*{\addspace}%
+      \printdate}%
+    \newunit}%
+}
+
+\ExecuteBibliographyOptions{labeldate,sorting=nyt,pagetracker,mergedate}
