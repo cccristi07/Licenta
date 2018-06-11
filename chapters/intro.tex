@@ -13,75 +13,40 @@ Deși majoritatea popoarelor din antichitate care s-au ocupat cu construcția ap
 
 În această lucrare se va aborda problematica identificării prezenței unui defect - \textit{Fault detection} și izolarea defectului \textit{Fault isolation} într-o regiune a rețelei.
 
-O rețea de apă poate fi privită ca un graf neorientat $G = (V, E)$ unde $V$ este mulțimea nodurilor rețelei - acestea reprezentând o abstractizare asupra componentelor precum - rezervoare, tancuri de apă sau turnuri de distribuție, iar $E$ este mulțimea muchiilor reprezentând de fapt țevile care fac legătura între noduri.
-
-Ca exemplu de lucru pentru această lucrare vom considera rețeaua de apă din Hanoi, prezentată în figura următoare  
-
-\section{Introducere}
-
-	Capitolul introductiv al lucrării de licenţă conţine, de obicei, motivaţia alegerii și studiului temei. În introducere se prezintă în linii generale contextul problemei studiate în cadrul unui cuprins extins. Acesta cuprinde descrierea lucrării de licenţă, pe secţiuni sau capitole, încercând să se scoată în evidenţă contribuţiile și realizările autorului.
-
-
-\section{Formatare}
-
-Formatul uzual al paginilor pentru redactarea lucrării de licenţă are următoarele caracteristici:
-
+O rețea de apă poate fi privită ca un graf neorientat $G = (V, E)$ unde $V$ este mulțimea nodurilor rețelei - acestea reprezentând o abstractizare asupra componentelor precum:
 \begin{itemize}
-\item pagină A4
-\item 	margini de 2cm sus, jos \c si la dreapta
-\item  margine de 3cm la stânga
-\item spaţiere simplă, la un rând (\emph{single line})
+\item rezervoare
+\item tancuri de apă
+\item puncte de distribuție
+\end{itemize} 
+
+$E$ este mulțimea muchiilor reprezentând de fapt țevile care fac legătura între noduri.
+
+Mergând mai departe cu abstractizarea se pot considera rețele de apă active și rețele de apă pasive. Diferența între cele două făcându-se în baza pompelor de apă amplasate în zonele unde presiunea sau elevația vin în detrimentul distribuției apei.
+
+Rețelele de apă care vor fi tratate în această lucrare fac parte din categoria pasivă, astfel putem diviza mulțimea nodurilor $V$ în $V^t$ și în $V^j$ reprezentând mulțimea nodurilor de tip tanc și mulțimea nodurilor joncțiune, cu proprietatea că $V = V^t \cup V^j$. Tancurile și rezervoarele dintr-o rețea de apă au proprietatea că nivelul de apă din acestea se va menține la un nivel oarecum staționar, astfel simulările din capitolele viitoare se vor axa pe nodurile simple de tip joncțiune, deci mulțimea de interes în acest caz va fi $V^j$ pentru care cunoaștem cardinalul.
+
+Caracteristicile care se pot recolta dintr-o rețea de apă pot varia în funcție de elementul inspectat și de senzorii dispuși în rețea, astfel pentru fiecare nod $n_i \in V^j$ putem defini la fiecare moment de timp 
+\begin{itemize}
+\item presiunea $p_i(t)$ - măsurată în metri coloană de apă $mH2O$, mărime influențată puternic de presiunea interioară a nodului și de eventualele perturbații exterioare i.e. scurgeri de apă prin țevi
+\item 'cererea' $d_i(t)$ - măsurată $L/s$, mărime ce caracterizează profilul de utilizare al utilizatorilor de-a lungul unei zile i.e. debitul de apă care ajunge la consumatori. Acest debit poate varia de-a lungul zilei, putem distinge de exemplu intervale de timp în care cererea este foarte mică și rețeaua intră în regim staționar
 \end{itemize}
 
-%Fonturile cele mai lizibile pentru redactarea lucrării de licenţă sunt acele fonturi care au corpul literei de dimensiune echilibrată în lăţime \c si înălţime. Exemple de fonturi care se pretează redactării lucrării de licenţă sunt: Times New Roman 12pt, Arial 12pt, Verdana 11pt, Adobe Caslon Pro12 pt, Linotype Palatino 12pt, Helvetica 12pt, Neutra Text 12pt, Kozuka Mincho 11pt.
+De asemenea pentru fiecare conductă a rețelei $e_{ij} \in E$ putem măsura viteza lichidului $v_{ij}(t)$.
 
-Nu se recomandă fonturi de dimensiune mai mare decât 12pt. Se recomandă alegerea unui font care conţine diacritice, în cazul redactării lucrării în limba română.
+Pentru a putea rezolva problema de \textit{Fault Detection and Isolation} este importantă găsirea unei modalități eficente de selecție și prelucrare a datelor de la rețea.Mai mult, punând în lumină aspectul ingineresc al problemei, trebuie găsită o submulțime $V_{opt} \subset V^j$ ai cărei elemente pot aduce informații necesare și suficiente pentru a detecta un defect într-o acoperire destul de mare a rețelei.
+\pagebreak
+\section{Exemplul de lucru}
+În următoarele capitole și în implementarea lucrării consider rețeaua din Hanoi iar pentru simularea scenariilor propuse voi folosi biblioteca și suita de funcții \textbf{EPANET} - Environmental Protection Agency NETwork - \cite{rossman2000epanet}
 
-Paragrafele se despart printr-un rând liber. Începutul unui paragraf se marchează prin deplasarea la dreapta a primului rând din paragraf, de obicei cu 1 sau 1.5 cm.
-
-Corpurile de text se distribuie pe orizontală de la un capat al celuilalt al paginii (aliniere \emph{justified}), și nu la stânga. Lucrarea de licenţă nu este un manuscris, ci un produs finit, prezentarea acestuia necesitând un anumit grad de finisare în formatare.
-
-Lucrarea de licenţă se redactează, în întregime, cu același font. Excepţie fac anexele, unde este posibilă utilizarea unui font special pentru transcrierea scripturilor și a programelor, de exemplu: Courier și/sau Courier New cu dimensiune de 10 sau 11pt.
-
-\section{Dimensiune}
-
-O lucrare de licenţă are, de obicei, între 40 și 80 de pagini.
-
-Paginile lucrării se numerotează în ordine. Nu este indicată reînceperea numerotării paginilor cu fiecare capitol. De asemenea, nu este indicată numerotarea paginii de titlu.
-
-Numerele de pagini se includ în câmpuri speciale de subsol (Footer), în care fontul utilizat trebuie să fie același cu restul lucrării și cu 1 sau 2 puncte tipografice mai mic. Optional, se poate include un câmp conţinând titlul lucrării în zona superioară a paginii (Header), acesta necesitând aceeași dimensiune de font adoptată pentru numerele de pagini.
-
-\section{Cuprins}
-
-Cuprinsul lucrării de licenţă conţine toate titlurile capitolelor, secţiunilor și subsecţiunilor, în ordinea în care acestea apar în lucrare. Se recomandă să nu se prescurteze cuvintele "CAPITOL" și "SECŢIUNE" în cazul în care acestea sunt utilizate înainte de numărul capitolului și al secţiunii sau subsecţiunii respective. Uzual, aceste cuvinte se omit.
-
-\section{Figuri, grafice și tabele}
-
- Figurile și tabelele trebuie să aibă un titlu care să menţioneze tipul obiectului respectiv, conţinutul acestuia și numărul acestuia în cadrul capitolului:
-
-	Figura c.n. - desemnează o figură, c fiind identificatorul capitolului, iar n reprezentând numărul figurii în cadrul acelui capitol; acest titlu va fi urmat de numele figurii, descriind conţinutul acesteia. De exemplu: Figura 3.2. Sistem de reglare automată a presiunii va fi titlul figurii a doua din capitolul 3, conţinând structura unui sistem de reglare automată a presiunii.
-
-	Tabelul c.n. - desemnează un tabel, c fiind identificatorul capitolului, iar n reprezentând numărul tabelului în cadrul acelui capitol; acest titlu va fi urmat de numele tabelului, descriind conţinutul acestuia. De exemplu: Tabelul 5.6. Caracteristici tehnice ale traductorului de temperatură va fi titlul tabelului al șaselea din capitolul 5, conţinând caracteristicile tehnice ale unui traductor de temperatură.
-
-	Graficele sunt considerate figuri și vor purta titluri adecvate. Graficele trebuie să aibă o etichetă pe fiecare axă, descriind semnificaţia acesteia, menţionând unitatea de măsură acolo unde este cazul. De exemplu, pentru răspunsul în timp al unui sistem de ordinul I oarecare, este îndeajuns a atașa eticheta y pe ordonată și eticheta t pe abscisă. Însă dacă acest răspuns aparţine unui model al unui proces fizic, se va menţiona unitatea de măsură pe fiecare axă, de exemplu y[m] și t[s].
-
-	Pentru o tipărire corectă, toate figurile și graficele ar trebui salvate la o rezoluţie de cel putin 300dpi pentru cele color și 100dpi pentru cele alb-negru. Se recomandă salvarea acestora în format .tiff sau .png pentru conservarea calităţii imaginilor.
-
-	Se recomandă alinierea centrală a figurilor. Tabelele se pot alinia la stânga, lăsând faţă de marginea paginii (acolo unde este posibil si dacă tabelul nu acoperă toată lăţimea paginii) aceeași dimensiune ca și în cazul primului rând al paragrafelor.
-
-\section{Ecuaţii}
-
-	Ecuaţiile se scriu cu aceeași înălţime de font ca și corpul textului și se numerotează în ordinea apariţiei în text: (c.n) unde c reprezintă identificatorul capitolului curent, iar n este numărul ecuaţiei în capitol. Ecuaţiile pot avea eticheta de identificare la stânga sau la dreapta. Ecuaţiile se pot alinia centrat sau la stânga. De exemplu:
-
-\be
-\label{eq:test}
-5+x=0
-\ee
-unde 1 reprezintă numărul capitolului, iar 1 este numărul ecuaţiei în cadrul acestuia. Înainte și după fiecare ecuaţie se lasă un rând liber.
+Rețeaua Hanoi constă într-o mulțime de noduri de tip joncțiune $V^j$ cu $|V^j| = 31$ și mulțimea $V^t$ cu $|V^t|=1$, ilustrată în figura de mai jos:
+ 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{pics/c1_pics/hanoi_network.pdf}
+\caption{Graful rețelei de apă din Hanoi}
+\end{figure}
 
 
-\section{Bibliografie}
-
-	Lista bibliografică este o componentă esenţială a lucrării de licenţă, aceasta demonstrând documentarea efectuată de către autor și marcând corespunzător ideile care nu îi aparţin acestuia. Bibliografia este formată dintr-o listă ordonată alfabetic. \textbf{Toate} elementele acestei liste trebuie \textbf{citate în text}.
 
 
