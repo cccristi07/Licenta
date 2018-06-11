@@ -1,0 +1,39 @@
+1. Introduction  [2-3 pag]
+- motivation
+- what all the chapters do
+
+2. about EPANET and resulting simulations [10 pag]
+- why is a waternetwork difficult to handle; equations
+- modeling tools (epanet)
+- practical details about epanet and its integration with python (dll, details about the inp file format; measures of interest)
+- for further use we consider hanoi case (details + pic)
+- measures of interest, illustrations: 
+		* dynamic behavior for all nodes under nominal load; 
+		* dynamic behavior for a subset of nodes with varied load scenarios;
+		* dynamic behavior for a subset of nodes with emitter;		
+
+3. Fault scenarios and residual definition [8 pag]
+- about faults: magnitude variation through emitter (plot for various magnitudes affecting the same node)
+- types of residuals (absolute and relative formulations; discussions about stationary state): 
+- sensor selection for fault detection and isolation: decide on a threshold, construct binary matrix M, use it in a set covering problem to decide on the selected sensors
+		* plot to highlight the selected sensors
+
+3'. fault detection and isolation using SVM 
+- de vazut daca intra in 4 sau nu ?
+
+4. fault detection and isolation via dictionary learning [10 pag]
+- dictionary learning problem
+- particularization of DL parameters
+- run for the residuals selected from chapter 3 
+- illustrations about DL training and DL classification
+- tables with performance in different scenarios
+
+5. a large scale example [3-4 pag]
+- the barcelona waternetwork
+
+5. conclusions and future directions [2 pag]
+
+bibliography [1-2 pag]
+
+appendix [5-10 pag]
+- snippets of code
