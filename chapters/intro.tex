@@ -6,6 +6,51 @@ Transportul și distribuția apei reprezintă una dintre cele mai vechi preocup�
 
 Deși majoritatea popoarelor din antichitate care s-au ocupat cu construcția apeductelor întrebuințau aceste sisteme pentru irigația pământului - ocupațiile de bază de atunci fiind în strânsă legătură cu agricultura - romanii au văzut în sistemele de provizionare a apei și un potențial imens în dezvoltarea civilizației, astfel ei sunt ei care aduc cele mai mari contribuții inginerești, apeductele construite de aceștia impresionând și astăzi prin grandoarea și iscusunța cu care au fost construite.
 
+Inovațiile în acest domeniu au suferit salturi bruște și puternice în momentul descoperirii unei noi relații matematice care transformă un parametru despre care se puteau face doar niște estimări grosiere într-o mărime bine definită și bine controlată. Istoric vorbind incipitul dezvoltării științei hidraulice s-a bazat pe relația descoperită de Arhimede din Siracuza în sec III î.Hr. $F = V_{obiect}*\rho_{lichid}*g$. O altă contribuție care are o deosebită importanță în domeniul tehnologiei de distribuiție a apei și nu numai o reprezintă tubul lui Pitot folosit la măsurarea vitezei fluidului, inventat de Henri Pitot în sec XVII. Din punct de vedere constructiv tubul are o formă de \textbf{L}, scufundarea acestuia într-un fluid (apă sau gaz) va determina creșterea nivelului și a presiunii până la o anumită limită (\cite{klopfenstein1998air}), ecuația care guvernează depedența nivel - viteză este:
+\begin{equation}
+u = \sqrt{\frac{2(p_t-p_s)}{\rho}} 
+\end{equation}
+
+unde:
+
+\begin{itemize}
+\item u reprezintă viteza fluidului
+\item $p_t$ reprezintă presiunea de stagnare
+\item $p_s$ reprezintă presiunea statică
+\item $\rho$ reprezintă densitatea fluidului
+\end{itemize}
+
+Mergând mai departe, alte contribuții importante apar din partea marilor matematicieni precum Daniel Bernoulli și Leonhard Euler, care au mărit spectrul mecanicii lui Newton și Leibniz spre aria hidraulicii și a termodinamicii. Fluidele considerate sunt incompresibile și au densitatea constantă în timp și uniform distribuită în spațiu. Bernoulli afirmă despre lichidele incompresibile că o creștere în viteză a lichidului este însoțită de o scădere a energiei potențiale a lichidului (i.e. presiune):
+\begin{equation}
+\frac{v^2}{2} + gz + \frac{p}{\rho} = c
+\end{equation}
+
+unde:
+\begin{itemize}
+\item v reprezintă viteza fluidului
+\item g reprezintă accelerația la care e supus fluidul
+\item z reprezintă elevația ștragulației conductei
+\item p reprezintă presiunea într-un anumit punct
+\item $\rho$ reprezintă densitatea fluidului
+\end{itemize}
+
+În contextul în care se dorește analiza unui caz real este important ca toate diferențele între cazurile ideale și cazurile reale trebuie puse în evidență în mod matematic, astfel se particularizează ecuația generală Navier-Stokes pentru cazuri în care se cunosc anumiți parametrii ai sistemului de analizat. Spre exemplu ecuația Poisuille care modelează începutul fluxului de apă într-o conductă este (\cite{elger2016engineering}):
+\begin{equation}
+\frac{\partial u}{\partial t} = \frac{G}{\rho} + \nu ( \frac{\partial^2 u}{\partial t^2} + \frac{1}{r}\frac{\partial u}{\partial{r}})
+\end{equation}
+
+unde:
+\begin{itemize}
+\item $u$ reprezintă viteza lichidului prin conductă
+\item $t$ reprezintă timpul
+\item $G$ reprezintă diferența de presiune
+\item $\rho$ reprezintă densitatea lichidului
+\item $\nu$ reprezintă vâscozitatea cinematică
+\item $r$ reprezintă poziția
+\end{itemize}
+
+Se poate observa că pe măsură ce modelul matematic se apropie de realitate, complexitatea acestuia crește și pentru fiecare situație specială - spre exemplu analiza presiunii la  introducerea apei într-o conductă vs. analiza presiunii când conducta este încărcată cu apă - are nevoie de o ecuație specială sau de o particularizare a ecuației Navier-Stokes, pentru care încă nu se conoaște dacă există soluții pentru cazul cu 3 dimensiuni și dacă soluțiile acestea sunt netede. 
+
 Ținând cont de importanța apei în desfășurarea activităților cotidiene atât pentru oameni cât și pentru actorii importanți ai industriei, este o condiție sine-qua-non ca un oraș să aibă un sistem performant și rezistent la defecte pentru distribuția apei. În contextul actual al dezvoltării tehnologiei este natural să folosim tehnici moderne de monitorizare a diferiților parametrii din cadrul unei rețele pentru a putea face o analiză riguroasă și eficientă cu referire nu numai la mentenanță ci și la consumul global și local în ideea îmbunătățirii și reducerii pierderilor.
 
 
@@ -35,9 +80,9 @@ Caracteristicile care se pot recolta dintr-o rețea de apă pot varia în funcț
 De asemenea pentru fiecare conductă a rețelei $e_{ij} \in E$ putem măsura viteza lichidului $v_{ij}(t)$.
 
 Pentru a putea rezolva problema de \textit{Fault Detection and Isolation} este importantă găsirea unei modalități eficente de selecție și prelucrare a datelor de la rețea.Mai mult, punând în lumină aspectul ingineresc al problemei, trebuie găsită o submulțime $V_{opt} \subset V^j$ ai cărei elemente pot aduce informații necesare și suficiente pentru a detecta un defect într-o acoperire destul de mare a rețelei.
-
+\pagebreak
 \section{Exemplul de lucru}
-În următoarele capitole și în implementarea lucrării consider rețeaua din Hanoi iar pentru simularea scenariilor propuse voi folosi biblioteca și suita de funcții \textbf{EPANET} - Environmental Protection Agency NETwork - \cite{rossman2000epanet}
+În următoarele capitole și în implementarea lucrării consider rețeaua din Hanoi iar pentru simularea scenariilor propuse voi folosi biblioteca și suita de funcții \textbf{EPANET} - Environmental Protection Agency NETwork 
 
 Rețeaua Hanoi constă într-o mulțime de noduri de tip joncțiune $V^j$ cu $|V^j| = 31$ și mulțimea $V^t$ cu $|V^t|=1$, ilustrată în figura de mai jos:
  

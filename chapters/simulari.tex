@@ -1,7 +1,12 @@
 \chapter{Simulări și software folosit}
 \label{chap:simulari}
 
-\section{Biblioteca și suita EPANET}
+\section{Dificultatea estimărilor parametrilor într-o rețea de apă}
 
-Pentru a putea simula și evalua scenarii ale defectelor și profiluri de utilizare ale consumatorilor, am ales biblioteca \textbf{EPANET}, dezvoltată și întreținută de \textit{United States Environmental Protection Agency}. Proiectul \textbf{EPANET} a pornit inițial 
-
+Găsirea unui set de ecuații al cărei soluție să conducă la o estimare îndeajuns de bună pentru control este o condiție sine qua non pentru detecția unui defect și izolarea acestuia în cadrul nodurilor rețelei. Astfel după cum a fost expus în capitolul \ref{chap:intro} ecuațiile care guvernează relațiile intre viteza prin conducte și presiune dintr-un anumit punct sunt particularizări ale ecuațiilor Bernoulli-Euler sau Navier-Stokes. În cadrul unei rețele de apă a unui oraș, complexitatea rezolvării problemei crește semnificativ din varii motive precum:
+\begin{itemize}
+\item ansamblul de coduncte și noduri interconectate dă naștere unui sistem fizic greu de modelat matematic
+\item parametrii care pot influența calitatea soluțiilor precum: tipul materialului conductei și al nodului, elevația fiecărui nod, rugozitatea fiecărei conducte și depunerile de pe aceasta
+\item apariția unor factori exogeni care pot fi uneori greu de estimat - tiparul de utilizare al rețelei de către consumatori poate varia puternic
+\item apariția defectelor precum scurgerile în proximitatea unui nod
+\end{itemize}
