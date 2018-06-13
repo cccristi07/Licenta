@@ -1,0 +1,157 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{elger2016engineering}{book}{}
+    \name{author}{2}{}{%
+      {{hash=EDF}{%
+         family={Elger},
+         familyi={E\bibinitperiod},
+         given={Donald\bibnamedelima F},
+         giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=RJA}{%
+         family={Roberson},
+         familyi={R\bibinitperiod},
+         given={John\bibnamedelima A},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Hoboken (NJ)}%
+    }
+    \strng{namehash}{EDFRJA1}
+    \strng{fullhash}{EDFRJA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{title}{Engineering fluid mechanics}
+    \field{year}{2016}
+  \endentry
+
+  \entry{karp1975computational}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KRM}{%
+         family={Karp},
+         familyi={K\bibinitperiod},
+         given={Richard\bibnamedelima M},
+         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{KRM1}
+    \strng{fullhash}{KRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1975}
+    \field{labeldatesource}{year}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{1}
+    \field{pages}{45\bibrangedash 68}
+    \field{title}{On the computational complexity of combinatorial problems}
+    \field{volume}{5}
+    \field{journaltitle}{Networks}
+    \field{year}{1975}
+  \endentry
+
+  \entry{klopfenstein1998air}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KJR}{%
+         family={Klopfenstein\bibnamedelima Jr},
+         familyi={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+         given={Rex},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{KJR1}
+    \strng{fullhash}{KJR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1998}
+    \field{labeldatesource}{year}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{4}
+    \field{pages}{257\bibrangedash 263}
+    \field{title}{Air velocity and flow measurement using a Pitot tube}
+    \field{volume}{37}
+    \field{journaltitle}{ISA transactions}
+    \field{year}{1998}
+  \endentry
+
+  \entry{rossman2000epanet}{article}{}
+    \true{moreauthor}
+    \name{author}{1}{}{%
+      {{hash=RLA}{%
+         family={Rossman},
+         familyi={R\bibinitperiod},
+         given={Lewis\bibnamedelima A},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {US Environmental Protection Agency. Office of Research}%
+      {Development. National Risk Management Research Laboratory}%
+    }
+    \strng{namehash}{RLA+1}
+    \strng{fullhash}{RLA+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{labeldatesource}{year}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{EPANET 2: users manual}
+    \field{year}{2000}
+  \endentry
+
+  \entry{sanz2016demand}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SEG}{%
+         family={Sanz\bibnamedelima Estap{\'e}},
+         familyi={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+         given={Gerard},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Universitat Polit{\`e}cnica de Catalunya}%
+    }
+    \strng{namehash}{SEG1}
+    \strng{fullhash}{SEG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Demand modeling for water networks calibration and leak
+  localization}
+    \field{year}{2016}
+  \endentry
+\enddatalist
+\endinput

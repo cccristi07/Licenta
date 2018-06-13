@@ -1,0 +1,30 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {romanian}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List\u {a} de figuri}{ii}{chapter*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List\u {a} de tabele}{iii}{chapter*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List\u a de algoritmi}{iv}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introducere}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Motivația alegerii temei}{1}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Expunerea problemei}{2}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Exemplul de lucru}{4}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Simulări și software folosit}{5}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Dificultatea estimărilor parametrilor într-o rețea de apă}{5}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Simulări folosind biblioteca EPANET}{6}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Detecția și izolarea defectelor}{8}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Testing Decection}{8}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Fișiere sursă}{10}{Anexa.a.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliografie}{18}{chapter*.7}
