@@ -242,9 +242,23 @@ Parametrii funcționali rețelei hanoi.inp sunt următorii:
 Graficul de utilizare al rețelei are o distribuție centrată în jurul orelor dimineții - acest lucru fiind corelat cu faptul că atunci este momentul în care cei mai mulți utilizatori își încep activitatea și consumă apă. Astfel rețeaua este supusă unui stres mai mare în timpul orel matinale față de exemplu de perioada nopții unde valorile multiplicității ajung la valori aproximativ de două ori mai mici.
 
 \begin{figure}[htbp]
+    \label{fig:normalprofile}
   \centering
   \includesvg[width=0.75\textwidth]{\pics/c2_pics/profil_normal.svg}
   \caption{Profilul normal de utilizare}
 \end{figure}
 
-Pentru rularea unei simulări nominale fișierul JSON de intrare poate avea câmpul de emitter\_values gol.
+Pentru rularea unei simulări nominale fișierul JSON de intrare poate avea câmpul de emitter\_values gol, obținându-se asftel caracteristica tranzitorie a presiunii, a debitului din noduri și a vitezei fluxului de apă din conducte.
+
+TODO: add grafic cu simularea hanoi fără demand...
+
+\section{Prezentarea măsurilor de interes preluate din simulări}
+
+Problema care se pune în continuare alegera unui subset din mărimile prelevate din simulator astfel încât discernerea între un caz de utilizare normal și unul defectuos să fie cât mai ușoară. 
+
+
+\subsection{Simulare dinamică pentru încărcare nominală}
+graficul cu utilizarea normală
+\subsection{Simulare dinamică pentru demand puternic}
+graficul cu utilizarea defectuoasă
+\subsection{Simulare dinamică pentru defecte în diferite noduri}
