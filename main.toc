@@ -17,14 +17,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Simulări și software folosit}{5}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Dificultatea estimărilor parametrilor într-o rețea de apă}{5}{section.2.1}
+\contentsline {section}{\numberline {2.1}Dificultatea simulării unei rețele de apă}{5}{section.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Simulări folosind biblioteca EPANET}{6}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Detecția și izolarea defectelor}{8}{chapter.3}
+\contentsline {subsection}{\numberline {2.2.1}Schema bibliotecii ANSI C - EPANET}{8}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Testing Decection}{8}{section.3.1}
+\contentsline {subsection}{\numberline {2.2.2}Structura fișierului de intrare .INP}{8}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Fișiere sursă}{10}{Anexa.a.A}
+\contentsline {paragraph}{\nonumberline [JUNCTIONS]}{9}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliografie}{18}{chapter*.7}
+\contentsline {paragraph}{\nonumberline [PIPES]}{9}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\nonumberline [EMITTERS]}{10}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\nonumberline [PATTERNS]}{10}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\nonumberline [DEMANDS]}{10}{section*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Integrarea EPANET cu Python}{10}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Simulări pe rețeaua de apă din Hanoi}{12}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Prezentarea măsurilor de interes preluate din simulări}{13}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.1}Simulare dinamică pentru încărcare nominală}{13}{subsection.2.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.2}Simulare dinamică pentru demand puternic}{13}{subsection.2.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.3}Simulare dinamică pentru defecte în diferite noduri}{13}{subsection.2.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Detecția și izolarea defectelor}{14}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Testing Decection}{14}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Fișiere sursă}{16}{Anexa.a.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliografie}{24}{chapter*.15}
