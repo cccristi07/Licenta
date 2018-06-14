@@ -20,7 +20,7 @@ Ecuațiile de regim staționar includ condiții de conservare fluxului de apă:
 \sum\limits_{j=1}^{n} \mathbf B_{ij}\mathbf q_j=\mathbf d_i
 \end{equation}
 
-Unde $q_i$ reprezintă debitul prin fiecare conductă iar \textbf{B} reprezintă matricea de adiacență a rețelei la echilibru, definită astfel
+Unde $q_i$ reprezintă debitul prin fiecare conductă iar \textbf{B} reprezintă matricea de adiacență a rețelei la echilibru, definită astfel:
 \begin{equation}
 \textbf{B}_{ij} = 
      \begin{cases}
@@ -46,11 +46,12 @@ unde:
 \item $q_l$ reprezintă debitul
 \end{itemize}
 
-Din ecuația empirică \eqref{Hazen-Williams} termenul $R_{ij}=\frac{10.67\cdot L_\ell}{C_\ell^{1.852}\cdot D_\ell^{4.87}}$ reprezintă rezistența conductei $ij$ iar dual, putem obține conductivitatea conductei $G_{ij} = \frac{1}{R_{ij}}$
+Din ecuația empirică \eqref{Hazen-Williams} termenul $R_{ij}=\frac{10.67\cdot L_\ell}{C_\ell^{1.852}\cdot D_\ell^{4.87}}$ reprezintă rezistența conductei $ij$ iar dual, putem obține conductivitatea conductei $G_{ij} = \frac{1}{R_{ij}}$.
 
 Având la dispoziție \eqref{Hazen-Williams} și \eqref{debit_presiune} putem exprima dependența debit presiune în regim staționar sub o formă matriceală compactă și cu o structură neliniară:
 
 \begin{equation}
+\label{eq:HW-matrix}
 \mathbf B\mathbf G\left[\left(-\mathbf B^\top \mathbf h+\mathbf B_f^\top \mathbf h_f\right)\times \left|-\mathbf B^\top \mathbf h+\mathbf B_f^\top \mathbf h_f\right|^{-0.46}\right]=\mathbf d
 \end{equation}
 
@@ -60,10 +61,11 @@ Din cauza dificultății rezolvării unei ecuații matriceale neliniare, softwar
 
 \section{Simulări folosind biblioteca EPANET}
 
-	Dezvoltat la începutul anilor 90' de către USEPA (United States Environmental Protection Agency), EPANET a fost inițial privit ca un instrument pentru cercetare, acesta a devenit un standard de industrie la capitolul simulărilor software robuste pentru rețele de apă, foarte multe pachete software proprietare de simulare hidraulică se bazează masiv pe EPANET, diferențele apărând la design-ul interfeței grafice și a manipulării datelor. Aceast program de simulare oferă utilizatorului posibilitatea de a-și defini într-un mod interactiv o rețea de apă configurând tipul de nod, legătura între oricare două noduri și posibilitatea de a adăuga și elemente active în rețea, pompe. Pentru a simula utilizatorul trebuie să își definească pentru fiecare nod un anumit debit cerut de utilizatori, o elevație, și o legătură cu alte noduri. Simularea se va desfășura pe o perioadă de timp definită cu pasul de eșantionare cât mai convenabil ;\cite{rossman2000epanet}.
+Dezvoltat la începutul anilor 90' de către USEPA (United States Environmental Protection Agency), EPANET a fost inițial privit ca un instrument pentru cercetare, acesta a devenit un standard de industrie la capitolul simulărilor software robuste pentru rețele de apă, foarte multe pachete software proprietare de simulare hidraulică se bazează masiv pe EPANET, diferențele apărând la design-ul interfeței grafice și a manipulării datelor. Aceast program de simulare oferă utilizatorului posibilitatea de a-și defini într-un mod interactiv o rețea de apă configurând tipul de nod, legătura între oricare două noduri și posibilitatea de a adăuga și elemente active în rețea, pompe. Pentru a simula utilizatorul trebuie să își definească pentru fiecare nod un anumit debit cerut de utilizatori, o elevație, și o legătură cu alte noduri. Simularea se va desfășura pe o perioadă de timp definită cu pasul de eșantionare cât mai convenabil ;\cite{rossman2000epanet}.
 	
 \begin{figure}[H]
 \centering
+\label{fig:epanet_simulator_win}
 \includegraphics[width=0.75\textwidth]{pics/c2_pics/epanet_simulator.png}
 \caption{Simulatorul EPANET}
 \end{figure}
@@ -71,3 +73,69 @@ Din cauza dificultății rezolvării unei ecuații matriceale neliniare, softwar
 În urma execuției simulării EPANET va stoca toate datele în memorie și va putea reliza grafice și alte interogări complexe.
 
 Modalitatea în care simulatorul EPANET reușește să obțină datele de simulare este prin implementarea eficientă a ecuațiilor  Hazen-Williams \eqref{Hazen-Williams} Darcy-Weisbach și Chezy-Manning, la fiecare perioadă de eșantionare algoritmul bazat de metoda gradientului rezolvă ecuațiile matriceale neliniare.
+
+Pe lângă posibilitatea de a simula în cadrul unui program de sine stătător toate scenariile dorite, USEPA pune la dispoziție și un API (Application Programming Interface) pentru a putea realiza programatic simulările și modificările aferente fiecărui scenariu. Folosind în acest fel interfața pusă la dispoziție scrisă în limbajul C și oferită sub forma unei biblioteci dinamice (în Windows fișier .dll, în Linux fișier .so) programatorul are posibilitatea de a realiza propriul software specializat pentru simularea rețelelor de apă. 
+
+Particularizările programatice includ Demand-ul ( debitul de ieșire din nod către utilizatori L/s) fiecărui nod la orice moment de timp, proporționalitatea Demand-ului pentru a putea emula modul în care rețeaua este folosită de utilizatori de-a unei zile de lucru și unul din aspectele importante pe care EPANET le pune la dispoziție programatorilor este posiblitatea de a simula o scurgere în rețea emulată prin intermediul unui Emitter. Emitterul din biblioteca epanet este modelat ca un orificiu (perforație) prin care se poate scurge apa, fie din motive de a elibera presiunea sau din cauza unui defect. Ecuația care guvernează scurgerea prin acest orificu este:
+
+\begin{equation}
+\label{eq:emitter}
+    q = Cp^\gamma
+\end{equation}
+
+unde:
+\begin{itemize}
+    \item q reprezintă debitul prin emitter
+    \item C reprezintă o constantă de proporționalitate
+    \item p reprezintă presiunea din joncțiune
+    \item $\gamma$ reprzintă exponentul de presiune
+\end{itemize}
+
+Astfel apariția unui defect într-un anumit nod determină apriția unei relații liniare în funcție de presiunea din nod. Coeficientul $\gamma$ definde de tipul de joncțiune și de dimensiunea orificiului prin care se va scurge apa, pentru orificii relativ mici acesta ia valori de aproximativ 0.5 ;\cite{rossman2000epanet}.
+
+\subsection{Schema bibliotecii ANSI C - EPANET}
+
+API-ul pus la dispoziție se bazează pe funcții C scrise  într-o manieră modularizată, în ideea de a separa partea de analiză a rețelei și de modificare a parametrilor de partea de simulare hidraulică și calitativă. Astfel în imaginea de mai jos este prezentată modalitatea în care datele ajung și sunt folosite în cadrul simulatorului:
+
+\begin{figure}[H]
+\label{fig:EPANET_dataflow}
+\centering
+\includegraphics[width=0.75\textwidth]{pics/c2_pics/epanet_dataflow.pdf}
+\caption{Fluxul de date în biblioteca EPANET}
+\end{figure}
+
+\begin{flushleft}
+Fișierele prezentate în schema de mai sus în partea dreaptă au semnificația:
+\end{flushleft}
+\begin{itemize}
+    \item .INP - fișierul în care sunt definite topologia rețelei, tiparele de utilizare, caracteristicile elementelor active, valorile de Emitter și reguli complexe pentru funcționarea conductelor și pompelor
+    \item .HYD - fișerul în care sunt stocate rezultatele simulării hidraulice
+    \item .OUT - fișierul în care sunt stocate datele analizei calitative a apei
+    \item .RPT - jurnalul în care biblioteca trece toate mesajele de eroare și atenționările cu privire la rețea
+\end{itemize}
+
+\subsection{Structura fișierului de intrare .INP}
+Ceea ce stă la baza unei simulări este definirea input-ului rețelei de apă, anume fișierul INP. Fișierul INP - este un fișier text care conține anumite directive referitoare la componentele rețelei, 
+tabelul de mai jos descrie toate aceste cuvintele cheie recunoscute de interpretor:
+
+
+\begin{center}
+\begin{tabular}{ p{3cm} p{3cm} p{3cm} p{3cm} }
+\label{tabel:INP_Structure}
+Componente de rețea & Simulare rețea & Calitate apă & Jurnalizare \\
+ \hline
+ [TITLE] & [CURVES] & [QUALITY] & [OPTIONS] \\\
+ \textcolor{blue}{[JUNCTIONS]} & \textcolor{blue}{[PATTERNS]} & [REACTIONS] & [TIMES] \\\
+ [RESERVOIRS]& [ENERGY]& [SOURCES] &[REPORT] \\\
+ [TANKS]& [STATUS] &[MIXING]& \\\
+ [PIPES] & [CONTROLS] &  &  \\\
+ [PUMPS] & [RULES] &  & \\\
+ [VALVES] & \textcolor{blue}{[DEMANDS]} & & \\\
+ \textcolor{blue}{[EMITTERS]} & & &
+\end{tabular}
+\end{center}
+
+Cele mai importante
+
+
+
