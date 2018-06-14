@@ -116,26 +116,135 @@ Fișierele prezentate în schema de mai sus în partea dreaptă au semnificația
 
 \subsection{Structura fișierului de intrare .INP}
 Ceea ce stă la baza unei simulări este definirea input-ului rețelei de apă, anume fișierul INP. Fișierul INP - este un fișier text care conține anumite directive referitoare la componentele rețelei, 
-tabelul de mai jos descrie toate aceste cuvintele cheie recunoscute de interpretor:
+tabelul de mai jos descrie toate aceste cuvintele cheie recunoscute de interpretor, împărțite în 4 categorii funcționale:
+
+\begin{itemize}
+    \item Componente - se definesc toate componentele fizice ale sistemului noduri, conducte, valve, emitters
+    \item Simulare - se definesc caracteristicile care trebuie urmate de solver în procesul de simulare
+    \item Calitate - se definesc parametrii relevanți analizei de apă - Cantitatea de substanță dizolvabilă din fiecare nod, constantele de timp pentru reacțiile de ordin I și II
+    \item Jurnalizare - secțiune responsabilă cu fixarea parametrilor de execuție a rețelei - pasul de eșantionare, unitățile de măsură, parametrii impliciți și modul de raportare a simulării
+\end{itemize}
 
 
-\begin{center}
+
+\begin{table}[H]
 \begin{tabular}{ p{3cm} p{3cm} p{3cm} p{3cm} }
-\label{tabel:INP_Structure}
-Componente de rețea & Simulare rețea & Calitate apă & Jurnalizare \\
+
+Componente  & Simulare  & Calitate  & Jurnalizare \\
  \hline
  [TITLE] & [CURVES] & [QUALITY] & [OPTIONS] \\\
  \textcolor{blue}{[JUNCTIONS]} & \textcolor{blue}{[PATTERNS]} & [REACTIONS] & [TIMES] \\\
  [RESERVOIRS]& [ENERGY]& [SOURCES] &[REPORT] \\\
  [TANKS]& [STATUS] &[MIXING]& \\\
- [PIPES] & [CONTROLS] &  &  \\\
+ \textcolor{blue}{[PIPES]} & [CONTROLS] &  &  \\\
  [PUMPS] & [RULES] &  & \\\
  [VALVES] & \textcolor{blue}{[DEMANDS]} & & \\\
  \textcolor{blue}{[EMITTERS]} & & &
 \end{tabular}
-\end{center}
-
-Cele mai importante
-
+\caption{Structura fișierului INP} \label{tabel:INP_Structure}
+\end{table}
 
 
+Cele mai importante directive au fost trecute în tabelul \ref{tabel:INP_Structure} în culoarea albastru. Urmând ca fiecare să fie explicată mai în detaliu.
+
+\paragraph{[JUNCTIONS]} \mbox{} \\
+Reprezintă structurile care definesc obiectele de tip nod din rețea, acestea vor avea ca atribute setate:
+\begin{itemize}
+    \item ID - indicele nodului
+    \item Elevation - înălțimea nodului (m)
+    \item Base demand - debitul inițial către utilizatori (s-a folosit termenul demand pentru a desemna cerința de apă din rețea)
+    \item Demand pattern ID - pentru fiecare nod se poate fixa un anumit profil de utilizare prin legarea acestuia cu un anumit obiect PATTERN
+\end{itemize}
+
+\paragraph{[PIPES]} \mbox{} \\
+Pipes reprezintă structurile care modelează conductele din rețea, pentru care atributele sunt:
+
+\begin{itemize}
+    \item ID - indexul fiecărei conducte
+    \item start node ID - indexul nodului de plecare
+    \item end node ID - indexul nodului destinație
+    \item Length - lungimea conductei (m)
+    \item Diameter - diametrul conductei (mm)
+    \item Roughness coef - coeficientul de rugozitate al conductei
+    \item Minor loss coef - coeficientul de pierdere al conductei
+    \item Status - conducta poate fi în 3 stări , deschisă - OPEN, închisă - CLOSED sau polarizată - CV (lasă să treacă fluxul de apă într-o singură direcție
+\end{itemize}
+
+\paragraph{[EMITTERS]} \mbox{} \\
+În lucrarea de față folosesc EMITTERS ca modalitate de a modela o scurgere de apă într-un anumit nod. Caracteristicile structurii sunt:
+\begin{itemize}
+    \item Junction ID - indexul nodului unde se află scurgerea
+    \item Flow coeff - coeficientul C din ecuația \eqref{eq:emitter}
+\end{itemize}
+
+
+\paragraph{[PATTERNS]} \mbox{} \\
+Prin intermediul structurilor PATTERN se definesc profilurile de utilizare ale rețelei. Modalitatea de funcționare a demand-ului este prin multiplicarea valorii PATTERN cu valoarea de Base Demand a fiecărui nod. Astfel motorul de simulare va diviza întreaga perioadă de simulare astfel încât fiecare multiplicitate să primească un interval de timp egal.
+
+\paragraph{[DEMANDS]} \mbox{} \\
+Structură care definește gradul de utilizare pentru fiecare nod din rețea. Atributele care definesc utilizarea sunt:
+\begin{itemize}
+    \item Junction ID - indexul nodului unde se dorește modificarea debitului de utilizare
+    \item Base Demand - magnitudinea debitului de utilizare
+\end{itemize}
+
+\section{Integrarea EPANET cu Python}
+Pentru a ușura mecanismul de procesare și interpretare am decis să adaptez funcțiile de bibliotecă EPANET scrise în C la limbajul Python prin utilizarea unei clase de adaptare, \ref{lst:enwrap}. Motivele pentru care am ales limbajul Python sunt rapiditatea dezvoltării aplicației, robustețea soluției și ușurința tratării erorilor. Python este un limbaj interpretat - deci tipurile variabilelor sunt decise dinamic în momentul rulării aplicației în schimb modul acesta nu permite conversia implicită a variabilelor la run-time, eliminând astfel foarte multe erori greu de depistat.
+
+Structura clasei de adaptare numită în engleză Wrapper (i.e. ambalaj al bibliotecii de funcții scrise în C) se bazează pe instanțierea unui obiect prin care se pot apela diferite funcții din biblioteca dinamică astfel încât să se obțină datele necesare.
+Metoda clasei prin care se face interogarea rețelei este:
+
+\lstinputlisting[language=Python,caption={Funcția de query},label={lst:queryfunc},firstline=105,lastline=105]{\code/ENWrapper.py}
+Parametrul \textit{sim\_dict} primit de funcția \ref{lst:queryfunc} reprezintă un fișier JSON (Java Script Object Notation) care are o structură ce permite interogarea rețelei în legătură cu diferite mărimi dorite.
+
+\lstinputlisting[caption={Structură JSON intrare},label={lst:inputJSON},firstline=109,lastline=119]{\code/ENWrapper.py}
+Unde câmpurile reprezintă:
+\begin{itemize}
+    \item simulation\_name - numele simulării
+    \item simulation\_type - tipul simulării H - hidraulic, Q - calitate a apei
+    \item emitter\_values - un vector de cupluri (node\_index, emitter\_value), node\_index reprezintă indexul joncțiunii iar emitter\_value reprezintă magnitudinea scurgerii din acel nod
+    \item query - reprezintă valorile care se doresc a fi interogate pentru fiecare componentă:
+    \begin{itemize}
+        \item EN\_PRESSURE - întoarcerea valorilor presiunilor pentru fiecare nod
+        \item EN\_DEMAND - întoarcerea valorilor demand-ului pentru fiecare nod
+        \item EN\_VELOCITY - întoarcerea valorilor vitezei apei prin fiecare conductă
+    \end{itemize}
+\end{itemize}
+La apelarea funcției query\_network se va returna de asemenea un dicționar, care poate fi convertit la format-ul JSON, pentru a putea fi folosit în alte procese de simulare și validare, spre exemplu într-un mediu de dezvoltare Matlab/Octave. Structura fișierului de ieșire este:
+
+
+
+\lstinputlisting[caption={Structură JSON ieșire},label={lst:outputJSON},firstline=122,lastline=132]{\code/ENWrapper.py}
+Câmpul NODE\_VALUES reprezintă un vector JSON-uri, fiecare element al acestui vector fiind în fapt rezultatul numeric al unei simulări pentru câmpurile specificate la fișierul de intrare \ref{lst:inputJSON}.
+
+Un pas important în dezvoltarea Wrapper-ului peste EPANET a reprezentat tratarea erorilor returnate de funcțiile de C. În momentul apelării unei funcții de C, EPANET returnează o pereche (a, b) unde a reprezintă valoarea efectivă interogată iar b reprezintă codul erorii. Tratarea excepțiilor s-a făcut cu ajutorul funcției:
+
+\lstinputlisting[caption={Cod pentru tratarea erorilor},label={lst:errorcheck},firstline=298,lastline=312]{\code/ENWrapper.py}
+
+și prin definirea unei excepții customizate pentru clasa ENWrapper scrisă
+
+\lstinputlisting[caption={Definirea Excepției},label={lst:enexception},firstline=333,lastline=336]{\code/ENWrapper.py}
+
+\section{Simulări pe rețeaua de apă din Hanoi}
+
+Având ca susținere fișierul pentru rețeaua de apă din Hanoi \ref{fig:hanoinetwork} și biblioteca EPANET cu codul de
+adaptare Python, pot realiza simulări asupra acestei rețele de apă. Inițial voi explicita profilurile de utilizare a
+rețelei de apă urmând ca mai apoi să arăt modul în care rețeaua funcționează în mod nominal (fără nici un defect).
+
+Parametrii funcționali rețelei hanoi.inp sunt următorii:
+
+\begin{itemize}
+    \item pasul de eșantionare al simulării 15min
+    \item pasul de eșantionare al pattern-ului 15min
+    \item Perioada de simulare este de 24h
+\end{itemize}
+
+Graficul de utilizare al rețelei are o distribuție centrată în jurul orelor dimineții - acest lucru fiind corelat cu faptul că atunci este momentul în care cei mai mulți utilizatori își încep activitatea și consumă apă. Astfel rețeaua este supusă unui stres mai mare în timpul orel matinale față de exemplu de perioada nopții unde valorile multiplicității ajung la valori aproximativ de două ori mai mici.
+
+\begin{figure}[htbp]
+  \centering
+  \includesvg[width=0.75\textwidth]{\pics/c2_pics/profil_normal.svg}
+  \caption{Profilul normal de utilizare}
+\end{figure}
+
+Pentru rularea unei simulări nominale fișierul JSON de intrare poate avea câmpul de emitter\_values gol.
