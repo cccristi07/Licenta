@@ -191,9 +191,9 @@ Structură care definește gradul de utilizare pentru fiecare nod din rețea. At
 \end{itemize}
 
 \section{Integrarea EPANET cu Python}
-Pentru a ușura mecanismul de procesare și interpretare am decis să adaptez funcțiile de bibliotecă EPANET scrise în C la limbajul Python prin utilizarea unei clase de adaptare, \ref{lst:enwrap}. Motivele pentru care am ales limbajul Python sunt rapiditatea dezvoltării aplicației, robustețea soluției și ușurința tratării erorilor. Python este un limbaj interpretat - deci tipurile variabilelor sunt decise dinamic în momentul rulării aplicației în schimb modul acesta nu permite conversia implicită a variabilelor la run-time, eliminând astfel foarte multe erori greu de depistat.
+Pentru a ușura mecanismul de procesare și interpretare am decis să folosesc funcțiile de bibliotecă EPANET adaptate din C la limbajul Python de proiectul open-source \cite{EpanetPython}. Motivele pentru care am ales limbajul Python sunt rapiditatea dezvoltării aplicației, robustețea soluției și ușurința tratării erorilor. Python este un limbaj interpretat - deci tipurile variabilelor sunt decise dinamic în momentul rulării aplicației în schimb acesta nu permite conversia implicită a variabilelor la run-time, eliminând astfel foarte multe erori greu de depistat.
 
-Structura clasei de adaptare numită în engleză Wrapper (i.e. ambalaj al bibliotecii de funcții scrise în C) se bazează pe instanțierea unui obiect prin care se pot apela diferite funcții din biblioteca dinamică astfel încât să se obțină datele necesare.
+Prin utilizarea unei clase de adaptare, \ref{lst:enwrap}, la API-ul de Python pus la dispoziție de \cite{EpanetPython} doresc să realizez o interfață mai ușoară pentru definirea, rularea simulărilor dar și pentru savlarea datelor într-un format care permite operabilitatea între mai multe programe, de exemplu Python-Matlab. Structura clasei de adaptare numită în engleză Wrapper (i.e. ambalaj al bibliotecii de funcții scrise în C) se bazează pe instanțierea unui obiect prin care se pot apela diferite funcții din biblioteca dinamică astfel încât să se obțină datele necesare.
 Metoda clasei prin care se face interogarea rețelei este:
 
 \lstinputlisting[language=Python,caption={Funcția de query},label={lst:queryfunc},firstline=105,lastline=105]{\code/ENWrapper.py}
@@ -243,7 +243,7 @@ Parametrii funcționali rețelei hanoi.inp sunt următorii:
 
 Graficul de utilizare al rețelei are o distribuție centrată în jurul orelor dimineții - acest lucru fiind corelat cu faptul că atunci este momentul în care cei mai mulți utilizatori își încep activitatea și consumă apă. Astfel rețeaua este supusă unui stres mai mare în timpul orel matinale față de exemplu de perioada nopții unde valorile multiplicității ajung la valori aproximativ de două ori mai mici.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{\pics/c2_pics/profil_normal.pdf}
   \caption{Profilul normal de utilizare}
@@ -252,7 +252,6 @@ Graficul de utilizare al rețelei are o distribuție centrată în jurul orelor 
 
 Pentru rularea unei simulări nominale fișierul JSON de intrare poate avea câmpul de emitter\_values gol, obținându-se asftel caracteristica tranzitorie a presiunii, a debitului din noduri și a vitezei fluxului de apă din conducte.
 
-TODO: add grafic cu simularea hanoi fără demand...
 
 \section{Prezentarea măsurilor de interes preluate din simulări}
 
@@ -260,7 +259,38 @@ Problema care se pune în continuare alegera unui subset din mărimile prelevate
 
 
 \subsection{Simulare dinamică pentru încărcare nominală}
-graficul cu utilizarea normală
-\subsection{Simulare dinamică pentru demand puternic}
-graficul cu utilizarea defectuoasă
+În regim nominal ansamblul rețelei de apă nu este supus la nici un defect, funcționarea fiind corespunzătoare profilului de utilizare normal \ref{fig:normalprofile}. Datele care sunt extrase din simularea nominală și prezintă interes pentru analiză sunt corespunzătoare presiunii din fiecare nod. De asemenea vor fi prezentate și celelalte măsurători - viteza apei prin conducte și debitul către utilizatori.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.90\textwidth]{\pics/c2_pics/ref_pressure/reference_pressure.pdf}
+\caption{Profilul nominal al presiunii}
+\label{fig:ref_presssure}
+\end{figure}
+
+După cum se poate observa în \ref{fig:ref_presssure} profilul nominal al presiunii intră în tiparul profilului de cerere prezentat în \ref{fig:normalprofile}, unde în jurul orelor dimineții, când activitatea utilizatorilor este asociată unui regim dinamic al rețelei, iar orele nopții sunt caracterizate de marimi lent variabile. Astfel pe acest grafic s-au putut evidenția 3 zone importante, anume, cele două zone de regim staționar în intervalele $[5, 20] *15min$ și $[72,95]*15min$ și zona de regim dinamic în intervalul $[23,70]*15min$. Este de menționat că aceste intervale au fost selectate empiric în baza unei analize grafice asupra caracteristicilor presiune-viteză-debit.
+
+Caracteristicile de viteză și debit urmează o caracteristică asemănătoare cu caracteristica de presiune din fiecare nod, o explicație naturală provenind de la faptul că presiunea este considerată ca fiind înălțimea nivelului de apă dintr-un nod.
+
+\begin{figure}[H]
+\centering
+
+\subfloat[Profil nominal demand]{%
+  \includegraphics[width=0.45\textwidth]{\pics/c2_pics/ref_others/ref_demand}%
+  \label{fig:ref_demand}%
+}\qquad
+\subfloat[Profil nominal viteza]{%
+  \includegraphics[width=0.45\textwidth]{\pics/c2_pics/ref_others/ref_velocity}%
+  \label{fig:ref_pressure}%
+}
+
+\caption{Rezultate simulări}
+\label{fig:ref_other}
+\end{figure}
+
+După cum se observă în \ref{fig:ref_other} zonele de regim staționar și de regim dinamic se păstrează în continuare și pentru caracteristicile de viteză și debit.
+
+
 \subsection{Simulare dinamică pentru defecte în diferite noduri}
+
+În continuare vom considera un scenariu de defect pentru rețea care constă în modificarea succesivă a parametrului de proporționalitate din relația de calcul a debitului de emitter \eqref{eq:emitter}.

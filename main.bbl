@@ -97,6 +97,29 @@
     \field{year}{1998}
   \endentry
 
+  \entry{EpanetPython}{online}{}
+    \name{author}{1}{}{%
+      {{hash=PA}{%
+         family={Pathirana},
+         familyi={P\bibinitperiod},
+         given={Assela},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PA1}
+    \strng{fullhash}{PA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{EPANET calling API for python.}
+    \verb{url}
+    \verb https://github.com/asselapathirana/epanettools
+    \endverb
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'urldate'}
+  \endentry
+
   \entry{rossman2000epanet}{article}{}
     \true{moreauthor}
     \name{author}{1}{}{%
