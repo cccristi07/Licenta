@@ -53,4 +53,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Fișiere sursă}{16}{Anexa.a.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliografie}{24}{chapter*.15}
+\contentsline {chapter}{\nonumberline Bibliography}{24}{chapter*.15}

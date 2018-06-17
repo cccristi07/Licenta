@@ -16,7 +16,7 @@
   {}
 \endgroup
 
-\datalist[entry]{nyt/global//global/global}
+\datalist[entry]{nty/global//global/global}
   \entry{elger2016engineering}{book}{}
     \name{author}{2}{}{%
       {{hash=EDF}{%
@@ -39,8 +39,6 @@
     \strng{fullhash}{EDFRJA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{year}
     \field{sortinit}{E}
     \field{sortinithash}{E}
     \field{title}{Engineering fluid mechanics}
@@ -63,8 +61,6 @@
     \strng{fullhash}{KRM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1975}
-    \field{labeldatesource}{year}
     \field{sortinit}{K}
     \field{sortinithash}{K}
     \field{number}{1}
@@ -91,8 +87,6 @@
     \strng{fullhash}{KJR1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1998}
-    \field{labeldatesource}{year}
     \field{sortinit}{K}
     \field{sortinithash}{K}
     \field{number}{4}
@@ -121,8 +115,6 @@
     \strng{fullhash}{RLA+1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
-    \field{labeldatesource}{year}
     \field{sortinit}{R}
     \field{sortinithash}{R}
     \field{title}{EPANET 2: users manual}
@@ -145,8 +137,6 @@
     \strng{fullhash}{SEG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{year}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{title}{Demand modeling for water networks calibration and leak

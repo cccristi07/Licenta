@@ -57,12 +57,10 @@
       <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
-      <file>authoryear.bbx</file>
-      <file>./cls/upb-authoryear.bbx</file>
-      <file>authoryear.cbx</file>
-      <file>./cls/upb-authoryear.cbx</file>
+      <file>numeric.bbx</file>
+      <file>numeric.cbx</file>
       <file>biblatex.cfg</file>
-      <file>./cls/romanian.lbx</file>
+      <file>english.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">

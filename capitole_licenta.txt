@@ -19,7 +19,9 @@
 		* plot to highlight the selected sensors
 
 3'. fault detection and isolation using SVM 
-- de vazut daca intra in 4 sau nu ?
+- https://topepo.github.io/caret/recursive-feature-elimination.html
+- SVM
+- Recursive Feature Ellimination pt selectia senzorilor
 
 4. fault detection and isolation via dictionary learning [10 pag]
 - dictionary learning problem

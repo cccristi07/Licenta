@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6600 64-bit) (preloaded format=xelatex 2018.3.9)  14 JUN 2018 23:17
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6600 64-bit) (preloaded format=xelatex 2018.3.9)  17 JUN 2018 20:24
 entering extended mode
 **./main.tex
 (main.tex
@@ -1576,7 +1576,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex citestyle data model...
-Package biblatex Info: ... file './cls/upb-authoryear.dbx' not found.
+Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count381
@@ -1699,17 +1699,12 @@ File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 \c@biburllcpenalty=\count454
 \c@smartand=\count455
 )
-Package biblatex Info: Trying to load bibliography style './cls/upb-authoryear'
-...
-Package biblatex Info: ... file './cls/upb-authoryear.bbx' found.
- (cls/upb-authoryear.bbx
-File: upb-authoryear.bbx 2013/06/05 v1.0 biblatex bibliography style
-Package biblatex Info: Trying to load bibliography style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.bbx' found.
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
 
-("C:\Users\Cristian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\au
-thoryear.bbx"
-File: authoryear.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+("C:\Users\Cristian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\bbx\nu
+meric.bbx"
+File: numeric.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
@@ -1718,25 +1713,25 @@ andard.bbx"
 File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count456
 \c@bbx:relatedtotal=\count457
-)))
-Package biblatex Info: Trying to load citation style './cls/upb-authoryear'...
-Package biblatex Info: ... file './cls/upb-authoryear.cbx' found.
- (cls/upb-authoryear.cbx
-File: upb-authoryear.cbx 2013/06/05 v1.0 biblatex bibliography style
-Package biblatex Info: Trying to load citation style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.cbx' found.
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
 
-("C:\Users\Cristian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\cbx\au
-thoryear.cbx"
-File: authoryear.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
+("C:\Users\Cristian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\cbx\nu
+meric.cbx"
+File: numeric.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
-))
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
@@ -2103,11 +2098,19 @@ l.def"))
 \openout2 = `./cls/gls.aux'.
 
 (cls/gls.tex)
-Package biblatex Info: Trying to load language 'romanian' -> './cls/romanian'..
-.
-Package biblatex Info: ... file './cls/romanian.lbx' found.
- (cls/romanian.lbx
-File: romanian.lbx 
+Package biblatex Info: Trying to load language 'romanian'...
+Package biblatex Info: ... file 'romanian.lbx' not found.
+
+
+Package biblatex Warning: Language 'romanian' not supported.
+(biblatex)                Using fallback language 'english' on input line 30.
+
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+("C:\Users\Cristian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\en
+glish.lbx"
+File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -2134,8 +2137,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
@@ -2376,17 +2378,10 @@ g1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) (code/ENWrapper.py) (code/ENWrapper.py) [10] (code/ENWrapper.py)
 (code/ENWrapper.py) (code/ENWrapper.py) [11]
-
-Package caption Warning: \label without proper reference on input line 91.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:hanoinetwork' on page 12 undefined on input line 
-230.
-
 File: ./pics/c2_pics/profil_normal.pdf Graphic file (type pdf)
 <use ./pics/c2_pics/profil_normal.pdf>
-[12]) (chapters/detectiescurgeri.tex [13]
+ [12])
+(chapters/detectiescurgeri.tex [13]
 chapter 3.
 ) [14
 
@@ -2398,6 +2393,30 @@ chapter A.
 
 ] [17] [18] [19] [20] [21] [22])) [23]
 chapter without number
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 [24
 
 
@@ -2410,19 +2429,19 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 75.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 75.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59260 strings out of 427834
- 1249835 string characters out of 3147926
- 2147465 words of memory out of 3000000
- 62425 multiletter control sequences out of 15000+200000
+ 59223 strings out of 427834
+ 1248946 string characters out of 3147926
+ 2338288 words of memory out of 3000000
+ 62392 multiletter control sequences out of 15000+200000
  537638 words of font info for 71 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 66i,12n,100p,10532b,5270s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 66i,12n,100p,10532b,5286s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on main.pdf (29 pages).

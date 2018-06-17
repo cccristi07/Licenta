@@ -54,6 +54,8 @@ Având la dispoziție \eqref{Hazen-Williams} și \eqref{debit_presiune} putem ex
 \label{eq:HW-matrix}
 \mathbf B\mathbf G\left[\left(-\mathbf B^\top \mathbf h+\mathbf B_f^\top \mathbf h_f\right)\times \left|-\mathbf B^\top \mathbf h+\mathbf B_f^\top \mathbf h_f\right|^{-0.46}\right]=\mathbf d
 \end{equation}
+% d este în general necunoscut, și se alege empiric, fiecare variație a demand-ului și a emitter-ului
+% ceea ce se influențează de fapt în simulări este parametrul d, prin diferite variatii de emitter-demand
 
 unde s-au luat în calcul și nodurile care au variații de presiune foarte mici - spre exemplu nodurile de tip tanc și  nodurile de tip rezervor - termenul $\mathbf B_f^\top \mathbf h_f$ reprezintă contribuția acestor noduri la starea de echilibru a rețelei.
 
@@ -65,9 +67,9 @@ Dezvoltat la începutul anilor 90' de către USEPA (United States Environmental 
 	
 \begin{figure}[H]
 \centering
-\label{fig:epanet_simulator_win}
 \includegraphics[width=0.75\textwidth]{pics/c2_pics/epanet_simulator.png}
 \caption{Simulatorul EPANET}
+\label{fig:epanet_simulator_win}
 \end{figure}
 
 În urma execuției simulării EPANET va stoca toate datele în memorie și va putea reliza grafice și alte interogări complexe.
@@ -98,10 +100,10 @@ Astfel apariția unui defect într-un anumit nod determină apriția unei relaț
 API-ul pus la dispoziție se bazează pe funcții C scrise  într-o manieră modularizată, în ideea de a separa partea de analiză a rețelei și de modificare a parametrilor de partea de simulare hidraulică și calitativă. Astfel în imaginea de mai jos este prezentată modalitatea în care datele ajung și sunt folosite în cadrul simulatorului:
 
 \begin{figure}[H]
-\label{fig:EPANET_dataflow}
 \centering
 \includegraphics[width=0.75\textwidth]{pics/c2_pics/epanet_dataflow.pdf}
 \caption{Fluxul de date în biblioteca EPANET}
+\label{fig:EPANET_dataflow}
 \end{figure}
 
 \begin{flushleft}
@@ -161,13 +163,13 @@ Pipes reprezintă structurile care modelează conductele din rețea, pentru care
 
 \begin{itemize}
     \item ID - indexul fiecărei conducte
-    \item start node ID - indexul nodului de plecare
-    \item end node ID - indexul nodului destinație
+    \item Start node ID - indexul nodului de plecare
+    \item End node ID - indexul nodului destinație
     \item Length - lungimea conductei (m)
     \item Diameter - diametrul conductei (mm)
     \item Roughness coef - coeficientul de rugozitate al conductei
     \item Minor loss coef - coeficientul de pierdere al conductei
-    \item Status - conducta poate fi în 3 stări , deschisă - OPEN, închisă - CLOSED sau polarizată - CV (lasă să treacă fluxul de apă într-o singură direcție
+    \item Status - conducta poate fi în 3 stări , deschisă - OPEN, închisă - CLOSED sau polarizată - CV (lasă să treacă fluxul de apă într-o singură direcție)
 \end{itemize}
 
 \paragraph{[EMITTERS]} \mbox{} \\
@@ -242,10 +244,10 @@ Parametrii funcționali rețelei hanoi.inp sunt următorii:
 Graficul de utilizare al rețelei are o distribuție centrată în jurul orelor dimineții - acest lucru fiind corelat cu faptul că atunci este momentul în care cei mai mulți utilizatori își încep activitatea și consumă apă. Astfel rețeaua este supusă unui stres mai mare în timpul orel matinale față de exemplu de perioada nopții unde valorile multiplicității ajung la valori aproximativ de două ori mai mici.
 
 \begin{figure}[htbp]
-    \label{fig:normalprofile}
   \centering
   \includegraphics[width=0.75\textwidth]{\pics/c2_pics/profil_normal.pdf}
   \caption{Profilul normal de utilizare}
+  \label{fig:normalprofile}
 \end{figure}
 
 Pentru rularea unei simulări nominale fișierul JSON de intrare poate avea câmpul de emitter\_values gol, obținându-se asftel caracteristica tranzitorie a presiunii, a debitului din noduri și a vitezei fluxului de apă din conducte.
