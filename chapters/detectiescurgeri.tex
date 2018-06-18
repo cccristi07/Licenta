@@ -203,3 +203,30 @@ Astfel vom considera nodurile de măsurătoare ca o submulțime  a lui $V' \subs
 Se poate observa că în figurile \ref{fig:rez_time} reziduul cel mai pronunțat ca funcție de timp se găsește în nodul în care se simulează și defectul - lucru natural și de așteptat. O caracteristică importantă a acestei rețele de apă este faptul că există o dependență între diferitele răspunsuri în timp ale caracteristicii de presiune, fapt care ne permite să exploatăm redundanțele din rețea și să prezicem cu o acuratețe relativ ridicată defectele.
 
 Este necesar acum să prezentăm profilurile reziduurilor atemporale, care în final vor reprezenta caracteristicile de intrare pentru algoritmul de clasificare și selecție de senzori.
+
+\begin{figure}[H]
+\begin{tabular}{cc}
+\subfloat[Reziduuri pentru defect în nodul 11, magnitudine 25]{%
+  \includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/atem_res_emitter11_mag25}%
+  \label{fig:residual_atemp_11}%
+} &
+\subfloat[Reziduuri pentru defect în nodul 17, magnitudine 25]{%
+  \includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/atem_res_emitter17_mag25}%
+  \label{fig:residual_atemp_17}%
+} \\
+
+\subfloat[Reziduuri pentru defect în nodul 21, magnitudine 25]{%
+  \includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/atem_res_emitter21_mag25}%
+  \label{fig:residual_atemp_21}%
+}&
+
+\subfloat[Reziduuri pentru defect în nodul 27, magnitudine 25]{%
+  \includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/atem_res_emitter27_mag25}%
+  \label{fig:residual_atemp_27}%
+} 
+\end{tabular}
+\caption{Reziduuri atemporale rețea}
+\label{fig:rez_atemp}
+\end{figure}
+
+Asemenea reziduurilor de la \ref{fig:rez_time} se poate observa că simularea unui emitter într-un nod va determina un răspuns puternic în nodul respectiv și în vecinătatea nodului afectat
