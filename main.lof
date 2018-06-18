@@ -15,13 +15,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Profilul nominal al presiunii\relax }}{13}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Rezultate simulări\relax }}{14}{figure.caption.16}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Rezultate simulări nominale\relax }}{14}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profil nominal demand}}}{14}{subfigure.5.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil nominal viteza}}}{14}{subfigure.5.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Rezultate simulări defecte ușoare\relax }}{15}{figure.caption.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profile cu defect în nodul 14}}}{15}{subfigure.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil cu defect în nodul 25}}}{15}{subfigure.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Rezultate simulări defecte puternice\relax }}{16}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profile cu defect puternic în nodul 14}}}{16}{subfigure.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil cu defect puternic în nodul 25}}}{16}{subfigure.2.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

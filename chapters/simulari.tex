@@ -54,10 +54,13 @@ Având la dispoziție \eqref{Hazen-Williams} și \eqref{debit_presiune} putem ex
 \label{eq:HW-matrix}
 \mathbf B\mathbf G\left[\left(-\mathbf B^\top \mathbf h+\mathbf B_f^\top \mathbf h_f\right)\times \left|-\mathbf B^\top \mathbf h+\mathbf B_f^\top \mathbf h_f\right|^{-0.46}\right]=\mathbf d
 \end{equation}
-% d este în general necunoscut, și se alege empiric, fiecare variație a demand-ului și a emitter-ului
-% ceea ce se influențează de fapt în simulări este parametrul d, prin diferite variatii de emitter-demand
+
 
 unde s-au luat în calcul și nodurile care au variații de presiune foarte mici - spre exemplu nodurile de tip tanc și  nodurile de tip rezervor - termenul $\mathbf B_f^\top \mathbf h_f$ reprezintă contribuția acestor noduri la starea de echilibru a rețelei.
+
+Parametrul $\mathbf{d}$ reprezintă cosumul pentru noduri ($L/s$) și reprezintă un factor de incertitudine pentru întregul model. În cadrul unei simulări acesta poate fi estimat sau ales empiric, dar nu poate fi cunoscut cu precizie în fiecare moment. Problema aflării vectorului de consum a nodurilor intră în categoria problemelor legate de serii de timp și a estimării valorilor viitoare. Simulatoarele software transpun în general o variație a parametrilor de rețea (emitter-demand) în modificarea acestui parametru d.
+% d este în general necunoscut, și se alege empiric, fiecare variație a demand-ului și a emitter-ului
+% ceea ce se influențează de fapt în simulări este parametrul d, prin diferite variatii de emitter-demand
 
 Din cauza dificultății rezolvării unei ecuații matriceale neliniare, software-ul specializat trebuie să folosească diferite metode de optimizare ("Solver") pentru a putea obține o diferență cât mai mică între cazul estimat și rezultatul real al ecuației. Este important de reținut faptul că rezolvarea problemelor de programare neliniară cu constrângeri poate generea de fapt o problemă NP-completă, sau în unele cazuri chiar NP-dură ;\cite{karp1975computational}.
 
@@ -270,6 +273,8 @@ Problema care se pune în continuare alegera unui subset din mărimile prelevate
 
 După cum se poate observa în \ref{fig:ref_presssure} profilul nominal al presiunii intră în tiparul profilului de cerere prezentat în \ref{fig:normalprofile}, unde în jurul orelor dimineții, când activitatea utilizatorilor este asociată unui regim dinamic al rețelei, iar orele nopții sunt caracterizate de marimi lent variabile. Astfel pe acest grafic s-au putut evidenția 3 zone importante, anume, cele două zone de regim staționar în intervalele $[5, 20] *15min$ și $[72,95]*15min$ și zona de regim dinamic în intervalul $[23,70]*15min$. Este de menționat că aceste intervale au fost selectate empiric în baza unei analize grafice asupra caracteristicilor presiune-viteză-debit.
 
+\subsection{Alte mărimi de interes din simulatorul EPANET}
+
 Caracteristicile de viteză și debit urmează o caracteristică asemănătoare cu caracteristica de presiune din fiecare nod, o explicație naturală provenind de la faptul că presiunea este considerată ca fiind înălțimea nivelului de apă dintr-un nod.
 
 \begin{figure}[H]
@@ -284,13 +289,12 @@ Caracteristicile de viteză și debit urmează o caracteristică asemănătoare 
   \label{fig:ref_pressure}%
 }
 
-\caption{Rezultate simulări}
-\label{fig:ref_other}
+\caption{Rezultate simulări nominale}
+\label{fig:ref_demand_vel}
 \end{figure}
 
-După cum se observă în \ref{fig:ref_other} zonele de regim staționar și de regim dinamic se păstrează în continuare și pentru caracteristicile de viteză și debit.
+După cum se observă în \ref{fig:ref_demand_vel} zonele de regim staționar și de regim dinamic se păstrează în continuare și pentru caracteristicile de viteză și debit. De asemenea este important de menționat că profilurile nominale ale celoralte noduri decât cele ilustrate în figurile de mai sus urmează aceeași caracteristică dinamică, alegerea nodurilor și conductelor respective a fost făcută pentru a păstra figura curată.
 
 
-\subsection{Simulare dinamică pentru defecte în diferite noduri}
 
-În continuare vom considera un scenariu de defect pentru rețea care constă în modificarea succesivă a parametrului de proporționalitate din relația de calcul a debitului de emitter \eqref{eq:emitter}.
+
