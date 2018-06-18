@@ -45,6 +45,18 @@
     \field{year}{2016}
   \endentry
 
+  \entry{GIGO}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Garbage in Garbage out.}
+    \verb{url}
+    \verb https://en.wikipedia.org/wiki/Garbage_in,_garbage_out
+    \endverb
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'urldate'}
+  \endentry
+
   \entry{karp1975computational}{article}{}
     \name{author}{1}{}{%
       {{hash=KRM}{%
@@ -95,6 +107,44 @@
     \field{volume}{37}
     \field{journaltitle}{ISA transactions}
     \field{year}{1998}
+  \endentry
+
+  \entry{dataPreprocessing}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KS}{%
+         family={Kotsiantis},
+         familyi={K\bibinitperiod},
+         given={SB},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Kanellopoulos},
+         familyi={K\bibinitperiod},
+         given={D},
+         giveni={D},
+      }}%
+      {{hash=PP}{%
+         family={Pintelas},
+         familyi={P\bibinitperiod},
+         given={PE},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{KSKDPP1}
+    \strng{fullhash}{KSKDPP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{2}
+    \field{pages}{111\bibrangedash 117}
+    \field{title}{Data preprocessing for supervised leaning}
+    \field{volume}{1}
+    \field{journaltitle}{International Journal of Computer Science}
+    \field{year}{2006}
   \endentry
 
   \entry{EpanetPython}{online}{}
