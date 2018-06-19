@@ -1,0 +1,27 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+
+
+\begin{axis}[%
+width=1.642in,
+height=1.642in,
+at={(6.237in,3.461in)},
+scale only axis,
+point meta min=0,
+point meta max=1,
+axis on top,
+xmin=0.5,
+xmax=31.5,
+tick align=outside,
+y dir=reverse,
+ymin=0.5,
+ymax=31.5,
+axis line style={draw=none},
+ticks=none
+]
+\addplot [forget plot] graphics [xmin=0.5, xmax=31.5, ymin=0.5, ymax=31.5] {residual_scaled_matrix-1.png};
+\end{axis}

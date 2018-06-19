@@ -158,14 +158,14 @@ rscal_{i}^{j,m} = \frac{r_i^{j,m} - \min r_{1:n}^{j,m}}{ \max r_{1:n}^{j,m} -  \
 
 Ca semnificație notațiile prezentate în \ref{sec:nomenclatura} care conțin simbolul~ $\widehat{}$~ fac referire la datele folosite pentru validarea modelului iar valorile unde se specifică nodul defectului și magnitudinea acestuia sunt considerate ca fiind date de antrenare și testare. Astfel în contextul definirii setului de dat pe care vom aplica algoritmii de calsificare va trebui să definim matricea:
 \begin{equation}
-\mathbf{R<tip>}^{j, m} \in \mathbb{R}^{n_{d} \times n}
+\mathbf{R}<tip>^{j, m} \in \mathbb{R}^{n_{d} \times n}
 \label{eq:residual_mat}
 \end{equation}
 
 Unde croșetele din formulă reprezintă un înlocuitor pentru metoda de reziduu folosită iar $n_{d}$ reprezintă numărul de defecte tratate în setul de date. De asemenea pentru fiecare linie a matricei \eqref{eq:residual_mat} putem defini perechea
 \begin{equation}
 \left( \mathbf{R}<tip>(d,:), y_{d} \right)
-\label{eq:residual_label}
+\label{eq:residual_mat_label}
 \end{equation} 
 Unde $ \mathbf{R}<tip>(d,:)$ reprezintă răspunsul rețelei prin reziduuri la defectul $d$. Iar $y_{d}$ reprezintă eticheta pentru acest set de date, anume, nodul în care a avut loc defectul.
 
@@ -230,3 +230,13 @@ Este necesar acum să prezentăm profilurile reziduurilor atemporale, care în f
 \end{figure}
 
 Asemenea reziduurilor de la \ref{fig:rez_time} se poate observa că simularea unui emitter într-un nod va determina un răspuns puternic în nodul respectiv și în vecinătatea nodului afectat
+
+\section{Metodă preliminară de selecție a senzorilor}
+O metodă prin care se poate decide și evalua importanța senzorilor într-o rețea este prin construirea matricei de reziduuri \eqref{eq:residual_mat}, asupra căreia aplicăm o operație de scalare pe coloane, pentru a aduce valorile acesteia în intervalul $[0,1]$. Pentru experimentul în care simulăm în fiecare nod un emitter de 25 obținem grafic o matrice $\mathbf{R}scaled \in \mathbb{R}^{31 \times 31}$:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/residual_scaled_matrix}
+\caption{Matricea de reziduuri scalată}
+\label{fig:rez_scaled_matrix_img}
+\end{figure} 

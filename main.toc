@@ -63,6 +63,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.5}Calcul și prezentare reziduuri}{18}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Fișiere sursă}{22}{Anexa.a.A}
+\contentsline {section}{\numberline {3.6}Metodă preliminară de selecție a senzorilor}{20}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{30}{chapter*.21}
+\contentsline {chapter}{\numberline {A}Fișiere sursă}{23}{Anexa.a.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.22}
