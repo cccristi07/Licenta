@@ -237,6 +237,13 @@ O metodă prin care se poate decide și evalua importanța senzorilor într-o re
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/residual_scaled_matrix}
-\caption{Matricea de reziduuri scalată}
+\caption{Matricea de reziduuri scalate}
 \label{fig:rez_scaled_matrix_img}
 \end{figure} 
+
+După cum se observă în \ref{fig:rez_scaled_matrix_img} fiecare coloană a matricei $\mathbf{R}scaled$ reprezintă răspunsul prelucrat - scalat în intervalul $[0,1]$ - al unui defect, valorile care tind spre o culoare mai închisă de negru sunt răspunsuri mai pronuțate iar valorile care se apropie de alb reprezintă valori mai puțin evidențiate ale reziduului în nod. Analizând matricea se poate observa care noduri răspund mai bine la anumite răspunsuri, o caracteristică importantă a acestei matrice este că, o alură diagonală - semnificația elementelor diagonale fiind răspunsul nodurilor afectate de defecte aplicate în ele însuși. Dacă matricea de reziduuri ar fi avut o caracteristică diagonală perfectă - elementele nenule s-ar fi regăsit doar pe aceasta - problema de clasificare ar fi fost una simplă și ar fi implicat amplasarea unui senzor în fiecare nod. Cazul real impune dependențe între presiunile, debitele din fiecare nod, dar și vitezele din fiecare conductă, astfel, fiecare defect separat va avea o "amprentă" unică - prin care se diferențiază de celelalte și una comună. Scopul este găsirea unui subset al mulțimii de noduri care să poată identifica defectele cu pierderi minime de performanțe.
+
+
+\subsection{Binarizarea matricei de reziduuri}
+
+bla bla

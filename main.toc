@@ -65,6 +65,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.6}Metodă preliminară de selecție a senzorilor}{20}{section.3.6}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.6.1}Binarizarea matricei de reziduuri}{21}{subsection.3.6.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Fișiere sursă}{23}{Anexa.a.A}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.22}

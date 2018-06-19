@@ -7,21 +7,51 @@
 
 
 \begin{axis}[%
-width=1.642in,
-height=1.642in,
-at={(6.237in,3.461in)},
+axis x line = bottom,
+axis y line = left,
+width=31cm,
+height=31cm,
+xmin=0,
+xmax=31,
+ymin=0,
+ymax=31,
+% at={(-1,-1)},
 scale only axis,
-point meta min=0,
-point meta max=1,
+% grid=both,
+%  grid style={line width=.1pt, draw=gray!10},
+% minor tick num=1,
+% point meta min=0,
+% point meta max=1,
+colormap={blackwhite}{gray(0cm)=(1); gray(1cm)=(0)} ,
 axis on top,
-xmin=0.5,
-xmax=31.5,
 tick align=outside,
 y dir=reverse,
-ymin=0.5,
-ymax=31.5,
+% xlabel={Numar Defect},
+xlabel style={at={(0.5,-0.125)}},
+% ylabel={Raspuns in nod},
+colorbar,
+ylabel style={at={(-0.125, 0.5)}},
+xtick={1,2,...,31},
+xtick style={font=\Large},
+ytick={1,2,...,31},
 axis line style={draw=none},
 ticks=none
 ]
-\addplot [forget plot] graphics [xmin=0.5, xmax=31.5, ymin=0.5, ymax=31.5] {residual_scaled_matrix-1.png};
+\addplot [forget plot] graphics [xmin=0, xmax=31, ymin=0, ymax=31] {residual_scaled_matrix-1.png};
+
+
 \end{axis}
+
+\foreach \x  in {1,2,...,31}{
+
+\draw[] (\x - 1, 0) -- (\x - 1, 31);
+\node[] at(\x -0.5, -0.5) {\Large $f_{\x}$};
+}
+
+\foreach \y  in {1,2,...,31}{
+
+\draw[] (0, \y) -- (31, \y);
+\node[] at(-0.5, 31.5-\y) {\Large $n_{\y}$};
+}
+
+
