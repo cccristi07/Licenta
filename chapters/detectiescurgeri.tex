@@ -1,4 +1,4 @@
-\chapter{Detecția și izolarea defectelor}
+\chapter{Scenarii pentru defecte și simulări}
 \label{chap:detectie}
 \section{Definirea defectelor}
 Defectele sunt simulate modificând parametrul $C$ din ecuația emitter-ului \eqref{eq:emitter}. Modalitatea prin care se execută în cod simularea unui defect este prin apelarea metodei:
@@ -11,7 +11,7 @@ parametrii funcției $set\_emitter$ sunt:
 \item emitter\_val - magnitudinea defectului
 \end{itemize}
 
-Metoda mai întâi vefică dacă nodul cu indexul $node_index$ reprezintă doar o jonncțiune apoi setează magnitudinea defectului în nodul primit cu ajutorul funcției de bibliotecă $\mathbf{ENsetnodevalue}$ 
+Metoda mai întâi verifică dacă nodul cu indexul $node_{index}$ reprezintă doar o joncțiune apoi setează magnitudinea defectului în nodul primit cu ajutorul funcției de bibliotecă $\mathbf{ENsetnodevalue}$ 
 
 \section{Simulare dinamică pentru defecte în diferite noduri}
 
@@ -32,7 +32,7 @@ Metoda mai întâi vefică dacă nodul cu indexul $node_index$ reprezintă doar 
 \label{fig:ref_emitter_soft}
 \end{figure}
 
-După cum se poate observa în imaginile \ref{fig:ref_emitter_soft} variația emitter-ului într-un nod produce în mod evident o modificarea a modului comun al caracteristicii $timp-presiune$. Din punctul de vedere al magnitudinolor de simulare pentru defecte, am considerat 2 clase de defecte, anume:
+După cum se poate observa în imaginile \ref{fig:ref_emitter_soft} variația emitter-ului într-un nod produce în mod evident o modificarea a modului comun al caracteristicii $timp-presiune$. Din punctul de vedere al magnitudinilor de simulare pentru defecte, am considerat 2 clase de defecte, anume:
 \begin{itemize}
 \item defecte ușoare (soft faults) - cu valorile coeficientului de emitter mai mici de 35
 \item defecte puternice (hard faults) - cu valorile emitter mai mari de 35 
@@ -137,7 +137,7 @@ iar pentru valorile reziduului despre care nu se cunosc încă lucruri folosim n
 \label{eq:measured_residual}
 \end{equation}
 
-Alte tipuri de reziduuri preprocesate sunt relative:
+Alte tipuri de reziduuri pre-procesate sunt relative:
 \begin{equation}
 rrelativ_i^{j,m} = \frac{r_i^{j,m}}{\overline{\mathbf{p}}_i^{nom}} 
 \label{eq:relative_residual}
@@ -156,7 +156,7 @@ rscal_{i}^{j,m} = \frac{r_i^{j,m} - \min r_{1:n}^{j,m}}{ \max r_{1:n}^{j,m} -  \
 \end{equation}
 
 
-Ca semnificație notațiile prezentate în \ref{sec:nomenclatura} care conțin simbolul~ $\widehat{}$~ fac referire la datele folosite pentru validarea modelului iar valorile unde se specifică nodul defectului și magnitudinea acestuia sunt considerate ca fiind date de antrenare și testare. Astfel în contextul definirii setului de dat pe care vom aplica algoritmii de calsificare va trebui să definim matricea:
+Ca semnificație notațiile prezentate în \ref{sec:nomenclatura} care conțin simbolul~ $\widehat{}$~ fac referire la datele folosite pentru validarea modelului iar valorile unde se specifică nodul defectului și magnitudinea acestuia sunt considerate ca fiind date de antrenare și testare. Astfel în contextul definirii setului de dat pe care vom aplica algoritmii de clasificare va trebui să definim matricea:
 \begin{equation}
 \mathbf{R}<tip>^{j, m} \in \mathbb{R}^{n_{d} \times n}
 \label{eq:residual_mat}
@@ -236,14 +236,72 @@ O metodă prin care se poate decide și evalua importanța senzorilor într-o re
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/residual_scaled_matrix}
+\includegraphics[width=0.85\textwidth]{\pics/c3_pics/residuals/residual_scaled_matrix}
 \caption{Matricea de reziduuri scalate}
 \label{fig:rez_scaled_matrix_img}
 \end{figure} 
 
-După cum se observă în \ref{fig:rez_scaled_matrix_img} fiecare coloană a matricei $\mathbf{R}scaled$ reprezintă răspunsul prelucrat - scalat în intervalul $[0,1]$ - al unui defect, valorile care tind spre o culoare mai închisă de negru sunt răspunsuri mai pronuțate iar valorile care se apropie de alb reprezintă valori mai puțin evidențiate ale reziduului în nod. Analizând matricea se poate observa care noduri răspund mai bine la anumite răspunsuri, o caracteristică importantă a acestei matrice este că, o alură diagonală - semnificația elementelor diagonale fiind răspunsul nodurilor afectate de defecte aplicate în ele însuși. Dacă matricea de reziduuri ar fi avut o caracteristică diagonală perfectă - elementele nenule s-ar fi regăsit doar pe aceasta - problema de clasificare ar fi fost una simplă și ar fi implicat amplasarea unui senzor în fiecare nod. Cazul real impune dependențe între presiunile, debitele din fiecare nod, dar și vitezele din fiecare conductă, astfel, fiecare defect separat va avea o "amprentă" unică - prin care se diferențiază de celelalte și una comună. Scopul este găsirea unui subset al mulțimii de noduri care să poată identifica defectele cu pierderi minime de performanțe.
+După cum se observă în \ref{fig:rez_scaled_matrix_img} fiecare coloană a matricei $\mathbf{R}scaled$ reprezintă răspunsul prelucrat - scalat în intervalul $[0,1]$ - al unui defect, valorile care tind spre o culoare mai închisă de negru sunt răspunsuri mai pronunțate iar valorile care se apropie de alb reprezintă valori mai puțin evidențiate ale reziduului în nod. Analizând matricea se poate observa care noduri răspund mai bine la anumite răspunsuri, o caracteristică importantă a acestei matrice este că, o alură diagonală - semnificația elementelor diagonale fiind răspunsul nodurilor afectate de defecte aplicate în ele însuși. Dacă matricea de reziduuri ar fi avut o caracteristică diagonală perfectă - elementele nenule s-ar fi regăsit doar pe aceasta - problema de clasificare ar fi fost una simplă și ar fi implicat amplasarea unui senzor în fiecare nod. Cazul real impune dependențe între presiunile, debitele din fiecare nod, dar și vitezele din fiecare conductă, astfel, fiecare defect separat va avea o "amprentă" unică - prin care se diferențiază de celelalte și una comună. Scopul este găsirea unui subset al mulțimii de noduri care să poată identifica defectele cu pierderi minime de performanțe.
 
 
 \subsection{Binarizarea matricei de reziduuri}
 
-bla bla
+Pentru a putea reține un răspuns binar în cadrul matricei este important să considerăm o limită $l$ peste care răspunsul senzorului este luat în considerare sau nu. Astfel definim matricea binară $\mathbf{M}$ de aceeași dimensiune ca și $\mathbf{R}scaled$ dar peste care aplicăm o operație de binarizare:
+
+\begin{equation}
+    \mathbf{M}_{i,j} = \begin{cases}
+            1 &\quad \text{ dacă } \mathbf{R}scaled_{i,j} \geq l \\
+            0 &\quad \text{ dacă } \mathbf{R}scaled_{i,j}  < l
+    \end{cases}
+\end{equation}
+În continuare vom defini notațiile matematice pentru mulțimile defectelor și a nodurilor.
+Este important să considerăm astfel mulțimea răspunsurilor la defecte $F = \{\mathbf{f}_i | i \in V \}$ iar fiecare element $\mathbf{f}_i$ al mulțimii este definit ca un vector format din valori binare cu însemnătatea:
+
+\begin{equation}
+\mathbf{f}_i[k] = \begin{cases}
+       1 &\quad\text{dacă nodul k răspunde la defectul i}\\
+       0 &\quad\text{dacă nodul k nu răspunde la defectul i}
+     \end{cases}
+\label{eq:fault_signature}
+\end{equation}
+
+Echivalent putem defini mulțimea răspunsurilor nodurilor $N =\{\mathbf{n}_i| i \in V\}$, pentru fiecare element $\mathbf{n}_i$ avem:
+
+\begin{equation}
+\mathbf{n}_i[k] = \begin{cases}
+       1 &\quad\text{dacă defectul k este detectat de nodul k}\\
+       0 &\quad\text{dacă defectul k nu este detectat de nodul k}
+     \end{cases}
+\label{eq:fault_signature}
+\end{equation}
+
+todo adauga grafic cu matricea binara M
+
+
+\subsection{Selecția senzorilor}
+
+Având definite elementele pentru interpretarea decizională a datelor preluate de la senzori, putem formula o metodă prin care să selectăm acei senzori care oferă informațiile cele mai importante. După cum se observă și în matricea reziduurilor \ref{fig:rez_scaled_matrix_img} există foarte multă redundanță în sistemul complex al rețelei de apă care întâmpină perturbații precum scurgeri. Ținând cont că de faptul că fiecare defect are un răspuns diferit, putem să decidem care este subsetul de senzori care reușește să ofere informații îndeajuns de relevante în legătură cu evenimentele din rețea, ca exemplu trivial putem afirma că un nod care răspunde la toate defectele oferă informații relevante pentru detecția de defecte dar nu și pentru izolarea defectelor.
+
+Pentru problema selecției de senzori dorim să obținem o submulțime de noduri $V_s \subset V^j$ cu proprietatea că aceasta va avea un cardinal cât mai mic și defectele detectate de senzorii selectați sunt cât mai multe. Problema aceasta reprezintă de fapt o abordare a unei probleme NP-complete anume Minimum Set Cover - problema acoperirii minime a mulțimilor \cite{perelman2016sensor}.
+
+\paragraph{Problema MSC} \mbox{} \\
+Fiind dată o mulțime univers $U$ cu $|U| = n$ și o mulțime cu cardinal $m$ $S = \{S_i | S_i \subset U\}$ având proprietatea că  $\bigcup\limits_{i=1}^{m} S_{i} = U$ se dorește găsirea celei mai mici partiții a mulțimii $S$ a cărei reuniuni va fi egală cu $U$ \cite{CLRS}. 
+
+În cazul rețelelor de apă mulțimea $U$ reprezintă de fapt mulțimea defectelor pentru care se dorește găsirea partiției cu cardinal minim a mulțimii de noduri care să fie sensibilă la toate defectele \cite{perelman2016sensor}.
+
+Această problemă poate fi pusă sub forma unei probleme de optimizare matematică, având la dispoziție matricea binară $\mathbf{M}$ și un vector de selecție a senzorilor $\alpha$:
+% \begin{equation*}
+% \begin{align}
+%     &\min_{\alpha \in \mathbb{R}^n} \sum_{j} \alpha_{j} \\
+%     & s.l.: \sum_{j} M_{i,j}\alpha_{j} \geq 1,  i = \overline{1,n_{faults}}
+% \end{align}
+% \end{equation*}
+
+\begin{subequations}
+\begin{alignat}{2}
+&\!\min_{\alpha \in \mathbb{R}^n}        &\qquad& \sum_{j} \alpha_{j} \label{eq:optProb}\\
+&\text{s.l.:} &      & \sum_{j} M_{i,j}\alpha_{j} \geq 1 \label{eq:constr}
+\end{alignat}
+\end{subequations}
+
+ Minimizarea sumei vectorului $\alpha$ din \ref{eq:optProb} se referă la selectarea unui număr cât mai mic de senzori pentru a fi plasați în rețea. Constrângerea atașată acestei probleme de programare liniară \eqref{eq:constr} are rolul de a impune ca pentru fiecare defect să existe cel puțin un senzor care să îl detecteze.
