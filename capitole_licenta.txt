@@ -1,8 +1,8 @@
-1. Introduction  [2-3 pag] - 4 pag
+1. Introduction  [2-3 pag] - 4 pag DONE
 - motivation
 - what all the chapters do
 
-2. about EPANET and resulting simulations [10 pag]
+2. about EPANET and resulting simulations [10 pag] DONE
 - why is a waternetwork difficult to handle; equations
 - modeling tools (epanet)
 - practical details about epanet and its integration with python (dll, details about the inp file format; measures of interest)
@@ -13,7 +13,7 @@
 		* dynamic behavior for a subset of nodes with emitter;
 - Sa arat si ceva despre celelalte caracteristici ale retelei VELOCITY si DEMAND eventual		
 
-3. Fault scenarios and residual definition [8 pag]
+3. Fault scenarios and residual definition [8 pag] - 9 pag DONE
 - about faults: magnitude variation through emitter (plot for various magnitudes affecting the same node)
 - types of residuals (absolute and relative formulations; discussions about stationary state): 
 - sensor selection for fault detection and isolation: decide on a threshold, construct binary matrix M, use it in a set covering problem to decide on the selected sensors
