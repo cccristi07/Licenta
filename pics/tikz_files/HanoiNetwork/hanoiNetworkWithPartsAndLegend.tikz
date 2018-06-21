@@ -1,0 +1,69 @@
+\tikzstyle{node}=[circle,draw=black,fill=blue,minimum height=15pt]
+\tikzstyle{link}=[line width=2pt,solid]
+\tikzstyle{part}=[rounded corners=10,line width=2pt, dashed,draw=blue]
+
+\def \scalex {0.003}
+\def \scaley {0.00175}
+
+% \foreach \x in {-15,...,25}{
+% \draw[thick](\x,-2)--(\x,20) node[at start,below]{\x};
+% }
+% \foreach \y in {-1,...,19}{
+% \draw[thick](-16,\y)--(26,\y) node[at start,left]{\y};
+% }
+
+% plot nodes
+\foreach \n/\x/\y in {2/3896.83/9031.75, 3/3896.83/7904.76, 4/3071.43/7873.02, 5/2706.35/6761.90,  6/2309.52/5714.29,   7/2055.56/5142.86, 8/1611.11/4111.11,  9/1214.29/3206.35,  10/833.33 /2269.84, 11/-39.68 /2238.10, 12/-1420.63/2238.10, 13/-4293.65/2269.84, 14/1865.08/2190.48,  15/2595.24/2063.49,   16/3468.25/1841.27, 17/3833.33/4174.60,  18/3896.83/5746.03,  19/3896.83/7206.35,  20/5928.57/7920.63, 21/7214.29/8000.00,   22/8325.40/7904.76,  23/5912.70/5539.68,  24/5611.11/4047.62,  25/5198.41/2253.97,  26/4769.84/2031.75, 27/4150.79/1857.14,  28/7690.48/5412.70, 29/7357.14/3761.90,   30/7208.33/716.67,  31/6753.97/1095.24,   32/6166.67/1857.14,   1/3891.67/9616.67}
+{
+\node(n\n)[node]at(\scalex*\x,\scaley*\y){};
+}
+% make the tank node special
+\draw[line width=2pt] (n1.center) circle(12pt);
+
+% make the sensor nodes special
+% \foreach \ind in {16,13,31,10}{
+% \draw[line width=2pt,dotted] (n\ind.center) circle(12pt) circle(17pt);
+% }
+
+\foreach \id/\na/\nb/\l/\diam in {1/1/2/100/1016, 2/2/3/1350/1016, 3/3/4/900/1016, 4/4/5/1150/1016, 5/5/6/1450/1016, 6/6/7/450/1016, 7/7/8/850/1016, 8/8/9/850/1016,9/9/10/800/1016, 10/10/11/950/762 , 11/11/12/1200/610 , 12/12/13/3500/610 , 13/10/14/800/508 , 14/14/15/500/300 , 15/15/16/550/300 , 16/16/17/2730/300 , 17/17/18/1750/508 , 18/18/19/800/508 , 19/19/3/400/610 , 20/3/20/2200/1016, 21/20/21/1500/508 , 22/21/22/500/300 , 23/20/23/2650/1016, 24/23/24/1230/762 ,25/24/25/1300/762 , 26/25/26/850/508 , 27/26/27/300/300 , 28/27/16/750/300 , 29/23/28/1500/407 , 30/28/29/2000/300 , 31/29/30/1600/300 , 32/30/31/150/300 ,33/31/32/860/508 , 34/32/25/950/610}
+{
+\draw[link](n\na)--(n\nb) node[midway,below,sloped]{\large \l};
+}
+
+% +1 to the parts seen here (because node 1 is actually the tank)
+% parts = {1, [2 3 19], [4 5 6 7], [8 9], [10 11], 12, [13, 15, 15],  ...
+%     16, 17, 19, [20, 21], 22, 23, [24, 25, 26], [29, 30, 31], 27, 28};
+
+% \node [part, rotate fit=0, fit=(n2)(n3)(n4)(n5)(n17)(n18)(n19)] {};
+% \node [part, rotate fit=45, fit=(n6) (n7)(n8)(n9)(n14)(n15)(n16)] {};
+% \node [part, rotate fit=0, fit=(n10) (n11)(n12)(n13)] {};
+% \node [part, rotate fit=0, fit=(n20) (n21)(n22)(n23)] {};
+% \node [part, rotate fit=0, fit=(n24) (n25)(n26)(n27)(n28)(n29)(n30)(n31)(n32)] {};
+
+% \draw[part](13,16.25)--(10,16.25)--(10,15)--(8,15)--(8,13)--(7,13)--(7,11)--(9,10)--(10,7)--(13,7)--cycle;
+% \draw[part](6,11)--(2.25,6)--(5.25,3)--(8,2.75)--(11,2)--(11,4)--(8,5)--(6,6)--(8,10)--cycle;
+% \draw[part](3.5,3)--(-14,3)--(-14,5.5)--(2.5,5.5)--cycle;
+% \draw[part](17,15.5)--(16.5,9)--(19,8.5)--(20,13)--(26,13)--(26,15.5)--cycle;
+% \draw[part](15,8)--(14,5)--(11,5)--(12,2)--(16,2.5)--(22,0)--(23,0)--(23.5,6.5)--(25,10.5)--(21,10.5)--(20,7)--cycle;
+
+
+% plot label nodes (modified from the INP variant)
+\foreach \x/\y/\lbl in {4125/9016.67/1,4125/8200/2,2858.33/8133.33/3,2441.67/7016.67/4,2058.33/5916.67/5,1758.33/5333.33/6,1425/4383.33/7,1008.33/3450/8,725/2680/9,-151.67/2693.33/10,-1525/2690/11,-4425/2710/12,1691.67/2593.33/13,2441.67/2433.33/14,3221.67/2186.67/15,3575/4150/16,3625/5783.33/17,3625/7200/18,5841.67/8296.67/19,7078.33/8423.33/20,8225/8366.67/21,5708.33/5883.33/22,5341.67/4116.67/23,5075/2633.33/24,4608.33/2390/25,3925/2183.33/26,7958.33/5650/27,7081.67/3833.33/28,7431.67/386.67/29,6958.33/1426.67/30,5958.33/2206.67/31}{
+\node[fill=white,draw=black](cn)at(\scalex*\x,\scaley*\y){\Large\lbl};
+}
+
+ \node(l1)[node, label={[xshift=1.2cm]0:\Large nod jonc\c tiune}]at(-10,15.5){};
+ \node(l4)[node, label={[xshift=1.2cm]0:\Large nod tanc}, below of=l1, node distance=1.5cm]{};
+ \draw[line width=2pt] (l4.center) circle(12pt);
+%  \node(l4)[node, label={[xshift=1.2cm]0:\Large nod cu senzor}, below of=l2, node distance=1.5cm]{};
+%  \draw[line width=2pt,dashed] (l4.center) circle(12pt) circle(17pt);
+ 
+%  \node(l4)[part, minimum height=.75cm,minimum width=1.5cm,label={[xshift=.5cm]0:\Large junction partition}, below of=l3, node distance=1.5cm]{};
+ \draw[link](l4.west)++(-0.2,-1.3cm)--++(1.7cm,0) node(l5)[pos=1.2, right]{\Large conduct\u a};
+ \node[below of=l4, node distance=2.5cm,minimum height=1em,label={[xshift=1.45cm]0:\Large defect}](l6){};
+ \draw[-latex,line width=2pt,,red](l6.north)+(0em,1em)--+(-1.5em,-1.5em)--+(.75em,-0.5em)--+(-1em,-3em);
+ 
+ \node[draw,fit=(l1)(l4)(l5)(l6),inner sep=1.9cm, label={[]-90:\Huge}]{};
+
+
+\draw[-latex,line width=2pt,,red](n18.north)+(2em,1em)--+(.5em,-1.5em)--+(2.75em,-0.5em)--+(1em,-3em);

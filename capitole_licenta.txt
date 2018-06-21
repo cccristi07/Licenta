@@ -13,13 +13,13 @@
 		* dynamic behavior for a subset of nodes with emitter;
 - Sa arat si ceva despre celelalte caracteristici ale retelei VELOCITY si DEMAND eventual		
 
-3. Fault scenarios and residual definition [8 pag] - 9 pag DONE
+3. Fault scenarios and residual definition [8 pag] - 10 pag DONE
 - about faults: magnitude variation through emitter (plot for various magnitudes affecting the same node)
 - types of residuals (absolute and relative formulations; discussions about stationary state): 
 - sensor selection for fault detection and isolation: decide on a threshold, construct binary matrix M, use it in a set covering problem to decide on the selected sensors
 		* plot to highlight the selected sensors
 
-4. fault detection and isolation using SVM 
+4. fault detection and isolation using SVM [7-8 pag]
 - https://topepo.github.io/caret/recursive-feature-elimination.html
 - SVM
 - Recursive Feature Ellimination pt selectia senzorilor
@@ -31,7 +31,7 @@
 - illustrations about DL training and DL classification
 - tables with performance in different scenarios
 
-6. a large scale example [3-4 pag]
+6. a large scale example [3-4 pag] - nu stiu daca il mai pun
 - the barcelona waternetwork
 
 7. conclusions and future directions [2 pag]

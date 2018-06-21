@@ -45,13 +45,13 @@ ticks=none
 \foreach \x  in {1,2,...,31}{
 
 \draw[] (\x - 1, 0) -- (\x - 1, 31);
-\node[] at(\x -0.5, -0.5) {\Large $f_{\x}$};
+\node[] at(\x -0.5, -0.5) {\Large $n_{\x}$};
 }
 
 \foreach \y  in {1,2,...,31}{
 
 \draw[] (0, \y) -- (31, \y);
-\node[] at(-0.5, 31.5-\y) {\Large $n_{\y}$};
+\node[] at(-0.5, 31.5-\y) {\Large $f_{\y}$};
 }
 
 

@@ -1,11 +1,11 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {romanian}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List\u {a} de figuri}{ii}{chapter*.1}
+\contentsline {chapter}{List\u {a} de figuri}{iii}{chapter*.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List\u {a} de tabele}{iii}{chapter*.2}
+\contentsline {chapter}{List\u {a} de tabele}{iv}{chapter*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List\u a de algoritmi}{iv}{chapter*.3}
+\contentsline {chapter}{List\u a de algoritmi}{v}{chapter*.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introducere}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -45,7 +45,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.2}Alte mărimi de interes din simulatorul EPANET}{13}{subsection.2.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Detecția și izolarea defectelor}{15}{chapter.3}
+\contentsline {chapter}{\numberline {3}Scenarii pentru defecte și simulări}{15}{chapter.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Definirea defectelor}{15}{section.3.1}
 \defcounter {refsection}{0}\relax 
@@ -67,6 +67,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.6.1}Binarizarea matricei de reziduuri}{21}{subsection.3.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Fișiere sursă}{23}{Anexa.a.A}
+\contentsline {paragraph}{\nonumberline Exemplificare}{22}{section*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.22}
+\contentsline {subsection}{\numberline {3.6.2}Selecția senzorilor}{23}{subsection.3.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\nonumberline Problema MSC}{23}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\nonumberline Modalitatea de rezolvare a problemei MSC}{23}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Clasificarea defectelor folosind tehnici de învățare automată}{25}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Problematica domeniului de învățare automată}{25}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Mașini cu vectori suport}{25}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Rezultate preliminare folosind toți senzorii}{25}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Selecția de senzori folosind Eliminarea recursivă de caracteristici}{25}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Rezultate folosind senzorii selectați}{25}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Clasificarea defectelor folosind metoda învățării de dicționare rare}{26}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Aspecte teoretice}{26}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Adaptarea la problema rețelelor de apă}{26}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Rezultate și metrici de clasificare}{26}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Concluzii și direcții viitoare}{27}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Fișiere sursă}{29}{Anexa.a.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{30}{chapter*.27}

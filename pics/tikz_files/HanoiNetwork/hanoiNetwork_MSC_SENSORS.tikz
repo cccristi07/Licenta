@@ -21,8 +21,14 @@
 \draw[line width=2pt] (n1.center) circle(12pt);
 
 % make the sensor nodes special
-\foreach \ind in {16,13,31,10}{
-\draw[line width=2pt,dotted] (n\ind.center) circle(12pt) circle(17pt);
+%  12
+%     14
+%     16
+%     21
+%     26
+%     28
+\foreach \ind in {12,14,16,21,26,28}{
+\draw[line width=3pt,dotted,orange] (n\ind.center) circle(12pt) circle(17pt);
 }
 
 \foreach \id/\na/\nb/\l/\diam in {1/1/2/100/1016, 2/2/3/1350/1016, 3/3/4/900/1016, 4/4/5/1150/1016, 5/5/6/1450/1016, 6/6/7/450/1016, 7/7/8/850/1016, 8/8/9/850/1016,9/9/10/800/1016, 10/10/11/950/762 , 11/11/12/1200/610 , 12/12/13/3500/610 , 13/10/14/800/508 , 14/14/15/500/300 , 15/15/16/550/300 , 16/16/17/2730/300 , 17/17/18/1750/508 , 18/18/19/800/508 , 19/19/3/400/610 , 20/3/20/2200/1016, 21/20/21/1500/508 , 22/21/22/500/300 , 23/20/23/2650/1016, 24/23/24/1230/762 ,25/24/25/1300/762 , 26/25/26/850/508 , 27/26/27/300/300 , 28/27/16/750/300 , 29/23/28/1500/407 , 30/28/29/2000/300 , 31/29/30/1600/300 , 32/30/31/150/300 ,33/31/32/860/508 , 34/32/25/950/610}
@@ -56,14 +62,14 @@
  \node(l2)[node, label={[xshift=1.2cm]0:\Large nod tanc}, below of=l1, node distance=1.5cm]{};
  \draw[line width=2pt] (l2.center) circle(12pt);
  \node(l4)[node, label={[xshift=1.2cm]0:\Large nod cu senzor}, below of=l2, node distance=1.5cm]{};
- \draw[line width=2pt,dashed] (l4.center) circle(12pt) circle(17pt);
+ \draw[line width=2pt,dashed,orange] (l4.center) circle(12pt) circle(17pt);
  
 %  \node(l4)[part, minimum height=.75cm,minimum width=1.5cm,label={[xshift=.5cm]0:\Large junction partition}, below of=l3, node distance=1.5cm]{};
  \draw[link](l4.west)++(-0.2,-1.3cm)--++(1.7cm,0) node(l5)[pos=1.2, right]{\Large conduct\u a};
  \node[below of=l4, node distance=2.5cm,minimum height=1em,label={[xshift=1.45cm]0:\Large defect}](l6){};
  \draw[-latex,line width=2pt,,red](l6.north)+(0em,1em)--+(-1.5em,-1.5em)--+(.75em,-0.5em)--+(-1em,-3em);
  
- \node[draw,fit=(l1)(l2)(l4)(l5)(l6),inner sep=1.9cm, label={[]-90:\Huge legend\u a}]{};
+ \node[draw,fit=(l1)(l2)(l4)(l5)(l6),inner sep=1.9cm, label={[]-90:\Huge }]{};
 
 
 \draw[-latex,line width=2pt,,red](n18.north)+(2em,1em)--+(.5em,-1.5em)--+(2.75em,-0.5em)--+(1em,-3em);

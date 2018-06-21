@@ -17,6 +17,48 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{CLRS}{book}{}
+    \name{author}{4}{}{%
+      {{hash=CTH}{%
+         family={Cormen},
+         familyi={C\bibinitperiod},
+         given={Thomas\bibnamedelima H.},
+         giveni={T\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=LCE}{%
+         family={Leiserson},
+         familyi={L\bibinitperiod},
+         given={Charles\bibnamedelima E.},
+         giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=RRL}{%
+         family={Rivest},
+         familyi={R\bibinitperiod},
+         given={Ronald\bibnamedelima L.},
+         giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Stein},
+         familyi={S\bibinitperiod},
+         given={Clifford},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The MIT Press}%
+    }
+    \strng{namehash}{CTH+1}
+    \strng{fullhash}{CTHLCERRLSC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{edition}{3rd}
+    \field{isbn}{0262033844, 9780262033848}
+    \field{title}{Introduction to Algorithms, Third Edition}
+    \field{year}{2009}
+  \endentry
+
   \entry{elger2016engineering}{book}{}
     \name{author}{2}{}{%
       {{hash=EDF}{%
@@ -147,6 +189,29 @@
     \field{year}{2006}
   \endentry
 
+  \entry{YALMIP}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=LJ}{%
+         family={L{\"{o}}fberg},
+         familyi={L\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LJ1}
+    \strng{fullhash}{LJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{In Proceedings of the CACSD Conference}
+    \field{title}{YALMIP : A Toolbox for Modeling and Optimization in MATLAB}
+    \list{location}{1}{%
+      {Taipei, Taiwan}%
+    }
+    \field{year}{2004}
+  \endentry
+
   \entry{EpanetPython}{online}{}
     \name{author}{1}{}{%
       {{hash=PA}{%
@@ -168,6 +233,50 @@
     \endverb
     \field{year}{2016}
     \warn{\item Invalid format of field 'urldate'}
+  \endentry
+
+  \entry{perelman2016sensor}{article}{}
+    \name{author}{4}{}{%
+      {{hash=PLS}{%
+         family={Perelman},
+         familyi={P\bibinitperiod},
+         given={Lina\bibnamedelima Sela},
+         giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=AW}{%
+         family={Abbas},
+         familyi={A\bibinitperiod},
+         given={Waseem},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=KX}{%
+         family={Koutsoukos},
+         familyi={K\bibinitperiod},
+         given={Xenofon},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=AS}{%
+         family={Amin},
+         familyi={A\bibinitperiod},
+         given={Saurabh},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{PLS+1}
+    \strng{fullhash}{PLSAWKXAS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{pages}{166\bibrangedash 176}
+    \field{title}{Sensor placement for fault location identification in water
+  networks: A minimum test cover approach}
+    \field{volume}{72}
+    \field{journaltitle}{Automatica}
+    \field{year}{2016}
   \endentry
 
   \entry{rossman2000epanet}{article}{}
