@@ -248,17 +248,63 @@ La finalul acestui proces mulțimea $C$ va conține $N_{cp}$ noduri care au cea 
 
 \section{Rezultate folosind senzorii selectați}
 
-În urma rulării algoritmului \ref{alg:rfe} pentru diferite valori ale lui $N_{cp}$ am obținut următoarele rezultate la clasificare:
+Pentru a testa metoda de selecție a senzorilor am fixat un spectru pentru parametrul $N_{cp} = \{1, 4, 6, 10\}$ 
 
-RFE 1 selected nodes [11]
-RFE 1 score is 0.6444444444444445
-RFE 3 selected nodes [10 11 27]
-RFE 3 score is 0.8585858585858586
-RFE 6 selected nodes [10 11 16 25 27 28]
-RFE 6 score is 0.9333333333333333
-RFE 10 selected nodes [ 9 10 11 12 16 20 25 27 28 29]
-RFE 10 score is 0.9414141414141414
-RFE 15 selected nodes [ 8  9 10 11 12 13 16 17 20 25 26 27 28 29 30]
-RFE 15 score is 0.9414141414141414
-RFE 22 selected nodes [ 3  4  5  7  8  9 10 11 12 13 15 16 17 19 20 24 25 26 27 28 29 30]
-RFE 22 score is 0.9414141414141414
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+        $N_{cp}$ & Senzori selectați & Acuratețe \\
+        \hline
+        1 & $11$ & 64\% \\
+        \hline
+        4 & $10, 11, 25, 27$ & $89.6\%$\\
+        \hline
+        6 & $10, 11, 16, 25, 27, 28$ & $93.3\%$\\
+        \hline
+        10 & $ 9, 10, 11, 12, 16, 20, 25, 27, 28, 29 $ & $94.14\%$ \\
+        \hline
+    \end{tabular}
+    \caption{Performanțele clasificării cu senzorii selectați de RFE}
+    \label{tab:rfe_selected_sensors}
+\end{table}
+
+În figura următoare este reprezentată performanța fiecărui nod în procesul de clasificare:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{\pics/c4_pics/selected_sensors}
+\caption{Scorul RFE}
+\label{fig:rfe_score}
+\end{figure}
+
+După cum se vede în figura \ref{fig:rfe_score} și în tabelul \ref{tab:rfe_selected_sensors} cei mai importanți senzori sunt cei reprezentați cu roșu și aduc cea mai puternică contribuție la performanțele procesului de clasificare.
+
+\paragraph{Comparație între MSC și RFE} \mbox{} \\ 
+Având în vedere că algoritmul RFE poate fi parametrizat pentru a putea selecta un anumit număr de senzori $N_{cp}$ problema MSC nu impune o constrângere explicită asupra numărului de senzori selectați, pentru a putea modifica acest număr este nevoie să considerăm modificarea limitei de sensibilitate a senzorilor pentru calcularea matricei $\mathbf{M}$ \eqref{eq:binary_matrix}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{\pics/c4_pics/show_selected_sensors}
+\caption{Comparație între senzorii aleși de  RFE și MSC}
+\label{fig:rfe_vs_msc}
+\end{figure}
+
+Figura \ref{fig:rfe_vs_msc} prezintă similaritățile între senzorii aleși de cele două metode, după cum se poate observa pentru cazul în care se doresc 4 senzori, atât MSC cât și RFE aleg senzorul 11. O particulartiate a MSC este că nu asignează o importanță a nodurilor ci doar alege acele noduri care asigură îndeplinirea condițiilor impuse de problema de minimizare. De asemenea metoda eliminării de caracteristici oferă o consistență în caracteristicile alese - pe măsură ce parametrul $N_{cp}$ crește, mulțimea de senzori selectați nu pierde elemente ci este doar completată.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+        Nr senzori selectați & Senzori selectați & Acuratețe \\
+        \hline
+        4 & $10, 11, 25, 27$ & $89.69\%$ \\
+        \hline
+        6 & $10, 11, 16,25, 27,28 $ & $93.3\%$\\
+        \hline
+        10 & $9,10, 11, 12, 16, 20, 25, 27, 28, 29$ & $94\%$\\
+        \hline
+    \end{tabular}
+    \caption{Performanțele clasificării cu senzorii selectați de MSC}
+    \label{tab:msc_selected_sensors}
+\end{table}
