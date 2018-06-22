@@ -232,6 +232,7 @@ Este necesar acum să prezentăm profilurile reziduurilor atemporale, care în f
 Asemenea reziduurilor de la \ref{fig:rez_time} se poate observa că simularea unui emitter într-un nod va determina un răspuns puternic în nodul respectiv și în vecinătatea nodului afectat
 
 \section{Metodă preliminară de selecție a senzorilor}
+\label{sec:sensor_selection}
 O metodă prin care se poate decide și evalua importanța senzorilor într-o rețea este prin construirea matricei de reziduuri \eqref{eq:residual_mat}, asupra căreia aplicăm o operație de scalare pe coloane, pentru a aduce valorile acesteia în intervalul $[0,1]$. Pentru experimentul în care simulăm în fiecare nod un emitter de 25 obținem grafic o matrice $\mathbf{R}scaled \in \mathbb{R}^{31 \times 31}$:
 
 \begin{figure}[H]
@@ -294,7 +295,7 @@ Având definite elementele pentru interpretarea decizională a datelor preluate 
 
 Pentru problema selecției de senzori dorim să obținem o submulțime de noduri $V_s \subset V^j$ cu proprietatea că aceasta va avea un cardinal cât mai mic și defectele detectate de senzorii selectați sunt cât mai multe. Problema aceasta reprezintă de fapt o abordare a unei probleme NP-complete anume Minimum Set Cover - problema acoperirii minime a mulțimilor \cite{perelman2016sensor}.
 
-\paragraph{Problema MSC} \mbox{} \\
+\subsubsection{Problema MSC} 
 Fiind dată o mulțime univers $U$ cu $|U| = n$ și o mulțime cu cardinal $m$ $S = \{S_i | S_i \subset U\}$ având proprietatea că  $\bigcup\limits_{i=1}^{m} S_{i} = U$ se dorește găsirea celei mai mici partiții a mulțimii $S$ a cărei reuniuni va fi egală cu $U$ \cite{CLRS}. 
 
 În cazul rețelelor de apă mulțimea $U$ reprezintă de fapt mulțimea defectelor pentru care se dorește găsirea partiției cu cardinal minim a mulțimii de noduri care să fie sensibilă la toate defectele \cite{perelman2016sensor}.
@@ -318,7 +319,7 @@ Această problemă poate fi pusă sub forma unei probleme de optimizare matemati
 
  Minimizarea sumei vectorului $\alpha$ din \ref{eq:optProb} se referă la selectarea unui număr cât mai mic de senzori pentru a fi plasați în rețea. Constrângerea atașată acestei probleme de programare liniară \eqref{eq:constr} are rolul de a impune ca pentru fiecare defect să existe cel puțin un senzor care să îl detecteze.
  
-\paragraph{Modalitatea de rezolvare a problemei MSC} \mbox{} \\
+\subsubsection{Modalitatea de rezolvare a problemei MSC}
 Având la dispoziție toate datele de intrare pentru problema MSC, am ales să folosesc toolbox-ul \textbf{YALMIP} - \textbf{MATLAB} pentru a afla nodurile cu importanța cea mai mare, rezolvând problema de optimizare \eqref{eq:opt_problem}. \textbf{YALMIP} este un toolbox specializat pentru probleme de optimizare și a fost dezvoltat așa fel încât programatorii să poată rezolva aceste ecuații într-un mod mult mai ușor - transpunând în cod ecuațiile de minimizare/maximizare și inegalitățile - fără să mai fie nevoie să aducă problema inițială la o formă intermediară \cite{YALMIP}.
 
 Codul \textbf{MATLAB} care se rulează pentru a rezolva acestă problemă este:
