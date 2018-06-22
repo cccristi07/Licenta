@@ -95,11 +95,96 @@ q_{ij} = \frac{(1+||y_i - y_j||^2)^{-1}}{\sum_{k \neq l} (1 + ||y_k - y_l||^2)^{
 \end{equation}
 
 \section{Mașini cu vectori suport}
-Algoritmii cu vector suport, \textit{Support Vector Machines SVM}, reprezintă o clasă de modele supervizate folosite cu succes atât pentru regresie cât și pentru clasificare. Principiul de bază pe care se bazează un SVM este ca plecând de la un set de exemple fiecare aparținând unei clase, algoritmul va găsi hiperplanul optim de separație între cele două exemple. Prin hiperplan optim de separație se înțelege acel hiperplan care asigură marginea cea mai largă de separare.
+Algoritmii cu vector suport, \textit{Support Vector Machines SVM}, reprezintă o clasă de modele supervizate folosite cu succes atât pentru regresie cât și pentru clasificare. Principiul de bază pe care se bazează un SVM este ca plecând de la un set de exemple fiecare aparținând unei clase, algoritmul va găsi hiperplanul optim de separație între cele două exemple. Prin hiperplan optim de separație se înțelege acel hiperplan care asigură marginea cea mai largă de separare \cite{svmbook}.
 
-Așa cum este prezentată în figura următoare 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{\pics/c4_pics/svm_hiperplan}
+\caption{Exemplu de hiperplane de decizie}
+\label{fig:svm_hiper}
+\end{figure}
+
+Așa cum se poate observa în figura de mai sus setul de date este format din vectori bidimensionali structurați în două clase C1 și C2. H1 reprezintă hiperplanul optim de separație între cele două clase deoarece oferă cel mai mult spațiu între vectorii de suport iar H2 reprezintă un hiperplan de separație care neoptim din cauza aproprierii prea mari dintre el și exemplele de la clasa C1.
+
+După cum se poate observa problema găsirii hiperplanului de separație constrânge ca datele ce se doresc a fi clasificate trebuie să fie liniar separabile \cite{svmbook}. În schimb există de asemenea modalități de a putea reprezenta în mod eficient și seturi de date cu neliniarități puternice, anume folosirea unui kernel i.e. o funcție care să transforme spațiul datelor de intrare într-un nou spațiu care să confere mai multe informații pentru clasificare. În abordarea lucrării de față vom folosi algoritmul SVM liniar.
+
+\subsection{Problema de optimizare SVM}
+
+Având un set de date $S={(\mathbf{x}_i, y_i)}$ unde $y_i \in {-1, 1}$ reprezintă clasa în care se află vectorul $mathbf{x}_i \in \mathbb{R}^n$, se dorește să se găsească hiperplanul de separație de 
+"margine maximă":
+
+\begin{equation}
+    w \cdot \mathbf{x} - b = 0
+\label{eq:svm_eq}
+\end{equation}
+
+unde $w$ reprezintă vectorul normal care definește hiperplanul de separație iar $b$ reprezintă coeficientul de compensare
+
+Clasificarea cu SVM se realizează analizând semnul rezultatului $p = \mathbf{w} \cdot \mathbf{x} - b$
+
+\begin{itemize}
+    \item dacă $p < 0$ atunci exemplul $x$ aparține clasei -1
+    \item dacă $p \geq 0$ atunci exemplul $x$ aparține clasei 1
+\end{itemize}
+
+Pentru seturi de date care nu sunt liniar separabile se folosește funcția de cost \eqref{eq:hinge}, scopul ei fiind să asigure distanța cât mai mare de separație între cele două clase.
+
+Astfel problema de optimizare pentru SVM este dată de minimizarea costurilor pentru fiecare exemplu dat:
+
+\begin{equation}
+    \min_{w} \frac{1}{n} \sum_{i=1}^{n} max(0, 1 - y_{i}(w\cdot x_i - b)) + C||w||^2
+    \label{eq:svm_opt}
+\end{equation}
+
+Introducând variabila $\zeta=max(0, 1 - y_{i}(w\cdot x_{i} - b))$ putem rescrie problema de optimizare:
+
+\begin{subequations}
+\begin{alignat}{2}
+% &\!\min_{\alpha \in \mathbb{R}^n}        &\qquad& \sum_{j} \alpha_{j} \label{eq:optProb}\\
+ &\!\min_{w} &  \frac{1}{n} \sum_{i=1}^{n} \zeta_{i} + C||w||^2 \label{eq:svm_opt} \\
+&\text{s.l.:} &  y_{i}(w\cdot x_{i} -b) \geq 1- \zeta_i \label{eq:constr}
+\end{alignat}
+\label{eq:opt_problem}
+\end{subequations}
+Avantajul este că pentru rezolvarea acestei probleme există solvere de programare pătratică foarte performante, care întrebuințează diferite metode ale metodei gradientului.
+
+\subsection{Motivația alegerii SVM}
+Unul dintre motivele pentru care am ales acest algoritm a fost faptul că există numeroase pachete de Python care implementează atât solvere eficiente pentru problema de optimizare cât și o bibliotecă bogată și extrem de bine documentată pentru extrem de multe metode de preprocesare și algoritmi de învățare automată, precum SciKit-Learn \cite{scikit-learn} \cite{sklearn_api}.
+
+De asemenea fiind un algoritm liniar simplu există șanse foarte mici să apară fenomenul de supra estimare \textit{overfitting} prin care modelul ales nu numai că învață trendul setului de date, dar și zgomotul de care acesta este afectat. O exemplificare a acestui fenomen este dată în figura următoare unde se compară un model simplu de gradul 1 cu un model mai complex de gradul 15:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{\pics/c4_pics/overfitting_example}
+\caption{Aproximări prin regresie liniară}
+\label{fig:svm_hiper}
+\end{figure}
+
 \section{Rezultate preliminare folosind toți senzorii}
 
+Considerând acum setul de date pentru un algoritm liniar SVM vectorii $x_i$ vor fi reprezentați de mediile reziduurilor pe intervalul staționar, deci $x_i \in \mathbb{R}^{31}$, iar $y_{i} = 1..31$ reprezintă clasa în care poate fi situat un defect.
+
+Setul de date a fost obținut prin considerarea a două mulțimi de defecte \cite{irofti2017dictionary}:
+\begin{itemize}
+    \item pentru setul de antrenare avem valori impare pentru emițător între 1 și 31
+    \item pentru setul de testare avem valori pare pentru emițător între 1 și 31
+\end{itemize}
+
+Astfel rulând câte o simulare pentru fiecare nod și valoare a emițătorului ajungel a un set de antrenare $\mathbf{X}_{train} \in \mathbb{R}^{496\times 31}$ și un set de testare $\mathbf{X}_{test} \in \mathbb{R}^{465\times 31}$ pentru fiecare dintre acestea vând seturile de clase $y_{train} \in \mathbb{N}^{496}$ și $y_{test} \in \mathbb{N}^{465}$
+
+Partea de antrenare a modelului se realizează prin folosirea unui obiect de tip SVC \textit{Support Vector Classifier} din toolkit-ul SciKit-Learn. Având ca parametru de regularizare C = 10 și kernelul liniar am obținut următoarele rezultate pe setul de testare:
+\begin{table}[h]
+\centering
+\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
+\hline
+Acuratețe & Precizie & Sensibilitate\\
+ \hline
+0.94    &  0.98     & 0.94 \\
+ \hline
+\end{tabular}
+\caption{Metrici medii pe setul de antrenare plin}
+\label{tbl:full_sensor_results}
+\end{table}
 \section{Selecția de senzori folosind Eliminarea recursivă de caracteristici}
 
 \section{Rezultate folosind senzorii selectați}
