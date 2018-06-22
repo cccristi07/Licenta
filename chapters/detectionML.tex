@@ -65,13 +65,39 @@ Din punctul de vedere al clasei $y_i$ putem să discernem între:
 
 În cadrul acestui tip de învățare ne interesează cu precădere algoritmii de reducere a dimensionalității setului de date, algoritmul \textit{T distributed stochatical neighbours embedding} și analiza componentelor principale, bazată pe algoritmul de descompunere în valori singulare.
 
-%\paragraph{T-SNE} \mbox{} \\
- 
+\paragraph{T-SNE} \mbox{} \\
 
- 
+Reprezintă un algoritm important în zona de analiză a datelor și este folosit pentru a aduce vectori de dimensiuni foarte mari la dimensiuni unde pot fi reprezentați grafic (2D și 3D). Având la dispoziție un set de $N$ vectori $\mathbf{x}_i \in \mathbb{R}^n$, mai întâi se calculează probabilitățile ca doi vectori diferiți să fie proporționali, algoritmul se bazează pe convertirea distanței euclidiene în într-o probabilitatea ca cei doi vectori să fie similari. Așa cum a spus și autorul lucrării \cite{tsne} "Similaritatea dintre $x_i$ și $x_j$ este probabilitatea condiționată $p_{i|j}$ ca $x_i$ să aleagă pe $x_j$ ca vecin considerând că vecinii sunt aleși în conformitate cu distribuția de probabilitate gausiană centrată în $x_i$:
+
+\begin{equation}
+    p_{i|j} = \frac{e^{- \frac{||x_j - x_i||^2}{2\sigma_i^2}}}{\sum_{k\neq i} e^{-\frac{||x_k - x_i||^2}{2\sigma_{i}^{2}}}}
+\end{equation}
+
+Următorul pas este ca algoritmul să găsească un nou set de vectori $y_i$ de dimensiune $d$ cu $d < n$, astfel încât similaritățile $p_{j|i}$ dintre vectorii $n$ dimensionali să fie cât se poate mai apropiate de similaritățile $q_{j|i}$ dintre vectorii $d$ dimensionali.
+
+\begin{equation}
+    q_{i|j} = \frac{-e^{||y_i - y_j||^2}}{\sum_{k \neq i} e^{- ||y_i - y_k||^2}} 
+\end{equation}
+
+Vectorii $\mathbf{y} \in \mathbb{R}^d$ sunt învățați prin minimizarea variantei simetrice a divergenței Kullback-Leibler:
+
+\begin{equation}
+    \mathbf{KL}(P, Q) = \sum_{i} \sum_{j} p_{ij}ln\frac{p_{ij}}{q_{ij}}
+\end{equation}
+
+unde 
+\begin{equation}
+    p_{ij} = \frac{p_{i|j} + p_{j|i}}{2n}
+\end{equation}
+și
+\begin{equation}
+q_{ij} = \frac{(1+||y_i - y_j||^2)^{-1}}{\sum_{k \neq l} (1 + ||y_k - y_l||^2)^{-1})}
+\end{equation}
 
 \section{Mașini cu vectori suport}
+Algoritmii cu vector suport, \textit{Support Vector Machines SVM}, reprezintă o clasă de modele supervizate folosite cu succes atât pentru regresie cât și pentru clasificare. Principiul de bază pe care se bazează un SVM este ca plecând de la un set de exemple fiecare aparținând unei clase, algoritmul va găsi hiperplanul optim de separație între cele două exemple. Prin hiperplan optim de separație se înțelege acel hiperplan care asigură marginea cea mai largă de separare.
 
+Așa cum este prezentată în figura următoare 
 \section{Rezultate preliminare folosind toți senzorii}
 
 \section{Selecția de senzori folosind Eliminarea recursivă de caracteristici}
