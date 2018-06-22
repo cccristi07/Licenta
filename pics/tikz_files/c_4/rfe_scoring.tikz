@@ -1,0 +1,64 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=0,
+xmax=35,
+xlabel style={font=\color{white!15!black}},
+xlabel={nod},
+ymin=0,
+ymax=1,
+ylabel style={font=\color{white!15!black}},
+ylabel={scor},
+axis background/.style={fill=white}
+]
+\addplot[ycomb, color=mycolor1, mark=o, mark options={solid, mycolor1}, forget plot] table[row sep=crcr] {%
+1	0.2\\
+2	0\\
+3	0.133333333333333\\
+4	0.4\\
+5	0.366666666666667\\
+6	0.3\\
+7	0.233333333333333\\
+8	0.5\\
+9	0.566666666666667\\
+10	0.766666666666667\\
+11	0.933333333333333\\
+12	1\\
+13	0.8\\
+14	0.666666666666667\\
+15	0.266666666666667\\
+16	0.466666666666667\\
+17	0.866666666666667\\
+18	0.633333333333333\\
+19	0.0333333333333333\\
+20	0.333333333333333\\
+21	0.7\\
+22	0.1\\
+23	0.166666666666667\\
+24	0.0666666666666667\\
+25	0.433333333333333\\
+26	0.9\\
+27	0.533333333333333\\
+28	0.966666666666667\\
+29	0.833333333333333\\
+30	0.733333333333333\\
+31	0.6\\
+};
+\addplot[forget plot, color=white!15!black] table[row sep=crcr] {%
+0	0\\
+35	0\\
+};
+\end{axis}
+\end{tikzpicture}%
