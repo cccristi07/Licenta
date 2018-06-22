@@ -3,63 +3,63 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Graful rețelei de apă din Hanoi\relax }}{4}{figure.caption.5}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Graful rețelei de apă din Hanoi\relax }}{5}{figure.caption.5}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Simulatorul EPANET\relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Simulatorul EPANET\relax }}{8}{figure.caption.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Fluxul de date în biblioteca EPANET\relax }}{8}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Fluxul de date în biblioteca EPANET\relax }}{9}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Profilul normal de utilizare\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Profilul normal de utilizare\relax }}{14}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Profilul nominal al presiunii\relax }}{13}{figure.caption.15}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Profilul nominal al presiunii\relax }}{15}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Rezultate simulări nominale\relax }}{14}{figure.caption.16}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Rezultate simulări nominale\relax }}{16}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profil nominal demand}}}{14}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profil nominal demand}}}{16}{subfigure.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil nominal viteza}}}{14}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil nominal viteza}}}{16}{subfigure.5.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Rezultate simulări defecte ușoare\relax }}{15}{figure.caption.17}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Rezultate simulări defecte ușoare\relax }}{17}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profile cu defect în nodul 14}}}{15}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profile cu defect în nodul 14}}}{17}{subfigure.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil cu defect în nodul 25}}}{15}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil cu defect în nodul 25}}}{17}{subfigure.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Rezultate simulări defecte puternice\relax }}{16}{figure.caption.18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Rezultate simulări defecte puternice\relax }}{18}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profile cu defect puternic în nodul 14}}}{16}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Profile cu defect puternic în nodul 14}}}{18}{subfigure.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil cu defect puternic în nodul 25}}}{16}{subfigure.2.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Profil cu defect puternic în nodul 25}}}{18}{subfigure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Reziduuri rețea\relax }}{19}{figure.caption.19}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Reziduuri rețea\relax }}{21}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Reziduuri pentru defect în nodul 11, magnitudine 29}}}{19}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Reziduuri pentru defect în nodul 11, magnitudine 29}}}{21}{subfigure.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Reziduuri pentru defect în nodul 17, magnitudine 29}}}{19}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Reziduuri pentru defect în nodul 17, magnitudine 29}}}{21}{subfigure.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Reziduuri pentru defect în nodul 21, magnitudine 29}}}{19}{subfigure.3.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Reziduuri pentru defect în nodul 21, magnitudine 29}}}{21}{subfigure.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Reziduuri pentru defect în nodul 27, magnitudine 29}}}{19}{subfigure.3.4}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Reziduuri pentru defect în nodul 27, magnitudine 29}}}{21}{subfigure.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Reziduuri atemporale rețea\relax }}{20}{figure.caption.20}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Reziduuri atemporale rețea\relax }}{22}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Reziduuri pentru defect în nodul 11, magnitudine 25}}}{20}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Reziduuri pentru defect în nodul 11, magnitudine 25}}}{22}{subfigure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Reziduuri pentru defect în nodul 17, magnitudine 25}}}{20}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Reziduuri pentru defect în nodul 17, magnitudine 25}}}{22}{subfigure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Reziduuri pentru defect în nodul 21, magnitudine 25}}}{20}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Reziduuri pentru defect în nodul 21, magnitudine 25}}}{22}{subfigure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Reziduuri pentru defect în nodul 27, magnitudine 25}}}{20}{subfigure.4.4}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Reziduuri pentru defect în nodul 27, magnitudine 25}}}{22}{subfigure.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Matricea de reziduuri scalate\relax }}{21}{figure.caption.21}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Matricea de reziduuri scalate\relax }}{23}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Matricea de răspunsuri binarizate\relax }}{22}{figure.caption.23}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Matricea de răspunsuri binarizate\relax }}{25}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Rețeaua cu senzorii plasați\relax }}{24}{figure.caption.26}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Rețeaua cu senzorii plasați\relax }}{27}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

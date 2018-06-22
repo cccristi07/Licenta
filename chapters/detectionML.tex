@@ -3,7 +3,72 @@
 
 
 \section{Problematica domeniului de învățare automată}
-Învățarea automată reprezintă un subdomeniu al inteligenței artificiale, stiință care se ocupă cu dezvoltarea de algoritmi care să transpună în domeniul mașinilor acele sarcini care sunt ușor de făcut pentru om, spre exemplu: interpretarea limbajului natural și a imaginilor, recunoașterea obiectelor, menținerea echilibrului sau luarea de decizii. Deși aceste acținui par destul banale pentru un om, transpunerea acestei probleme pentru un calculator este mult mai grea din cauza faptului 
+Învățarea automată reprezintă un subdomeniu al inteligenței artificiale, stiință care se ocupă cu dezvoltarea de algoritmi care să transpună în domeniul mașinilor acele sarcini care sunt ușor de făcut pentru om, spre exemplu: interpretarea limbajului natural și a imaginilor, recunoașterea obiectelor, menținerea echilibrului sau luarea de decizii. Deși aceste acținui par destul banale pentru un om, transpunerea acestei probleme pentru un calculator este mult mai grea din cauza faptului că însuși definirea matematică este anevoioasă - majoritatea formulându-se ca probleme de optimizare, dorindu-se minimizarea erorii de predicție a estimatorului.
+
+Istoria învățării automate (\textit{Machine Learning}) a pornit la mijlocul secolului XX din dorința de a depăși stadiul programelor "statice", care doar aduc blocuri de memorie, le prelucrează și afișează informația într-un mod relevenant, și de a crea programe "dinamice" care folosind datele furnizate, să descopere și să învețe singure anumite reguli prin care să extragă informațiile de interes. Una din primele aplicații ale domeniului de machine learning a fost în teoria jocurilor pentru jocul de  dame \cite{MLFirst}, unde cercetătorii s-au ocupat de dezvoltarea unui model care să devină un jucător mai bun odată cu jucarea jocurilor. Jocurile precum șahul, damele, și recent jocul go \cite{alphaGO}, reprezintă provocări foarte mari pentru cercetătorii în inteligența artificială din simplul motiv că oferă o interfață foarte simplă între mașină și mediul cu care interacționează, dar, din punct de vedere computațional sunt extrem de complexe, spre exemplu, jocul de șah și go a fost dovedit ca fiind în clasa de complexitate EXPTIME, probleme rezolvabile în timp exponențial.
+
+În domeniul recunoașterii de modele unul dintre roadele acestui câmp, luat ca a tare în momentul de față, este conceptul de OCR \textit{Optical Character Recognition} care reprezintă o colecție de algoritmi și metode de prelucrare care au ca scop final transformarea unei imagini cu text într-un șir de caractere, folosit cu succes încă de la începutul anilor 90 în sistemul poștal american pentru recunoașterea codurilor poștale \cite{lecun1989backpropagation}.
+
+\paragraph{Tipuri de algoritmi de învățare automată} \mbox{} \\
+
+Deși descrierea scopului învățării automate poate părea destul de generalistă, metodele aparținând acestui câmp de studiu sunt extrem de variate, unele modele apărând din câmpuri adiacente informaticii și ingineriei, de exemplu psihologia (modelul acțiune recompensă) și medicina (modelarea neuronului și a rețelelor neurale). O împărțire a algoritmilor de machine learning bazată pe tipul setului de date este următoarea
+
+\begin{itemize}
+\item învățare supervizată - seturi de date etichetate
+\item învățare nesupervizată - seturi de date neetichetate
+\item învățare semi-supervizată - combinație între exemple etichetate și neetichetate
+\item învățare ranforsată \textit{reinforcement learning} - modele bazate pe interacțiunea unui agent cu mediul
+\end{itemize}
+
+Dintre aceste patru subclase le vom detalia pe primele două, algoritmii de interes pentru această lucrare făcând parte din ele.
+
+\subsection{Învățarea supervizată}
+Învățarea supervizată presupune folosirea unui set de date de tipul $S = \{(x_i, y_i) | i = \overline{1, N}\}$ unde $x_i$ este vectorul de caracteristici, $y_i$ reprezintă clasa din care face parte acest exemplu iar $N$ reprezintă numărul de exemple din $S$ pentru a  găsi parametrii optimi ai unui estimator $f : X \rightarrow Y$  astfel încât predicțiile acestuia să fie cât mai apropiate de etichetele setului de date \textit{ground truth} \cite{AIBook}. Considerând definiția de mai sus putem trage concluzia că problemele de învățare supervizată se reduc la probleme de optimizare:
+
+\begin{equation}
+\min_{\gamma} \sum_{i}^{N} \mathcal{L}(f(x_i | \gamma), y_i)  
+\end{equation} 
+
+Unde 
+\begin{itemize}
+\item $\mathcal{L}$ reprezintă funcția de cost pentru un exemplu individual al setului de date
+\item $\gamma$ reprezintă vectorul cu ponderile funcției estimator $f$ 
+\end{itemize}
+
+Funcția de cost $\mathcal{L}$ poate să difere de la algoritm la algoritm, ea având rolul să furnizeze o distanță cât mai favorabilă între predicția funcției $f$ și valoarea de ground truth $y_i$. Detaliind modul în care se calculează costul dintre predicția clasificatorului și eticheta pentru exemplul $i$, putem enumera costul pătratic care este folosit intensiv în antrenarea clasificatoarelor bazate pe regresie liniară, polinomială, și rețele neurale:
+
+\begin{equation}
+\mathcal{L}(f(x_i | \gamma), y_i) = (f(x_i | \gamma) -  y_i)^2
+\label{eq:mse}
+\end{equation}
+
+costul absolut, folosit atunci când se dorește ușurarea efortului de calcul, pune probleme din cauza faptului că nu e diferențiabil în origine:
+\begin{equation}
+\mathcal{L}(f(x_i | \gamma), y_i) = |f(x_i | \gamma) -  y_i|
+\label{eq:abserr}
+\end{equation}
+
+și costul pivotant \textit{hinge loss}, folosit pentru clasificatoare de margine maximă de separație:
+\begin{equation}
+\mathcal{L}(f(x_i | \gamma), y_i) = max(0,1 -  f(x_i | \gamma)*y_i)
+\label{eq:hinge}
+\end{equation}
+
+Din punctul de vedere al clasei $y_i$ putem să discernem între:
+\begin{itemize}
+\item clasificare unde se dorește maparea lui $x_i$ într-un spațiu discret de clase
+\item regresie unde se dorește maparea lui $x_i$ într-un spațiu continuu, problemă asemănătoare cu interpolarea datelor sau cu calcularea unui scor
+\end{itemize}
+
+\subsection{Învățarea nesupervizată}
+Învățarea nesupervizată reprezintă categoria algoritmilor de \textit{machine learing} unde se dorește reprezentarea și transformarea datelor într-o modalitate care să confere structură și înțeles unui set de date neetichetat. În contrast cu învățarea supervizată metodele nesupervizate pot învăța să clasifice datele de intrare în \textit{clustere}, sau să găsească dependența între variabilele observate și anumite variabile latente - metodă folosită intensiv în analiza de limbaj natural pentru detecția temei unui text.
+
+În cadrul acestui tip de învățare ne interesează cu precădere algoritmii de reducere a dimensionalității setului de date, algoritmul \textit{T distributed stochatical neighbours embedding} și analiza componentelor principale, bazată pe algoritmul de descompunere în valori singulare.
+
+%\paragraph{T-SNE} \mbox{} \\
+ 
+
+ 
 
 \section{Mașini cu vectori suport}
 

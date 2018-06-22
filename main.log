@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6600 64-bit) (preloaded format=xelatex 2018.3.9)  21 JUN 2018 11:54
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6600 64-bit) (preloaded format=xelatex 2018.3.9)  21 JUN 2018 23:30
 entering extended mode
 **./main.tex
 (main.tex
@@ -45,18 +45,18 @@ Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             for `lot' on input line 138.
 Package tocbasic Info: defining new hook before heading of `' on input line 162
 7.
-Package scrreprt Info: You've used standard option `11pt'.
+Package scrreprt Info: You've used standard option `12pt'.
 (scrreprt)             This is correct!
-(scrreprt)             Internally I'm using `fontsize=11pt'.
+(scrreprt)             Internally I'm using `fontsize=12pt'.
 (scrreprt)             If you'd like to set the option with \KOMAoptions,
-(scrreprt)             you'd have to use `fontsize=11pt' there
-(scrreprt)             instead of `11pt', too.
-Class scrreprt Info: File `scrsize11pt.clo' used to setup font sizes on input l
+(scrreprt)             you'd have to use `fontsize=12pt' there
+(scrreprt)             instead of `12pt', too.
+Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input l
 ine 2293.
 
 ("C:\Users\Cristian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scr
-size11pt.clo"
-File: scrsize11pt.clo 2017/09/07 v3.24 KOMA-Script font size class option (11pt
+size12pt.clo"
+File: scrsize12pt.clo 2017/09/07 v3.24 KOMA-Script font size class option (12pt
 )
 )
 ("C:\Users\Cristian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\typ
@@ -75,21 +75,21 @@ Package typearea Info: You've used standard option `a4paper'.
 \ta@temp=\skip45
 \footheight=\skip46
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 10
+(typearea)             DIV  = 12
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 418.25555pt
+(typearea)              \textwidth      = 448.13095pt
 (typearea)              DIV departure   = -6%
-(typearea)              \evensidemargin = 17.3562pt
-(typearea)              \oddsidemargin  = 17.3562pt
+(typearea)              \evensidemargin = 2.4185pt
+(typearea)              \oddsidemargin  = 2.4185pt
 (typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 595.80026pt
-(typearea)              \topmargin      = -25.16531pt
-(typearea)              \headheight     = 17.0pt
-(typearea)              \headsep        = 20.40001pt
-(typearea)              \topskip        = 11.0pt
-(typearea)              \footskip       = 47.6pt
-(typearea)              \baselineskip   = 13.6pt
+(typearea)              \textheight     = 635.5pt
+(typearea)              \topmargin      = -41.72441pt
+(typearea)              \headheight     = 18.125pt
+(typearea)              \headsep        = 21.75pt
+(typearea)              \topskip        = 12.0pt
+(typearea)              \footskip       = 50.75pt
+(typearea)              \baselineskip   = 14.5pt
 (typearea)              on input line 1686.
 )
 \c@part=\count80
@@ -2179,15 +2179,15 @@ your preamble.
 * \textheight=731.23584pt
 * \oddsidemargin=13.08827pt
 * \evensidemargin=13.08827pt
-* \topmargin=-52.7645pt
+* \topmargin=-55.23949pt
 * \headheight=14.0pt
-* \headsep=20.40001pt
-* \topskip=11.0pt
-* \footskip=47.6pt
-* \marginparwidth=59.7508pt
+* \headsep=21.75pt
+* \topskip=12.0pt
+* \footskip=50.75pt
+* \marginparwidth=49.79233pt
 * \marginparsep=12.8401pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -2352,6 +2352,12 @@ Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
 . Rerun may be required (or you may have forgotten to use commands like \gls) o
 n input line 47.
 
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [3] (main.lof)
 \tf@lof=\write10
 \openout10 = `main.lof'.
@@ -2390,38 +2396,115 @@ Class scrreprt Warning: \float@addtolists detected!
 [1
 
 
-] [2] [3]
+]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
 File: pics/c1_pics/hanoi_network.pdf Graphic file (type pdf)
 <use pics/c1_pics/hanoi_network.pdf>
-) (chapters/simulari.tex [4]
+) (chapters/simulari.tex
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5]
 chapter 2.
-[5
+[6
 
 ]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
 File: pics/c2_pics/epanet_simulator.png Graphic file (type bmp)
 <pics/c2_pics/epanet_simulator.png>
- [6] [7]
+
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
 File: pics/c2_pics/epanet_dataflow.pdf Graphic file (type pdf)
 <use pics/c2_pics/epanet_dataflow.pdf>
- [8]
-Overfull \hbox (7.53491pt too wide) in paragraph at lines 164--166
-\TU/lmr/m/n/10.95 Pipes reprezintă structurile care modelează conductele din re
-țea, pentru care atributele sunt: 
- []
+
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [9]
 
-LaTeX Warning: Reference `lst:enwrap' on page 10 undefined on input line 199.
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11]
+
+LaTeX Warning: Reference `lst:enwrap' on page 12 undefined on input line 199.
 
 
 ("C:\Users\Cristian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlan
 g1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) (code/ENWrapper.py) (code/ENWrapper.py) [10] (code/ENWrapper.py)
-(code/ENWrapper.py) [11] (code/ENWrapper.py)
+) (code/ENWrapper.py) (code/ENWrapper.py)
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12] (code/ENWrapper.py) (code/ENWrapper.py) (code/ENWrapper.py)
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
 File: ./pics/c2_pics/profil_normal.pdf Graphic file (type pdf)
 <use ./pics/c2_pics/profil_normal.pdf>
- [12]
+
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14]
 File: ./pics/c2_pics/ref_pressure/reference_pressure.pdf Graphic file (type pdf
 )
 <use ./pics/c2_pics/ref_pressure/reference_pressure.pdf>
@@ -2429,15 +2512,23 @@ File: ./pics/c2_pics/ref_others/ref_demand.pdf Graphic file (type pdf)
 <use ./pics/c2_pics/ref_others/ref_demand.pdf>
 File: ./pics/c2_pics/ref_others/ref_velocity.pdf Graphic file (type pdf)
 <use ./pics/c2_pics/ref_others/ref_velocity.pdf>
- [13])
-(chapters/scenariidefecte.tex [14]
+
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15]) (chapters/scenariidefecte.tex
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
 chapter 3.
 (code/ENWrapper.py)
-Overfull \hbox (44.3138pt too wide) in paragraph at lines 14--15
-\TU/lmr/m/n/10.95 setează magnitudinea defectului în nodul primit cu ajutorul f
-uncției de bibliotecă $[]$ 
- []
-
 File: ./pics/c3_pics/emitter_node_same/emitter_node14.pdf Graphic file (type pd
 f)
 <use ./pics/c3_pics/emitter_node_same/emitter_node14.pdf>
@@ -2445,11 +2536,11 @@ File: ./pics/c3_pics/emitter_node_same/emitter_node25.pdf Graphic file (type pd
 f)
 <use ./pics/c3_pics/emitter_node_same/emitter_node25.pdf>
 
-Overfull \hbox (43.79999pt too wide) in paragraph at lines 25--30
+Overfull \hbox (48.0pt too wide) in paragraph at lines 25--30
 [][] [][] 
  []
 
-[15
+[17
 
 ]
 File: ./pics/c3_pics/emitter_node_same/emitter_hard_node14.pdf Graphic file (ty
@@ -2459,11 +2550,31 @@ File: ./pics/c3_pics/emitter_node_same/emitter_hard_node25.pdf Graphic file (ty
 pe pdf)
 <use ./pics/c3_pics/emitter_node_same/emitter_hard_node25.pdf>
 
-Overfull \hbox (43.79999pt too wide) in paragraph at lines 48--53
+Overfull \hbox (48.0pt too wide) in paragraph at lines 48--53
 [][] [][] 
  []
 
-[16] [17]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
 File: ./pics/c3_pics/residuals/time_res_emitter11_mag29.pdf Graphic file (type 
 pdf)
 <use ./pics/c3_pics/residuals/time_res_emitter11_mag29.pdf>
@@ -2481,7 +2592,13 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 178--198
 [][] 
  []
 
-[18]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21]
 File: ./pics/c3_pics/residuals/atem_res_emitter11_mag25.pdf Graphic file (type 
 pdf)
 <use ./pics/c3_pics/residuals/atem_res_emitter11_mag25.pdf>
@@ -2499,11 +2616,24 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 208--228
 [][] 
  []
 
-[19]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22]
 File: ./pics/c3_pics/residuals/residual_scaled_matrix.pdf Graphic file (type pd
 f)
 <use ./pics/c3_pics/residuals/residual_scaled_matrix.pdf>
- [20] [21]
+
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
@@ -2511,81 +2641,145 @@ Underfull \hbox (badness 10000) in paragraph at lines 279--280
 File: ./pics/c3_pics/residuals/residual_binary_matrix.pdf Graphic file (type pd
 f)
 <use ./pics/c3_pics/residuals/residual_binary_matrix.pdf>
-[22] (code/sensor_selection.m
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25] (code/sensor_selection.m
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
-Missing character: There is no � in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Invalid UTF-8 byte or sequence at line 26 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 26 replaced by U+FFFD.
-Missing character: There is no � in font [lmroman9-regular]:mapping=tex-text;!
-Missing character: There is no � in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
 Invalid UTF-8 byte or sequence at line 31 replaced by U+FFFD.
-Missing character: There is no � in font [lmroman9-regular]:mapping=tex-text;!
- [23])
+Missing character: There is no � in font [lmroman10-regular]:mapping=tex-text;!
+)
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26]
 File: ./pics/c3_pics/hanoi_network_sensors.pdf Graphic file (type pdf)
 <use ./pics/c3_pics/hanoi_network_sensors.pdf>
-) (chapters/detectionML.tex [24]
+) (chapters/detectionML.tex
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27]
 chapter 4.
-) (chapters/detectionDL.tex [25
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+[28
 
 ]
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29]) (chapters/detectionDL.tex
+
+Package Fancyhdr Warning: \headheight is too small (14.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
 chapter 5.
-) (chapters/concluzii.tex [26
+) (chapters/concluzii.tex [31
 
 ]
 chapter 6.
-) [27
+) [32
 
-] [28
+] [33
 
 ] (chapters/surse.tex
 chapter A.
-) [29
+) [34
 
 ]
 chapter without number
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ‌ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-[30
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ‌ in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman12-regular]:mapping=tex-text;!
+[35
 
 
 
@@ -2607,12 +2801,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59321 strings out of 427834
- 1254318 string characters out of 3147926
- 2123048 words of memory out of 3000000
- 62448 multiletter control sequences out of 15000+200000
- 537654 words of font info for 73 fonts, out of 3000000 for 9000
+ 59330 strings out of 427834
+ 1254642 string characters out of 3147926
+ 2116041 words of memory out of 3000000
+ 62459 multiletter control sequences out of 15000+200000
+ 537160 words of font info for 72 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 66i,16n,100p,10532b,5159s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 66i,16n,100p,10532b,4508s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (36 pages).
+Output written on main.pdf (41 pages).

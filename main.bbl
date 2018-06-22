@@ -99,6 +99,29 @@
     \warn{\item Invalid format of field 'urldate'}
   \endentry
 
+  \entry{alphaGO}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GE}{%
+         family={Gibney},
+         familyi={G\bibinitperiod},
+         given={Elizabeth},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GE1}
+    \strng{fullhash}{GE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{7587}
+    \field{pages}{445}
+    \field{title}{Google AI algorithm masters ancient game of Go}
+    \field{volume}{529}
+    \field{journaltitle}{Nature News}
+    \field{year}{2016}
+  \endentry
+
   \entry{karp1975computational}{article}{}
     \name{author}{1}{}{%
       {{hash=KRM}{%
@@ -187,6 +210,68 @@
     \field{volume}{1}
     \field{journaltitle}{International Journal of Computer Science}
     \field{year}{2006}
+  \endentry
+
+  \entry{lecun1989backpropagation}{article}{}
+    \name{author}{7}{}{%
+      {{hash=LY}{%
+         family={LeCun},
+         familyi={L\bibinitperiod},
+         given={Yann},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=BB}{%
+         family={Boser},
+         familyi={B\bibinitperiod},
+         given={Bernhard},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=DJS}{%
+         family={Denker},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima S},
+         giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={Henderson},
+         familyi={H\bibinitperiod},
+         given={Donnie},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HRE}{%
+         family={Howard},
+         familyi={H\bibinitperiod},
+         given={Richard\bibnamedelima E},
+         giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=HW}{%
+         family={Hubbard},
+         familyi={H\bibinitperiod},
+         given={Wayne},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=JLD}{%
+         family={Jackel},
+         familyi={J\bibinitperiod},
+         given={Lawrence\bibnamedelima D},
+         giveni={L\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{LY+1}
+    \strng{fullhash}{LYBBDJSHDHREHWJLD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{4}
+    \field{pages}{541\bibrangedash 551}
+    \field{title}{Backpropagation applied to handwritten zip code recognition}
+    \field{volume}{1}
+    \field{journaltitle}{Neural computation}
+    \field{year}{1989}
   \endentry
 
   \entry{YALMIP}{inproceedings}{}
@@ -301,6 +386,60 @@
     \field{sortinithash}{R}
     \field{title}{EPANET 2: users manual}
     \field{year}{2000}
+  \endentry
+
+  \entry{AIBook}{book}{}
+    \name{author}{2}{}{%
+      {{hash=RSJ}{%
+         family={Russell},
+         familyi={R\bibinitperiod},
+         given={Stuart\bibnamedelima J},
+         giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=NP}{%
+         family={Norvig},
+         familyi={N\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Malaysia; Pearson Education Limited,}%
+    }
+    \strng{namehash}{RSJNP1}
+    \strng{fullhash}{RSJNP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Artificial intelligence: a modern approach}
+    \field{year}{2016}
+  \endentry
+
+  \entry{MLFirst}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SAL}{%
+         family={Samuel},
+         familyi={S\bibinitperiod},
+         given={Arthur\bibnamedelima L},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IBM}%
+    }
+    \strng{namehash}{SAL1}
+    \strng{fullhash}{SAL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{3}
+    \field{pages}{210\bibrangedash 229}
+    \field{title}{Some studies in machine learning using the game of checkers}
+    \field{volume}{3}
+    \field{journaltitle}{IBM Journal of research and development}
+    \field{year}{1959}
   \endentry
 
   \entry{sanz2016demand}{article}{}
