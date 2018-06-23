@@ -27,14 +27,75 @@ Problema de găsire a dicționarului și a reprezentării semnalelor de antrenar
     \item din punct de vedere computațional există foarte multe multiplicări care nu se vor mai efectua
 \end{itemize}
 
-Modul în care am descris problema duce cu gândul la o metodă sofisticată de extragere a caracteristicilor din setul de date. Astfel dacă extragem o reprezentare sparsă $X = {x_i}$, putem să folosim vectorul rar $x_i$ ca exemplu de antrenare pentru alți algoritmi de antrenare sau clasificare.
+Modul în care am descris problema duce cu gândul la o metodă sofisticată de extragere a caracteristicilor din setul de date. Astfel dacă extragem o reprezentare sparsă $X = \{x_i\}$, putem să folosim vectorul rar $x_i$ ca exemplu de antrenare pentru alți algoritmi de antrenare sau clasificare.
 
 
-TODO adauga clasificare etc
+\subsection{Găsirea reprezentării sparse}
+Reprezentarea sparsă se ocupă de reconstruirea unui semnal $y \in \mathbf{R}^n$ având la dispoziție un dicționar $\mb{D} \in \mathbb{R}^{n\times m}, \mb{D} = [d_1, d_2, ..., d_m]$ cu $m > n$, adică, găsirea unui vector $\mb{x} \in \mathbb{R}^m$ astfel încât $y \approx \mb{D} \mb{x}$. 
+Reziduul aproximării sparse este definit ca:
 
+\begin{equation}
+    e = y - \mb{D} \mb{x}
+\end{equation}
 
+Un algoritm greedy care rezolvă această problemă este OMP \textit{Orthogonal Mathching Pursuit}. Având la un moment dat mulțimea $\mathcal{S}$ a atomilor din dicționar selectați, algoritmul dorește să atingă un anumit nivel de sparsitate $s = |\mathcal{S}|$ și îndeplinirea unui criteriu de eroare $||y - \mb{D_{\mathcal{S}}} \mb{x}|| < tol$ \cite[Capitolul 1]{DL_book}. Algoritmul va completa mulțimea $\mathcal{S}$  cu acel atom $d_k$ care nu se află în ea și care va fi cel mai bine corelat cu reziduul actual, deci $k = arg \max_{j \not \in \mathcal{S}} |e^T x_j|$. 
+
+Pentru a putea obține reprezentarea semnalului $y$ folosind mulțimea de atomi $\mathcal{S}$ este nevoie să rezolvăm sistemul de ecuații supradeterminat:
+
+\begin{equation}
+    \mb{D} \mb{x} = \mb{y}
+\end{equation}
+
+Prin folosirea soluției ecuațiilor normale:
+
+\begin{equation}
+    \mb{x} = (\mb{D} \mb{D}^T)^{-1} \mb{D} \mb{y}
+\end{equation}
 
 
 \section{Adaptarea la problema rețelelor de apă}
+
+Pentru a putea clasifica nodurile unde s-au produs defecte trebuie extinsă problema de optimizare \eqref{eq:dl_opt_problem} astfel încât să se ia în calcul o structură eficientă a dicționarului pentru reprezentarea sparsă a reziduurilor, dar și apariția unei noi matrici $\mathbf{W}$ numită clasificator \cite{DL_book}:
+\begin{equation}
+    \min_{\mathbf{W}} || \mathbf{H} - \mathbf{W}\mathbf{X}||_F^{2} + \gamma ||\mathbf{W}||^2_F
+    \label{eq:dl_nmf}
+\end{equation}
+
+matricea $\mathbf{H}$ reprezintă colecția de etichete pentru fiecare dintre reziduurile din $\mathbf{Y}$
+forma lui fiind:
+
+\begin{equation}
+    \mathbf{H}_i = e_k, \text{dacă pentru exemplul i s-a produs un defect în nodul k}
+    \label{eq:struct_H}
+\end{equation}
+
+parametrul $\gamma$ are rolul de a condiționa mai bine matricea și a evita fenomenul de \textit{overfitting}.
+Matricea $\mathbf{W}$ reprezintă o matrice de transformare care în mod ideal încearcă să transforme spațiul rar $\mathbf{X}$ într-un spațiu categoric de tipul versorilor $e_k \in \mathbb{R}^{n_{clase}}$. Real vorbind, ceea ce se întâmplă este că rezultatul înmulțirii $\mathbf{W}\mathbf{X}$ este un vector dens, unde indexul celui mai mare element denotă de fapt clasa din care face parte reziduul transformat $p_{dl} = argmax(\mathbf{W}\mathbf{x}$ \cite[Capitolul 8]{DL_book}. 
+Agregând cele două probleme de optimizare obținem învățarea de dicționare discriminative:
+
+\begin{equation}
+    \min_{\mathbf{D}, \mathbf{X}, \mathbf{W}} || \mathbf{Y} - \mathbf{D} \mathbf{X} ||^2_F + \alpha || \mathbf{H} - \mathbf{W} \mathbf{X} ||^2_F
+    \label{eq:disc_DL}
+\end{equation}
+
+
+O altă modalitate e a spori performanțele de clasificare este prin obligarea problemei de optimizare să aloce anumiți atomi ai dicționarului $\mathbf{D}$ unor anumite clase de defecte - învățarea de dicționare cu consistență de clasă \textit{label consistent dictionary learning} \cite{DL_book}. Problema de optimizare la care se reduce este:
+
+\begin{equation}
+    \min_{\mb{D}, \mb{W}, \mb{A}, \mb{X}} || \mb{Y} - \mb{D}\mb{X}||^2_F + \alpha ||\mb{H} - \mb{W} \mb{X} ||^2_F + \beta ||\mb{Q} - \mb{A}\mb{X} ||^2_F
+\end{equation}
+
+matricea $\mb{Q}$ fiind de fapt parametrul care alocă fiecare atom unui anumit defect și contribuie la sporirea calității clasificării. Liniile matricei $\mb{Q}$ sunt asociate fiecărui atom cu proprietatea
+
+\begin{equation}
+    q_{ij} = \begin{cases}
+    1,\quad \text{atomul i este asociat clasei j} \\
+    0,\quad  \text{în rest}
+    \end{cases}
+\end{equation}
+
+
+
+
 
 \section{Rezultate și metrici de clasificare}
