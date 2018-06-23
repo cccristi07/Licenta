@@ -1,5 +1,4 @@
 % This file was created by matplotlib2tikz v0.6.17.
-\begin{tikzpicture}
 
 \definecolor{color3}{rgb}{0.83921568627451,0.152941176470588,0.156862745098039}
 \definecolor{color5}{rgb}{0.549019607843137,0.337254901960784,0.294117647058824}
@@ -14,6 +13,8 @@ xmin=-87.7629524951084, xmax=74.8989864946288,
 ymin=-76.2339476308442, ymax=76.0953212507968,
 tick align=outside,
 tick pos=left,
+xlabel=x1 ,
+ylabel=x2 ,
 x grid style={white!69.01960784313725!black},
 y grid style={white!69.01960784313725!black},
 legend cell align={left},
@@ -161,5 +162,3 @@ x                      y
 -7.933557128906250e+01 -1.648968505859375e+01
 };
 \end{axis}
-
-\end{tikzpicture}
