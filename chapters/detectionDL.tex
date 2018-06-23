@@ -70,7 +70,7 @@ forma lui fiind:
 \end{equation}
 
 parametrul $\gamma$ are rolul de a condiționa mai bine matricea și a evita fenomenul de \textit{overfitting}.
-Matricea $\mathbf{W}$ reprezintă o matrice de transformare care în mod ideal încearcă să transforme spațiul rar $\mathbf{X}$ într-un spațiu categoric de tipul versorilor $e_k \in \mathbb{R}^{n_{clase}}$. Real vorbind, ceea ce se întâmplă este că rezultatul înmulțirii $\mathbf{W}\mathbf{X}$ este un vector dens, unde indexul celui mai mare element denotă de fapt clasa din care face parte reziduul transformat $p_{dl} = argmax(\mathbf{W}\mathbf{x}$ \cite[Capitolul 8]{DL_book}. 
+Matricea $\mathbf{W}$ reprezintă o matrice de transformare care în mod ideal încearcă să transforme spațiul rar $\mathbf{X}$ într-un spațiu categoric de tipul versorilor $e_k \in \mathbb{R}^{n_{clase}}$. Real vorbind, ceea ce se întâmplă este că rezultatul înmulțirii $\mathbf{W}\mathbf{X}$ este un vector dens, unde indexul celui mai mare element denotă de fapt clasa din care face parte reziduul transformat $p_{dl} = argmax(\mathbf{W}\mathbf{x})$ \cite[Capitolul 8]{DL_book}. 
 Agregând cele două probleme de optimizare obținem învățarea de dicționare discriminative:
 
 \begin{equation}
@@ -83,6 +83,7 @@ O altă modalitate e a spori performanțele de clasificare este prin obligarea p
 
 \begin{equation}
     \min_{\mb{D}, \mb{W}, \mb{A}, \mb{X}} || \mb{Y} - \mb{D}\mb{X}||^2_F + \alpha ||\mb{H} - \mb{W} \mb{X} ||^2_F + \beta ||\mb{Q} - \mb{A}\mb{X} ||^2_F
+    \label{eq:lc_dl}
 \end{equation}
 
 matricea $\mb{Q}$ fiind de fapt parametrul care alocă fiecare atom unui anumit defect și contribuie la sporirea calității clasificării. Liniile matricei $\mb{Q}$ sunt asociate fiecărui atom cu proprietatea
@@ -94,8 +95,76 @@ matricea $\mb{Q}$ fiind de fapt parametrul care alocă fiecare atom unui anumit 
     \end{cases}
 \end{equation}
 
+Problema \eqref{eq:lc_dl} poate fi redusă la problema de optimizare \cite{DL_book}:
+
+\begin{equation}
+    \min_{\mb{D}, \mb{W}, \mb{A}, \mb{X}} 
+    \norm{
+    \begin{bmatrix}
+    \mb{Y} \\
+    \sqrt{\alpha} \mb{H} \\
+    \sqrt{\beta} \mb{Q}
+    \end{bmatrix}
+    -
+     \begin{bmatrix}
+    \mb{D} \\
+    \sqrt{\alpha} \mb{W}\\
+    \sqrt{\beta} \mb{A}
+    \end{bmatrix} 
+    \mb{X}
+    }^2_F
+    \label{eq:lc_dl}
+\end{equation}
+
+și poate fi rezolvată cu ajutorul algoritmului K-DVS care funcționează prin alternarea fixării matricelor $\mb{D}$ și $\mb{X}$, prima dată dicționarul este fixat și se găsește cea mai bună reprezentare $\mb{X}$, apoi se recalculează dicționarul $\mb{D}$. Metoda se bazează pe aproximarea unei matrice de rang n printr-o sumă de matrice de rang 1.
+
 
 
 
 
 \section{Rezultate și metrici de clasificare}
+
+Pentru testarea metodelor de DL am folosit setul de date de la capitolul \ref{chap:ml_classification}, iar metodele care calculează dicționarele și reprezentările sparse sunt cele de la \cite{dl-code}. Asemănător capitolului de clasificare cu SVM voi considera nodurile alese prin metoda MSC și prin metoda RFE, și voi arăta pentru fiecare dintre acestea acuratețea obținută cu ajutorul metodelor de DL cu consistență de clasă și DL discriminativ.
+Astfel avem pentru senzorii selectați de algoritmul RFE:
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+         Nr senzori & Senzori selectați & Acuratețe DL discriminativ & Acuratețe LC-DL \\
+        \hline
+
+        4 & $10, 11, 25, 27$ & $46.5\%$ & $82.4\%$\\
+        \hline
+        6 & $10, 11, 16, 25, 27, 28$ & $53.1\%$ & $86.2\%$ \\
+        \hline
+        10 & $ 9, 10, 11, 12, 16, 20, 25, 27, 28, 29 $ & $57.2\%$ & $93.3\%$  \\
+        \hline
+    \end{tabular}
+    \caption{Performanțele clasificării DL cu senzorii selectați de RFE}
+    \label{tab:dl_rfe_performance}
+\end{table}
+Iar pentru metoda de plasare a senzorilor cu problema MSC am obținut rezultatele:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+        Nr senzori & Senzori selectați & Acuratețe DL discriminativ & Acuratețe LC-DL \\
+        \hline
+        4 & $11, 15, 21, 28$ & $58.7\%$ & $89.7\%$ \\
+        \hline
+        6 & $12, 13, 16, 21, 25 , 26 $ & $51.4\%$ & $86.9\%$\\
+        \hline
+        10 & $6,12,13,14,15,16,21,26,27, 28$ & $65.59\%$ & $96.7\%$\\
+        \hline
+    \end{tabular}
+    \caption{Performanțele clasificării DL cu senzorii selectați de MSC}
+    \label{tab:dl_msc_performance}
+\end{table}
+
+
+Luând în calcul cei 10 senzori selectați de metoda MSC clasificatorul obținut de metoda învățarii de dicționare cu consistență de clase dă un rezultat al acurateții de 96.7\%, cu 2.1 \% mai performant decât abordarea cu SVM.
+
+
+
+

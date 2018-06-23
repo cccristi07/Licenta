@@ -254,18 +254,18 @@ Pentru a testa metoda de selecție a senzorilor am fixat un spectru pentru param
     \centering
     \begin{tabular}{|c|c|c|}
     \hline
-        $N_{cp}$ & Senzori selectați & Acuratețe \\
+        Nr senzori selectați & Senzori selectați & Acuratețe \\
         \hline
-        1 & $11$ & 64\% \\
+        1 & $11$ & 64.4\% \\
         \hline
-        4 & $10, 11, 25, 27$ & $89.6\%$\\
+        4 & $10, 11, 25, 27$ & $89.7\%$\\
         \hline
-        6 & $10, 11, 16, 25, 27, 28$ & $93.3\%$\\
+        6 & $10, 11, 16, 25, 27, 28$ & $94.8\%$\\
         \hline
-        10 & $ 9, 10, 11, 12, 16, 20, 25, 27, 28, 29 $ & $94.14\%$ \\
+        10 & $ 9, 10, 11, 12, 16, 20, 25, 27, 28, 29 $ & $94.1\%$ \\
         \hline
     \end{tabular}
-    \caption{Performanțele clasificării cu senzorii selectați de RFE}
+    \caption{Performanțele clasificării SVM cu senzorii selectați de RFE}
     \label{tab:rfe_selected_sensors}
 \end{table}
 
@@ -298,13 +298,13 @@ Figura \ref{fig:rfe_vs_msc} prezintă similaritățile între senzorii aleși de
     \hline
         Nr senzori selectați & Senzori selectați & Acuratețe \\
         \hline
-        4 & $10, 11, 25, 27$ & $89.69\%$ \\
+        4 & $11, 15, 21, 28 $& $92.1\%$ \\
         \hline
-        6 & $10, 11, 16,25, 27,28 $ & $93.3\%$\\
+        6 & $12, 13, 16,21, 26,28 $ & $93.3\%$\\
         \hline
-        10 & $9,10, 11, 12, 16, 20, 25, 27, 28, 29$ & $94\%$\\
+        10 & $6,12,13,14,15,16,21,26,27,28$ & $94\%$\\
         \hline
     \end{tabular}
-    \caption{Performanțele clasificării cu senzorii selectați de MSC}
+    \caption{Performanțele clasificării SVM cu senzorii selectați de MSC}
     \label{tab:msc_selected_sensors}
 \end{table}
