@@ -7,4 +7,14 @@ Abordarea propusă în această lucrare este una bine documentată \cite{irofti2
 
 Rezultatele clasificării folosind metodele LC-DL și SVM au dat rezultate apreciabile și relevante din punct de vedere statistic, antrenarea și testarea fiind făcută pe două seturi de date echilibrate (i.e. același număr de obiecte pentru fiecare clasă) și variate - fiecare defect pentru care se încerca clasificarea avea ca exemple de clasă profiluri cu mai multe magnitudini - metricile de acuratețe atingând un procent foarte ridicat - 96.7\% pentru LC-DL folosind 10 senzori aleși cu MSC și 94.1\% pentru SVM folosind 10 senzori aleși cu RFE. De asemenea algoritmul SVM poate fi folosit într-un alt algoritm \ref{alg:rfe} pentru a putea alege nodurile din rețea cu cea mai importantă contribuție.
 
-Ca explicație pentru faptul că defectele au fost clasificare cu o metrică ridicată de acuratețe, am ilustrat în figura următoare 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{\pics/c6_pics/2dfaults}
+\caption{Proiecția în 2D a profilurilor defectelor}
+\label{fig:tsne_faults}
+\end{figure}
+
+Ca ilustrație grafică bidimensională asupra profilurilor defectelor am realizat în figura \ref{fig:tsne_faults} proiecția pe 2 axe a vectorului de caracteristici al unui defect format din 31 de caracteristici, folosind algoritmul TSNE. După cum se poate observa aceste defecte nu numai ca sunt liniar separabile, dar în funcție de magnitudinea emițătorului în nodul respectiv proiecțiile $(x1, x2)$ se vor situa pe o dreaptă. Deși folosirea unei metode de clasificarea bazate pe extragerea proiecțiilor în 2D sau 3D prin algoritmul TSNE poate părea o idee atractivă, problema apare în momentul în care se dorește transformarea unui set de date nou - fiind un algoritm stocastic TSNE va da rezultate diferite la fiecare rulare și există riscul ca aceleași defecte să fie coagulate în alte zone ale planului bidimensional, compromițând astfel procesul de clasificare.
+
+
+
