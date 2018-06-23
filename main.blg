@@ -3,6 +3,3 @@ The style file: biblatex.bst
 Database file #1: main-blx.bib
 Database file #2: ./cls/bib.bib
 Biblatex version: 3.8
-Name 1 in "Malaysia; Pearson Education Limited," has a comma at the end for entry AIBook
-while executing---line 2749 of file biblatex.bst
-(There was 1 error message)

@@ -16,7 +16,264 @@
   {}
 \endgroup
 
-\datalist[entry]{nty/global//global/global}
+\datalist[entry]{none/global//global/global}
+  \entry{klopfenstein1998air}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KJR}{%
+         family={Klopfenstein\bibnamedelima Jr},
+         familyi={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+         given={Rex},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{KJR1}
+    \strng{fullhash}{KJR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{4}
+    \field{pages}{257\bibrangedash 263}
+    \field{title}{Air velocity and flow measurement using a Pitot tube}
+    \field{volume}{37}
+    \field{journaltitle}{ISA transactions}
+    \field{year}{1998}
+  \endentry
+
+  \entry{elger2016engineering}{book}{}
+    \name{author}{2}{}{%
+      {{hash=EDF}{%
+         family={Elger},
+         familyi={E\bibinitperiod},
+         given={Donald\bibnamedelima F},
+         giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=RJA}{%
+         family={Roberson},
+         familyi={R\bibinitperiod},
+         given={John\bibnamedelima A},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Hoboken (NJ)}%
+    }
+    \strng{namehash}{EDFRJA1}
+    \strng{fullhash}{EDFRJA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Engineering fluid mechanics}
+    \field{year}{2016}
+  \endentry
+
+  \entry{irofti2017dictionary}{article}{}
+    \name{author}{2}{}{%
+      {{hash=IP}{%
+         family={Irofti},
+         familyi={I\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Stoican},
+         familyi={S\bibinitperiod},
+         given={Florin},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{IPSF1}
+    \strng{fullhash}{IPSF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{1553\bibrangedash 1558}
+    \field{title}{Dictionary learning strategies for sensor placement and
+  leakage isolation in water networks}
+    \field{volume}{50}
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{year}{2017}
+  \endentry
+
+  \entry{sanz2016demand}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SEG}{%
+         family={Sanz\bibnamedelima Estap{\'e}},
+         familyi={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+         given={Gerard},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Universitat Polit{\`e}cnica de Catalunya}%
+    }
+    \strng{namehash}{SEG1}
+    \strng{fullhash}{SEG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Demand modeling for water networks calibration and leak
+  localization}
+    \field{year}{2016}
+  \endentry
+
+  \entry{karp1975computational}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KRM}{%
+         family={Karp},
+         familyi={K\bibinitperiod},
+         given={Richard\bibnamedelima M},
+         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{KRM1}
+    \strng{fullhash}{KRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{45\bibrangedash 68}
+    \field{title}{On the computational complexity of combinatorial problems}
+    \field{volume}{5}
+    \field{journaltitle}{Networks}
+    \field{year}{1975}
+  \endentry
+
+  \entry{rossman2000epanet}{article}{}
+    \true{moreauthor}
+    \name{author}{1}{}{%
+      {{hash=RLA}{%
+         family={Rossman},
+         familyi={R\bibinitperiod},
+         given={Lewis\bibnamedelima A},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {US Environmental Protection Agency. Office of Research}%
+      {Development. National Risk Management Research Laboratory}%
+    }
+    \strng{namehash}{RLA+1}
+    \strng{fullhash}{RLA+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{EPANET 2: users manual}
+    \field{year}{2000}
+  \endentry
+
+  \entry{EpanetPython}{online}{}
+    \name{author}{1}{}{%
+      {{hash=PA}{%
+         family={Pathirana},
+         familyi={P\bibinitperiod},
+         given={Assela},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PA1}
+    \strng{fullhash}{PA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{EPANET calling API for python.}
+    \verb{url}
+    \verb https://github.com/asselapathirana/epanettools
+    \endverb
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'urldate'}
+  \endentry
+
+  \entry{dataPreprocessing}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KS}{%
+         family={Kotsiantis},
+         familyi={K\bibinitperiod},
+         given={SB},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Kanellopoulos},
+         familyi={K\bibinitperiod},
+         given={D},
+         giveni={D},
+      }}%
+      {{hash=PP}{%
+         family={Pintelas},
+         familyi={P\bibinitperiod},
+         given={PE},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{KSKDPP1}
+    \strng{fullhash}{KSKDPP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2}
+    \field{pages}{111\bibrangedash 117}
+    \field{title}{Data preprocessing for supervised leaning}
+    \field{volume}{1}
+    \field{journaltitle}{International Journal of Computer Science}
+    \field{year}{2006}
+  \endentry
+
+  \entry{GIGO}{online}{}
+    \field{labeltitlesource}{title}
+    \field{title}{Garbage in Garbage out.}
+    \verb{url}
+    \verb https://en.wikipedia.org/wiki/Garbage_in,_garbage_out
+    \endverb
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'urldate'}
+  \endentry
+
+  \entry{perelman2016sensor}{article}{}
+    \name{author}{4}{}{%
+      {{hash=PLS}{%
+         family={Perelman},
+         familyi={P\bibinitperiod},
+         given={Lina\bibnamedelima Sela},
+         giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=AW}{%
+         family={Abbas},
+         familyi={A\bibinitperiod},
+         given={Waseem},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=KX}{%
+         family={Koutsoukos},
+         familyi={K\bibinitperiod},
+         given={Xenofon},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=AS}{%
+         family={Amin},
+         familyi={A\bibinitperiod},
+         given={Saurabh},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{PLS+1}
+    \strng{fullhash}{PLSAWKXAS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{166\bibrangedash 176}
+    \field{title}{Sensor placement for fault location identification in water
+  networks: A minimum test cover approach}
+    \field{volume}{72}
+    \field{journaltitle}{Automatica}
+    \field{year}{2016}
+  \endentry
+
   \entry{CLRS}{book}{}
     \name{author}{4}{}{%
       {{hash=CTH}{%
@@ -51,52 +308,55 @@
     \strng{fullhash}{CTHLCERRLSC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
     \field{edition}{3rd}
     \field{isbn}{0262033844, 9780262033848}
     \field{title}{Introduction to Algorithms, Third Edition}
     \field{year}{2009}
   \endentry
 
-  \entry{elger2016engineering}{book}{}
-    \name{author}{2}{}{%
-      {{hash=EDF}{%
-         family={Elger},
-         familyi={E\bibinitperiod},
-         given={Donald\bibnamedelima F},
-         giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+  \entry{YALMIP}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=LJ}{%
+         family={L{\"{o}}fberg},
+         familyi={L\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
       }}%
-      {{hash=RJA}{%
-         family={Roberson},
-         familyi={R\bibinitperiod},
-         given={John\bibnamedelima A},
-         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+    }
+    \strng{namehash}{LJ1}
+    \strng{fullhash}{LJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{In Proceedings of the CACSD Conference}
+    \field{title}{YALMIP : A Toolbox for Modeling and Optimization in MATLAB}
+    \list{location}{1}{%
+      {Taipei, Taiwan}%
+    }
+    \field{year}{2004}
+  \endentry
+
+  \entry{MLFirst}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SAL}{%
+         family={Samuel},
+         familyi={S\bibinitperiod},
+         given={Arthur\bibnamedelima L},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
-      {Wiley Hoboken (NJ)}%
+      {IBM}%
     }
-    \strng{namehash}{EDFRJA1}
-    \strng{fullhash}{EDFRJA1}
+    \strng{namehash}{SAL1}
+    \strng{fullhash}{SAL1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{E}
-    \field{sortinithash}{E}
-    \field{title}{Engineering fluid mechanics}
-    \field{year}{2016}
-  \endentry
-
-  \entry{GIGO}{online}{}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{G}
-    \field{sortinithash}{G}
-    \field{title}{Garbage in Garbage out.}
-    \verb{url}
-    \verb https://en.wikipedia.org/wiki/Garbage_in,_garbage_out
-    \endverb
-    \field{year}{2016}
-    \warn{\item Invalid format of field 'urldate'}
+    \field{number}{3}
+    \field{pages}{210\bibrangedash 229}
+    \field{title}{Some studies in machine learning using the game of checkers}
+    \field{volume}{3}
+    \field{journaltitle}{IBM Journal of research and development}
+    \field{year}{1959}
   \endentry
 
   \entry{alphaGO}{article}{}
@@ -112,104 +372,12 @@
     \strng{fullhash}{GE1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{G}
-    \field{sortinithash}{G}
     \field{number}{7587}
     \field{pages}{445}
     \field{title}{Google AI algorithm masters ancient game of Go}
     \field{volume}{529}
     \field{journaltitle}{Nature News}
     \field{year}{2016}
-  \endentry
-
-  \entry{karp1975computational}{article}{}
-    \name{author}{1}{}{%
-      {{hash=KRM}{%
-         family={Karp},
-         familyi={K\bibinitperiod},
-         given={Richard\bibnamedelima M},
-         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Wiley Online Library}%
-    }
-    \strng{namehash}{KRM1}
-    \strng{fullhash}{KRM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{number}{1}
-    \field{pages}{45\bibrangedash 68}
-    \field{title}{On the computational complexity of combinatorial problems}
-    \field{volume}{5}
-    \field{journaltitle}{Networks}
-    \field{year}{1975}
-  \endentry
-
-  \entry{klopfenstein1998air}{article}{}
-    \name{author}{1}{}{%
-      {{hash=KJR}{%
-         family={Klopfenstein\bibnamedelima Jr},
-         familyi={K\bibinitperiod\bibinitdelim J\bibinitperiod},
-         given={Rex},
-         giveni={R\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{KJR1}
-    \strng{fullhash}{KJR1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{number}{4}
-    \field{pages}{257\bibrangedash 263}
-    \field{title}{Air velocity and flow measurement using a Pitot tube}
-    \field{volume}{37}
-    \field{journaltitle}{ISA transactions}
-    \field{year}{1998}
-  \endentry
-
-  \entry{dataPreprocessing}{article}{}
-    \name{author}{3}{}{%
-      {{hash=KS}{%
-         family={Kotsiantis},
-         familyi={K\bibinitperiod},
-         given={SB},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=KD}{%
-         family={Kanellopoulos},
-         familyi={K\bibinitperiod},
-         given={D},
-         giveni={D},
-      }}%
-      {{hash=PP}{%
-         family={Pintelas},
-         familyi={P\bibinitperiod},
-         given={PE},
-         giveni={P\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Citeseer}%
-    }
-    \strng{namehash}{KSKDPP1}
-    \strng{fullhash}{KSKDPP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{number}{2}
-    \field{pages}{111\bibrangedash 117}
-    \field{title}{Data preprocessing for supervised leaning}
-    \field{volume}{1}
-    \field{journaltitle}{International Journal of Computer Science}
-    \field{year}{2006}
   \endentry
 
   \entry{lecun1989backpropagation}{article}{}
@@ -264,128 +432,12 @@
     \strng{fullhash}{LYBBDJSHDHREHWJLD1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{L}
-    \field{sortinithash}{L}
     \field{number}{4}
     \field{pages}{541\bibrangedash 551}
     \field{title}{Backpropagation applied to handwritten zip code recognition}
     \field{volume}{1}
     \field{journaltitle}{Neural computation}
     \field{year}{1989}
-  \endentry
-
-  \entry{YALMIP}{inproceedings}{}
-    \name{author}{1}{}{%
-      {{hash=LJ}{%
-         family={L{\"{o}}fberg},
-         familyi={L\bibinitperiod},
-         given={J.},
-         giveni={J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{LJ1}
-    \strng{fullhash}{LJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{L}
-    \field{sortinithash}{L}
-    \field{booktitle}{In Proceedings of the CACSD Conference}
-    \field{title}{YALMIP : A Toolbox for Modeling and Optimization in MATLAB}
-    \list{location}{1}{%
-      {Taipei, Taiwan}%
-    }
-    \field{year}{2004}
-  \endentry
-
-  \entry{EpanetPython}{online}{}
-    \name{author}{1}{}{%
-      {{hash=PA}{%
-         family={Pathirana},
-         familyi={P\bibinitperiod},
-         given={Assela},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{PA1}
-    \strng{fullhash}{PA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{P}
-    \field{sortinithash}{P}
-    \field{title}{EPANET calling API for python.}
-    \verb{url}
-    \verb https://github.com/asselapathirana/epanettools
-    \endverb
-    \field{year}{2016}
-    \warn{\item Invalid format of field 'urldate'}
-  \endentry
-
-  \entry{perelman2016sensor}{article}{}
-    \name{author}{4}{}{%
-      {{hash=PLS}{%
-         family={Perelman},
-         familyi={P\bibinitperiod},
-         given={Lina\bibnamedelima Sela},
-         giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-      {{hash=AW}{%
-         family={Abbas},
-         familyi={A\bibinitperiod},
-         given={Waseem},
-         giveni={W\bibinitperiod},
-      }}%
-      {{hash=KX}{%
-         family={Koutsoukos},
-         familyi={K\bibinitperiod},
-         given={Xenofon},
-         giveni={X\bibinitperiod},
-      }}%
-      {{hash=AS}{%
-         family={Amin},
-         familyi={A\bibinitperiod},
-         given={Saurabh},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{PLS+1}
-    \strng{fullhash}{PLSAWKXAS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{P}
-    \field{sortinithash}{P}
-    \field{pages}{166\bibrangedash 176}
-    \field{title}{Sensor placement for fault location identification in water
-  networks: A minimum test cover approach}
-    \field{volume}{72}
-    \field{journaltitle}{Automatica}
-    \field{year}{2016}
-  \endentry
-
-  \entry{rossman2000epanet}{article}{}
-    \true{moreauthor}
-    \name{author}{1}{}{%
-      {{hash=RLA}{%
-         family={Rossman},
-         familyi={R\bibinitperiod},
-         given={Lewis\bibnamedelima A},
-         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{2}{%
-      {US Environmental Protection Agency. Office of Research}%
-      {Development. National Risk Management Research Laboratory}%
-    }
-    \strng{namehash}{RLA+1}
-    \strng{fullhash}{RLA+1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{R}
-    \field{sortinithash}{R}
-    \field{title}{EPANET 2: users manual}
-    \field{year}{2000}
   \endentry
 
   \entry{AIBook}{book}{}
@@ -404,65 +456,410 @@
       }}%
     }
     \list{publisher}{1}{%
-      {Malaysia; Pearson Education Limited,}%
+      {Malaysia; Pearson Education Limited}%
     }
     \strng{namehash}{RSJNP1}
     \strng{fullhash}{RSJNP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{R}
-    \field{sortinithash}{R}
     \field{title}{Artificial intelligence: a modern approach}
     \field{year}{2016}
   \endentry
 
-  \entry{MLFirst}{article}{}
-    \name{author}{1}{}{%
-      {{hash=SAL}{%
-         family={Samuel},
-         familyi={S\bibinitperiod},
-         given={Arthur\bibnamedelima L},
-         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+  \entry{tsne}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MLvd}{%
+         family={Maaten},
+         familyi={M\bibinitperiod},
+         given={Laurens van\bibnamedelima der},
+         giveni={L\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim
+  d\bibinitperiod},
       }}%
-    }
-    \list{publisher}{1}{%
-      {IBM}%
-    }
-    \strng{namehash}{SAL1}
-    \strng{fullhash}{SAL1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{S}
-    \field{sortinithash}{S}
-    \field{number}{3}
-    \field{pages}{210\bibrangedash 229}
-    \field{title}{Some studies in machine learning using the game of checkers}
-    \field{volume}{3}
-    \field{journaltitle}{IBM Journal of research and development}
-    \field{year}{1959}
-  \endentry
-
-  \entry{sanz2016demand}{article}{}
-    \name{author}{1}{}{%
-      {{hash=SEG}{%
-         family={Sanz\bibnamedelima Estap{\'e}},
-         familyi={S\bibinitperiod\bibinitdelim E\bibinitperiod},
-         given={Gerard},
+      {{hash=HG}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey},
          giveni={G\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Universitat Polit{\`e}cnica de Catalunya}%
-    }
-    \strng{namehash}{SEG1}
-    \strng{fullhash}{SEG1}
+    \strng{namehash}{MLvdHG1}
+    \strng{fullhash}{MLvdHG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{S}
-    \field{sortinithash}{S}
-    \field{title}{Demand modeling for water networks calibration and leak
-  localization}
-    \field{year}{2016}
+    \field{number}{Nov}
+    \field{pages}{2579\bibrangedash 2605}
+    \field{title}{Visualizing data using t-SNE}
+    \field{volume}{9}
+    \field{journaltitle}{Journal of machine learning research}
+    \field{year}{2008}
+  \endentry
+
+  \entry{svmbook}{book}{}
+    \name{author}{2}{}{%
+      {{hash=CN}{%
+         family={Cristianini},
+         familyi={C\bibinitperiod},
+         given={Nello},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=STJ}{%
+         family={Shawe-Taylor},
+         familyi={S\bibinitperiod-T\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge university press}%
+    }
+    \strng{namehash}{CNSTJ1}
+    \strng{fullhash}{CNSTJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{An introduction to support vector machines and other
+  kernel-based learning methods}
+    \field{year}{2000}
+  \endentry
+
+  \entry{scikit-learn}{article}{}
+    \name{author}{16}{}{%
+      {{hash=PF}{%
+         family={Pedregosa},
+         familyi={P\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=VG}{%
+         family={Varoquaux},
+         familyi={V\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gramfort},
+         familyi={G\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MV}{%
+         family={Michel},
+         familyi={M\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=TB}{%
+         family={Thirion},
+         familyi={T\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GO}{%
+         family={Grisel},
+         familyi={G\bibinitperiod},
+         given={O.},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Blondel},
+         familyi={B\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Prettenhofer},
+         familyi={P\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Weiss},
+         familyi={W\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=DV}{%
+         family={Dubourg},
+         familyi={D\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=VJ}{%
+         family={Vanderplas},
+         familyi={V\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Passos},
+         familyi={P\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Cournapeau},
+         familyi={C\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Brucher},
+         familyi={B\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Perrot},
+         familyi={P\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DE}{%
+         family={Duchesnay},
+         familyi={D\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PF+1}
+    \strng{fullhash}{PFVGGAMVTBGOBMPPWRDVVJPACDBMPMDE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{2825\bibrangedash 2830}
+    \field{title}{Scikit-learn: Machine Learning in {P}ython}
+    \field{volume}{12}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2011}
+  \endentry
+
+  \entry{sklearn_api}{inproceedings}{}
+    \name{author}{15}{}{%
+      {{hash=BL}{%
+         family={Buitinck},
+         familyi={B\bibinitperiod},
+         given={Lars},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Louppe},
+         familyi={L\bibinitperiod},
+         given={Gilles},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Blondel},
+         familyi={B\bibinitperiod},
+         given={Mathieu},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Pedregosa},
+         familyi={P\bibinitperiod},
+         given={Fabian},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Mueller},
+         familyi={M\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GO}{%
+         family={Grisel},
+         familyi={G\bibinitperiod},
+         given={Olivier},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=NV}{%
+         family={Niculae},
+         familyi={N\bibinitperiod},
+         given={Vlad},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Prettenhofer},
+         familyi={P\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gramfort},
+         familyi={G\bibinitperiod},
+         given={Alexandre},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Grobler},
+         familyi={G\bibinitperiod},
+         given={Jaques},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LR}{%
+         family={Layton},
+         familyi={L\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=VJ}{%
+         family={VanderPlas},
+         familyi={V\bibinitperiod},
+         given={Jake},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JA}{%
+         family={Joly},
+         familyi={J\bibinitperiod},
+         given={Arnaud},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HB}{%
+         family={Holt},
+         familyi={H\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=VG}{%
+         family={Varoquaux},
+         familyi={V\bibinitperiod},
+         given={Ga{\"{e}}l},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BL+1}
+    \strng{fullhash}{BLLGBMPFMAGONVPPGAGJLRVJJAHBVG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{ECML PKDD Workshop: Languages for Data Mining and Machine
+  Learning}
+    \field{pages}{108\bibrangedash 122}
+    \field{title}{{API} design for machine learning software: experiences from
+  the scikit-learn project}
+    \field{year}{2013}
+  \endentry
+
+  \entry{RFE_PAPER}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=SV}{%
+         family={Svetnik},
+         familyi={S\bibinitperiod},
+         given={Vladimir},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=LA}{%
+         family={Liaw},
+         familyi={L\bibinitperiod},
+         given={Andy},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TC}{%
+         family={Tong},
+         familyi={T\bibinitperiod},
+         given={Christopher},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Ting},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=RF}{%
+         family={Roli},
+         familyi={R\bibinitperiod},
+         given={Fabio},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kittler},
+         familyi={K\bibinitperiod},
+         given={Josef},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Windeatt},
+         familyi={W\bibinitperiod},
+         given={Terry},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Berlin Heidelberg}%
+    }
+    \strng{namehash}{SV+1}
+    \strng{fullhash}{SVLATCWT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Leo Breiman's Random Forest ensemble learning procedure is applied to the
+  problem of Quantitative Structure-Activity Relationship (QSAR) modeling for
+  pharmaceutical molecules. This entails using a quantitative description of a
+  compound's molecular structure to predict that compound's biological activity
+  as measured in an in vitro assay. Without any parameter tuning, the
+  performance of Random Forest with default settings on six publicly available
+  data sets is already as good or better than that of three other prominent
+  QSAR methods: Decision Tree, Partial Least Squares, and Support Vector
+  Machine. In addition to reliable prediction accuracy, Random Forest provides
+  variable importance measures which can be used in a variable reduction
+  wrapper algorithm. Comparisons of various such wrappers and between Random
+  Forest and Bagging are presented.%
+    }
+    \field{booktitle}{Multiple Classifier Systems}
+    \field{isbn}{978-3-540-25966-4}
+    \field{pages}{334\bibrangedash 343}
+    \field{title}{Application of Breiman's Random Forest to Modeling
+  Structure-Activity Relationships of Pharmaceutical Molecules}
+    \list{location}{1}{%
+      {Berlin, Heidelberg}%
+    }
+    \field{year}{2004}
+  \endentry
+
+  \entry{DL_book}{book}{}
+    \name{author}{2}{}{%
+      {{hash=DB}{%
+         family={Dumitrescu},
+         familyi={D\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=IP}{%
+         family={Irofti},
+         familyi={I\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{DBIP1}
+    \strng{fullhash}{DBIP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Dictionary Learning Algorithms and Applications}
+    \field{year}{2018}
+  \endentry
+
+  \entry{dl-code}{online}{}
+    \name{author}{1}{}{%
+      {{hash=BDPI}{%
+         family={Bogdan\bibnamedelima Dumitrescu},
+         familyi={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={Paul\bibnamedelima Irofti},
+         giveni={P\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BDPI1}
+    \strng{fullhash}{BDPI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Dictionary Learning Book}
+    \verb{url}
+    \verb https://github.com/dl-book/dl-book
+    \endverb
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'urldate'}
   \endentry
 \enddatalist
 \endinput

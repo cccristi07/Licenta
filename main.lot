@@ -5,15 +5,23 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.1}{\ignorespaces Structura fișierului INP\relax }}{10}{table.caption.8}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Structura fișierului INP\relax }}{9}{table.caption.8}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Metrici medii pe setul de testare plin\relax }}{32}{table.caption.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.2}{\ignorespaces Performanțele clasificării SVM cu senzorii selectați de RFE\relax }}{34}{table.caption.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.3}{\ignorespaces Performanțele clasificării SVM cu senzorii selectați de MSC\relax }}{35}{table.caption.38}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.1}{\ignorespaces Performanțele clasificării DL cu senzorii selectați de RFE\relax }}{39}{table.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.2}{\ignorespaces Performanțele clasificării DL cu senzorii selectați de MSC\relax }}{39}{table.caption.40}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
