@@ -1,7 +1,7 @@
 \chapter{Clasificarea defectelor folosind metoda învățării de dicționare rare}
 \label{chap:dictionary_learning}
 \section{Aspecte teoretice}
-Problema învățării dicționarelor se clasează în domeniul problemelor de învățare nesupervizată - setul de date nu trebuie să fie structurat pe clase - dar există și variațiuni ale acesteia prin care modifică problema de optimizare astfel încât să se poată învăța dicționare specializate pentru clasificare.
+Problema învățării dicționarelor se clasează în domeniul problemelor de învățare nesupervizată - setul de date nu trebuie să fie structurat pe clase - dar există și variațiuni ale acesteia prin care modifică criteriul de optimizat astfel încât să se poată învăța dicționare specializate pentru clasificare.
 
 Având ca date de intrare un set de date $\mathbf{Y} \in \mathbb{R}^{n \times n_s}$, unde $n$ reprezintă dimensiunea semnalelor și $n_s$ reprezintă numărul de semnale folosite la antrenare, dorim să găsim acele matrice $\mathbf{D} \in \mathbb{R}^{n \times m}$ și $\mathbf{X} \in \mathbb{R}^{m \times n_s}$ astfel încât să rezolvăm problema de optimizare\cite[Capitol 2]{DL_book}:
 
