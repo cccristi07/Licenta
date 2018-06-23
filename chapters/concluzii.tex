@@ -17,4 +17,21 @@ Rezultatele clasificării folosind metodele LC-DL și SVM au dat rezultate aprec
 Ca ilustrație grafică bidimensională asupra profilurilor defectelor am realizat în figura \ref{fig:tsne_faults} proiecția pe 2 axe a vectorului de caracteristici al unui defect format din 31 de caracteristici, folosind algoritmul TSNE. După cum se poate observa aceste defecte nu numai ca sunt liniar separabile, dar în funcție de magnitudinea emițătorului în nodul respectiv proiecțiile $(x1, x2)$ se vor situa pe o dreaptă. Deși folosirea unei metode de clasificarea bazate pe extragerea proiecțiilor în 2D sau 3D prin algoritmul TSNE poate părea o idee atractivă, problema apare în momentul în care se dorește transformarea unui set de date nou - fiind un algoritm stocastic TSNE va da rezultate diferite la fiecare rulare și există riscul ca aceleași defecte să fie coagulate în alte zone ale planului bidimensional, compromițând astfel procesul de clasificare.
 
 
+\paragraph{Direcții viitoare} \mbox{} \\
+
+Ca abordare diferită putem să considerăm partiționarea rețelei în mai multe subgrafuri \cite{irofti2017dictionary}  cu scopul de a relaxa problema și de a crește performanțele clasificării. O modalitate de a vedea care sunt nodurile care oferă cea mai mare apropiere în sensul partiționării este folosirea unui algoritm de clusterizare asupra reziduurilor fiecărui defect, de exemplu K-Means. Rularea acestui algoritm cu 4 centroide dă următoarea cofigurație de clustere:
+
+\begin{itemize}
+    \item $C_1 = \{22, 23, 24, 27, 28, 29, 30, 31\}$
+    \item $C_2 = \{1, 2, 3, 16, 17, 18, 19\}$
+    \item $C_3 = \{  20, 21\}$
+    \item $C_4 = \{ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13\}$
+    \item $C_5 = \{ 25, 26, 14, 15\}$
+\end{itemize}
+
+Rulând algoritmul de clasificare de la capitolul \ref{chap:ml_classification} obținem o acuratețe de 95.2\% cu ajutorul a suportului de 4 senzori selectați $C=\{12, 19, 25, 27\}$
+% [{22, 23, 24, 27, 28, 29, 30, 31}, {1, 2, 3, 16, 17, 18, 19}, {20, 21}, {4, 5, 6, 7, 8, 9, 10, 11, 12, 13}, {25, 26, 14, 15}]
+
+
+
 
