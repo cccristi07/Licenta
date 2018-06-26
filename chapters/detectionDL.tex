@@ -21,16 +21,16 @@ Unde:
 
 Constrângerea \eqref{eq:dl_sparsity} se referă la raritatea vectorului de reprezentare iar \eqref{eq:dl_norm} la normalizarea atomilor pentru dicționar.
 
-Problema de găsire a dicționarului și a reprezentării semnalelor de antrenare $\mathbf{Y}$ conține neliniarități puternice din cauza condiției de sparsitate impuse. Cazul interesant și cel mai abordat în literatură îl reprezintă acela în care dicționarul este supracomplet \cite[Capitolul 1]{DL_book}, această proprietate poate aduce numeroase beneficii diferitelor procese de clasificare, anume:
+Problema de găsire a dicționarului și a reprezentării semnalelor de antrenare $\mathbf{Y}$ conține neliniarități puternice din cauza condiției de raritate impuse. Cazul interesant și cel mai abordat în literatură îl reprezintă acela în care dicționarul este supracomplet \cite[Capitolul 1]{DL_book}, această proprietate poate aduce numeroase beneficii diferitelor procese de clasificare, anume:
 \begin{itemize}
-    \item stocarea matricelor sparse se face mult mai eficient decât cele pline
+    \item stocarea matricelor sparse se face mult mai eficient decât a celor pline
     \item din punct de vedere computațional există foarte multe multiplicări care nu se vor mai efectua
 \end{itemize}
 
-Modul în care am descris problema duce cu gândul la o metodă sofisticată de extragere a caracteristicilor din setul de date. Astfel dacă extragem o reprezentare sparsă $X = \{x_i\}$, putem să folosim vectorul rar $x_i$ ca exemplu de antrenare pentru alți algoritmi de antrenare sau clasificare.
+Modul în care am descris problema duce cu gândul la o metodă sofisticată de extragere a caracteristicilor din setul de date. Astfel dacă extragem o reprezentare rară $X = \{x_i\}$, putem să folosim vectorul rar $x_i$ ca exemplu de antrenare pentru alți algoritmi de antrenare sau clasificare.
 
 
-\subsection{Găsirea reprezentării sparse}
+\subsection{Găsirea reprezentării rare}
 Reprezentarea sparsă se ocupă de reconstruirea unui semnal $y \in \mathbf{R}^n$ având la dispoziție un dicționar $\mb{D} \in \mathbb{R}^{n\times m}, \mb{D} = [d_1, d_2, ..., d_m]$ cu $m > n$, adică, găsirea unui vector $\mb{x} \in \mathbb{R}^m$ astfel încât $y \approx \mb{D} \mb{x}$. 
 Reziduul aproximării sparse este definit ca:
 
@@ -70,7 +70,7 @@ forma lui fiind:
 \end{equation}
 
 parametrul $\gamma$ are rolul de a condiționa mai bine matricea și a evita fenomenul de \textit{overfitting}.
-Matricea $\mathbf{W}$ reprezintă o matrice de transformare care în mod ideal încearcă să transforme spațiul rar $\mathbf{X}$ într-un spațiu categoric de tipul versorilor $e_k \in \mathbb{R}^{n_{clase}}$. Real vorbind, ceea ce se întâmplă este că rezultatul înmulțirii $\mathbf{W}\mathbf{X}$ este un vector dens, unde indexul celui mai mare element denotă de fapt clasa din care face parte reziduul transformat $p_{dl} = argmax(\mathbf{W}\mathbf{x})$ \cite[Capitolul 8]{DL_book}. 
+Matricea $\mathbf{W}$ reprezintă o matrice de transformare care în mod ideal încearcă să transforme vectorii rari din $\mathbf{X}$ în vectori asemănători versorilor $e_k \in \mathbb{R}^{n_{clase}}$, unde indexul variabilei nenule este corespunzător cu clasa defectului. Real vorbind, ceea ce se întâmplă este că rezultatul înmulțirii $\mathbf{W}\mathbf{X}$ este un vector dens, unde indexul celui mai mare element denotă de fapt clasa din care face parte reziduul transformat $p_{dl} = argmax(\mathbf{W}\mathbf{x})$ \cite[Capitolul 8]{DL_book}. 
 Agregând cele două probleme de optimizare obținem învățarea de dicționare discriminative:
 
 \begin{equation}
@@ -79,7 +79,7 @@ Agregând cele două probleme de optimizare obținem învățarea de dicționare
 \end{equation}
 
 
-O altă modalitate e a spori performanțele de clasificare este prin obligarea problemei de optimizare să aloce anumiți atomi ai dicționarului $\mathbf{D}$ unor anumite clase de defecte - învățarea de dicționare cu consistență de clasă \textit{label consistent dictionary learning} \cite{DL_book}. Problema de optimizare la care se reduce este:
+O altă modalitate de a spori performanțele de clasificare este prin obligarea problemei de optimizare să aloce anumiți atomi ai dicționarului $\mathbf{D}$ unor anumite clase de defecte - învățarea de dicționare cu consistență de clasă \textit{label consistent dictionary learning} \cite{DL_book}. Problema de optimizare la care se reduce este:
 
 \begin{equation}
     \min_{\mb{D}, \mb{W}, \mb{A}, \mb{X}} || \mb{Y} - \mb{D}\mb{X}||^2_F + \alpha ||\mb{H} - \mb{W} \mb{X} ||^2_F + \beta ||\mb{Q} - \mb{A}\mb{X} ||^2_F
