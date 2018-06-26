@@ -58,11 +58,11 @@
 
 
 \draw[fill=black] (2, 25) circle(5pt);
-\node(l1)[draw=none, label={[xshift=1.2cm]0:\Large nod neselectat}] at (2, 25){};
+\node(l1)[draw=none, label={[xshift=1.2cm]0:\Huge nod neselectat}] at (2, 25){};
 \draw[fill=blue] (2, 23) circle(10pt);
-\node(l2)[draw=none, label={[xshift=1.2cm]0:\Large nod selectat de MSC}] at (2, 23){};
+\node(l2)[draw=none, label={[xshift=1.2cm]0:\Huge nod selectat de MSC}] at (2, 23){};
 \draw[line width=2pt, dashed,red] (2, 21) circle(15pt) circle(19pt);
-\node(l3)[draw=none, label={[xshift=1.2cm]0:\Large nod selectat de RFE}] at (2, 21){};
+\node(l3)[draw=none, label={[xshift=1.2cm]0:\Huge nod selectat de RFE}] at (2, 21){};
 \node(l4)[draw=none] at (8,21){};
 \node(l5)[draw=none] at(8,25){};
 \node[draw,fit=(l1)(l2)(l3)(l4)(l5),inner sep=1.9cm]{};
