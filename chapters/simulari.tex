@@ -219,16 +219,16 @@ La apelarea funcției query\_network se va returna de asemenea un dicționar, ca
 
 
 
-\lstinputlisting[caption={Structură JSON ieșire},label={lst:outputJSON},firstline=122,lastline=132]{\code/ENWrapper.py}
+\lstinputlisting[caption={Structură JSON ieșire},label={lst:outputJSON},firstline=117,lastline=127]{\code/ENWrapper.py}
 Câmpul NODE\_VALUES reprezintă un vector JSON-uri, fiecare element al acestui vector fiind în fapt rezultatul numeric al unei simulări pentru câmpurile specificate în fișierul de intrare \ref{lst:inputJSON}.
 
 Un pas important în dezvoltarea Wrapper-ului peste EPANET a reprezentat tratarea erorilor returnate de funcțiile de C. În momentul apelării unei funcții de C, EPANET returnează o pereche (a, b) unde a reprezintă valoarea efectivă interogată iar b reprezintă codul erorii. Tratarea excepțiilor s-a făcut cu ajutorul funcției:
 
-\lstinputlisting[caption={Cod pentru tratarea erorilor},label={lst:errorcheck},firstline=298,lastline=312]{\code/ENWrapper.py}
+\lstinputlisting[caption={Cod pentru tratarea erorilor},label={lst:errorcheck},firstline=306,lastline=320]{\code/ENWrapper.py}
 
 și prin definirea unei excepții particularizate pentru clasa ENWrapper scrisă
 
-\lstinputlisting[caption={Definirea Excepției},label={lst:enexception},firstline=333,lastline=336]{\code/ENWrapper.py}
+\lstinputlisting[caption={Definirea Excepției},label={lst:enexception},firstline=341,lastline=344]{\code/ENWrapper.py}
 
 \section{Simulări pe rețeaua de apă din Hanoi}
 
