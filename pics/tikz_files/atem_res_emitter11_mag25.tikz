@@ -19,7 +19,7 @@ ymin=-0.095,
 ymax=-0.0915,
 axis background/.style={fill=white}
 ]
-\addplot [color=blue, draw=none, mark=x, mark options={solid, blue}, forget plot]
+\addplot [mark size=6pt,color=blue, draw=none, mark=x, mark options={solid, blue}, forget plot]
   table[row sep=crcr]{%
 1	-0.0916584800362249\\
 2	-0.0916969402302253\\
