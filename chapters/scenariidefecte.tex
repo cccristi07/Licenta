@@ -235,7 +235,7 @@ Este necesar acum să prezentăm profilurile reziduurilor atemporale, care în f
 \label{fig:rez_atemp}
 \end{figure}
 
-Asemenea reziduurilor de la \ref{fig:rez_time} se poate observa că simularea unui emitter într-un nod va determina un răspuns puternic în nodul respectiv și în vecinătatea nodului afectat
+Asemenea reziduurilor de la \ref{fig:rez_time} se poate observa că simularea unui \emph{emitter} într-un nod va determina un răspuns puternic în nodul respectiv și în vecinătatea nodului afectat.
 
 \section{Metodă preliminară de selecție a senzorilor}
 \label{sec:sensor_selection}
@@ -243,12 +243,12 @@ O metodă prin care se poate decide și evalua importanța senzorilor într-o re
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.55\textwidth]{\pics/c3_pics/residuals/residual_scaled_matrix}
-\caption{Matricea de reziduuri scalate}
+\includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/residual_scaled_matrix}
+\caption{Matricea de reziduuri scalate, negru -- 1, alb -- 0}
 \label{fig:rez_scaled_matrix_img}
 \end{figure} 
 
-După cum se observă în \ref{fig:rez_scaled_matrix_img} fiecare coloană a matricei $\mathbf{R}scaled$ reprezintă răspunsul prelucrat - scalat în intervalul $[0,1]$ - al unui nod, valorile care tind spre o culoare mai închisă de negru sunt răspunsuri mai pronunțate iar valorile care se apropie de alb reprezintă valori mai puțin evidențiate ale reziduului în nod(i.e. coloana de apă nu a scăzut atât de mult în nodul respectiv). Analizând matricea se poate observa care noduri răspund mai bine la anumite răspunsuri, o caracteristică importantă a acestei matrice este că, o alură diagonală - semnificația elementelor diagonale fiind răspunsul nodurilor afectate de defecte aplicate în ele însuși. Dacă matricea de reziduuri ar fi avut o caracteristică diagonală perfectă - elementele nenule s-ar fi regăsit doar pe aceasta - problema de clasificare ar fi fost una trivială și ar fi implicat amplasarea unui senzor în fiecare nod. Cazul real impune dependențe între presiunile, debitele din fiecare nod, dar și vitezele din fiecare conductă, astfel, fiecare defect separat va avea o "amprentă" unică - prin care se diferențiază de celelalte și una comună. Scopul este găsirea unui subset al mulțimii de noduri care să poată identifica defectele cu pierderi minime de performanțe.
+După cum se observă în \ref{fig:rez_scaled_matrix_img} fiecare coloană a matricei $\mathbf{R}scaled$ reprezintă răspunsul prelucrat - scalat în intervalul $[0,1]$ - al unui nod, valorile care tind spre o culoare mai închisă de negru sunt răspunsuri mai pronunțate iar valorile care se apropie de alb reprezintă valori mai puțin evidențiate ale reziduului în nod (i.e., coloana de apă nu a scăzut atât de mult în nodul respectiv comparativ cu valoarea sa nominală). Analizând matricea se poate observa care noduri răspund mai bine la anumite răspunsuri, o caracteristică importantă a acestei matrice este că are o alură diagonală - semnificația elementelor diagonale fiind răspunsul nodurilor afectate de defecte aplicate în ele înseși. Dacă matricea de reziduuri ar fi avut o caracteristică diagonală perfectă - elementele nenule s-ar fi regăsit doar pe aceasta - problema de clasificare ar fi fost una trivială și ar fi implicat amplasarea unui senzor în fiecare nod - deși în același timp nepractic deoarece ar fi necesitat un număr foarte mare de senzori. Cazul real impune dependențe între presiunile, debitele din fiecare nod, dar și vitezele din fiecare conductă, astfel, fiecare defect separat va avea o "amprentă" unică - prin care se diferențiază de celelalte.. Scopul este găsirea unui subset al mulțimii de noduri care să poată identifica defectele care pot avea loc în tot setul de noduri, cu pierderi minime de acuratețe.
 
 
 \subsection{Binarizarea matricei de reziduuri}
@@ -263,32 +263,34 @@ Pentru a putea reține un răspuns binar în cadrul matricei este important să 
 \label{eq:binary_matrix}
 \end{equation}
 În continuare vom defini notațiile matematice pentru mulțimile defectelor și a nodurilor.
-Este important să considerăm astfel mulțimea răspunsurilor la defecte $F = \{\mathbf{f}_i | i \in V \}$ iar fiecare element $\mathbf{f}_i$ al mulțimii este definit ca un vector format din valori binare cu însemnătatea:
+Este important să considerăm astfel mulțimea răspunsurilor la defecte $F = \{\mathbf{f}_i | i \in V \}$ iar fiecare element $\mathbf{f}_i$ al mulțimii este definit ca un vector format din valori binare cu semnificația:
 
 \begin{equation}
 \mathbf{f}_i[k] = \begin{cases}
        1 &\quad\text{dacă nodul k răspunde la defectul i}\\
        0 &\quad\text{dacă nodul k nu răspunde la defectul i}
      \end{cases}
-\label{eq:fault_signature}
+\label{eq:fault_signature_row}
 \end{equation}
 
 Echivalent putem defini mulțimea răspunsurilor nodurilor $N =\{\mathbf{n}_i| i \in V\}$, pentru fiecare element $\mathbf{n}_i$ avem:
 
 \begin{equation}
 \mathbf{n}_i[k] = \begin{cases}
-       1 &\quad\text{dacă defectul k este detectat de nodul k}\\
-       0 &\quad\text{dacă defectul k nu este detectat de nodul k}
+       1 &\quad\text{dacă defectul k este detectat de nodul i}\\
+       0 &\quad\text{dacă defectul k nu este detectat de nodul i}
      \end{cases}
-\label{eq:fault_signature}
+\label{eq:fault_signature_column}
 \end{equation}
+Relația de la \ref{eq:fault_signature_row} definește o linie a matricei ilustrate în figura \ref{fig:rez_scaled_matrix_img} și definesc sensibilitatea nodurilor la un anumit defect.
 
+În mod asemănător relația de la \ref{eq:fault_signature_column} definește o coloană matricei de reziduuri scalate și semnificația este sensibilitatea unui nod la toate defectele posibile.
 \paragraph{Exemplificare} \mbox{} \\
 
 Considerând o limită $l=0.65$ pentru matricea de răspunsuri scalate putem obține o matrice binară calculată după formula \eqref{eq:binary_matrix}. Forma matricei $\mathbf{M}$ este:
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.55\textwidth]{\pics/c3_pics/residuals/residual_binary_matrix}
+\includegraphics[width=0.5\textwidth]{\pics/c3_pics/residuals/residual_binary_matrix}
 \caption{Matricea de răspunsuri binarizate}
 \label{fig:binary_matrix}
 \end{figure}
@@ -302,7 +304,7 @@ Având definite elementele pentru interpretarea decizională a datelor preluate 
 Pentru problema selecției de senzori dorim să obținem o submulțime de noduri $V_s \subset V^j$ cu proprietatea că aceasta va avea un cardinal cât mai mic și defectele detectate de senzorii selectați sunt cât mai multe. Problema aceasta reprezintă de fapt o abordare a unei probleme NP-complete anume Minimum Set Cover - problema acoperirii minime a mulțimilor \cite{perelman2016sensor}.
 
 \subsubsection{Problema MSC} 
-Fiind dată o mulțime univers $U$ cu $|U| = n$ și o mulțime cu cardinal $m$ $S = \{S_i | S_i \subset U\}$ având proprietatea că  $\bigcup\limits_{i=1}^{m} S_{i} = U$ se dorește găsirea celei mai mici partiții a mulțimii $S$ a cărei reuniuni va fi egală cu $U$ \cite{CLRS}. 
+Fiind dată o mulțime univers $U$ cu $|U| = n$ și o mulțime cu cardinal $m$ $S = \{S_i | S_i \subset U\}$ având proprietatea că  $\bigcup\limits_{i=1}^{m} S_{i} = U$ se dorește găsirea celei mai mici partiții a mulțimii $S$ a cărei reuniuni va fi egală cu $U$ \cite{CLRS}. Prin anumite relaxări ale problemei se poate ajunge la o soluție a cărei reuniune să fie cât mai apropiată de mulțimea univers $U$. 
 
 În cazul rețelelor de apă mulțimea $U$ reprezintă de fapt mulțimea defectelor pentru care se dorește găsirea partiției cu cardinal minim a mulțimii de noduri care să fie sensibilă la toate defectele \cite{perelman2016sensor}.
 
@@ -323,7 +325,7 @@ Această problemă poate fi pusă sub forma unei probleme de optimizare matemati
 \label{eq:opt_problem}
 \end{subequations}
 
- Minimizarea sumei vectorului $\alpha$ din \ref{eq:optProb} se referă la selectarea unui număr cât mai mic de senzori pentru a fi plasați în rețea. Constrângerea atașată acestei probleme de programare liniară \eqref{eq:constr} are rolul de a impune ca pentru fiecare defect să existe cel puțin un senzor care să îl detecteze.
+ Minimizarea sumei vectorului $\alpha$ din \eqref{eq:optProb} se referă la selectarea unui număr cât mai mic de senzori pentru a fi plasați în rețea. Constrângerea atașată acestei probleme de programare liniară \eqref{eq:constr} are rolul de a impune ca pentru fiecare defect să existe cel puțin un senzor care să îl detecteze. Este important să amintim că parametrul $\alpha$ este de fapt o variabilă binară $\alpha = \{\alpha_i | \alpha_i \in \{0, 1\} \}$ ceea ce implică o dificultate sporită și solvere specializate \cite{gurobi} \cite{cplex}.
  
 \subsubsection{Modalitatea de rezolvare a problemei MSC}
 Având la dispoziție toate datele de intrare pentru problema MSC, am ales să folosesc toolbox-ul \textbf{YALMIP} - \textbf{MATLAB} pentru a afla nodurile cu importanța cea mai mare, rezolvând problema de optimizare \eqref{eq:opt_problem}. \textbf{YALMIP} este un toolbox specializat pentru probleme de optimizare și a fost dezvoltat așa fel încât programatorii să poată rezolva aceste ecuații într-un mod mult mai ușor - transpunând în cod ecuațiile de minimizare/maximizare și inegalitățile - fără să mai fie nevoie să aducă problema inițială la o formă intermediară \cite{YALMIP}.
