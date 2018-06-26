@@ -3,7 +3,7 @@
 
 \section{Dificultatea simulării unei rețele de apă}
 
-Găsirea unui set de ecuații al cărei soluție să conducă la o estimare îndeajuns de bună pentru control este o condiție sine qua non pentru detecția unui defect și izolarea acestuia în cadrul nodurilor rețelei. Astfel după cum a fost expus în capitolul \ref{chap:intro} ecuațiile care guvernează relațiile intre viteza prin conducte și presiune dintr-un anumit punct sunt particularizări ale ecuațiilor Bernoulli-Euler sau Navier-Stokes. În cadrul unei rețele de apă a unui oraș, complexitatea rezolvării problemei crește semnificativ din varii motive precum:
+Găsirea unui set de ecuații al cărei soluție să conducă la o estimare îndeajuns de bună pentru control este o condiție sine-qua-non pentru detecția unui defect și izolarea acestuia în cadrul nodurilor rețelei. Astfel după cum a fost expus în capitolul \ref{chap:intro} ecuațiile care guvernează relațiile intre viteza prin conducte și presiune dintr-un anumit punct sunt particularizări ale ecuațiilor Bernoulli-Euler sau Navier-Stokes. În cadrul unei rețele de apă a unui oraș, complexitatea rezolvării problemei crește semnificativ din varii motive precum:
 \begin{itemize}
 \item ansamblul de coduncte și noduri interconectate dă naștere unui sistem fizic greu de modelat matematic
 \item parametrii care pot influența calitatea soluțiilor precum: tipul materialului conductei și al nodului, elevația fiecărui nod, rugozitatea fiecărei conducte și depunerile de pe aceasta
@@ -13,14 +13,14 @@ Găsirea unui set de ecuații al cărei soluție să conducă la o estimare înd
 
 Ținând cont de complexitatea problemei în regim dinamic pentru a putea obține o soluție de regim staționar a rețelei este necesar să ignorăm evenimentele imprevizibile precum apariția unei scurgeri sau variațiile bruște ale consumului.
 
-Ecuațiile de regim staționar includ condiții de conservare fluxului de apă:
+Ecuațiile de regim staționar includ condiții de conservare a fluxului de apă:
 
 \begin{equation}
 \label{Ecuația de conservare a rețelei de apă}
 \sum\limits_{j=1}^{n} \mathbf B_{ij}\mathbf q_j=\mathbf d_i
 \end{equation}
 
-Unde $q_i$ reprezintă debitul prin fiecare conductă iar \textbf{B} reprezintă matricea de adiacență a rețelei la echilibru, definită astfel:
+unde $q_i$ reprezintă debitul prin fiecare conductă iar \textbf{B} reprezintă matricea de adiacență a rețelei la echilibru, definită astfel:
 \begin{equation}
 \textbf{B}_{ij} = 
      \begin{cases}
@@ -30,7 +30,7 @@ Unde $q_i$ reprezintă debitul prin fiecare conductă iar \textbf{B} reprezintă
      \end{cases}
 \end{equation}
 
-Partea de estimare a diferenței de presiuni (în engl. "Head-Flow differential") între două noduri interconectate se face utilizând formula Hazen-Williams ;\cite{sanz2016demand}:
+Partea de estimare a diferenței de presiuni (în engl. "Head-Flow differential") între două noduri interconectate se face utilizând formula Hazen-Williams \cite{sanz2016demand}:
 \begin{equation}
 \label{debit_presiune}
 \mathbf h_i-\mathbf h_j=\frac{10.67\cdot L_\ell}{C_\ell^{1.852}\cdot D_\ell^{4.87}}\cdot \mathbf q_\ell\cdot |\mathbf q_\ell|^{0.852}
@@ -48,7 +48,7 @@ unde:
 
 Din ecuația empirică \eqref{Hazen-Williams} termenul $R_{ij}=\frac{10.67\cdot L_\ell}{C_\ell^{1.852}\cdot D_\ell^{4.87}}$ reprezintă rezistența conductei $ij$ iar dual, putem obține conductivitatea conductei $G_{ij} = \frac{1}{R_{ij}}$.
 
-Având la dispoziție \eqref{Hazen-Williams} și \eqref{debit_presiune} putem exprima dependența debit presiune în regim staționar sub o formă matriceală compactă și cu o structură neliniară:
+Având la dispoziție ecuațiile \eqref{Hazen-Williams} și \eqref{debit_presiune} putem exprima dependența debit presiune în regim staționar sub o formă matriceală compactă și cu o structură neliniară:
 
 \begin{equation}
 \label{eq:HW-matrix}
@@ -56,7 +56,7 @@ Având la dispoziție \eqref{Hazen-Williams} și \eqref{debit_presiune} putem ex
 \end{equation}
 
 
-unde s-au luat în calcul și nodurile care au variații de presiune foarte mici - spre exemplu nodurile de tip tanc și  nodurile de tip rezervor - termenul $\mathbf B_f^\top \mathbf h_f$ reprezintă contribuția acestor noduri la starea de echilibru a rețelei.
+\noindent unde s-au luat în calcul și nodurile care au variații de presiune foarte mici - spre exemplu nodurile de tip tanc și  nodurile de tip rezervor - termenul $\mathbf B_f^\top \mathbf h_f$ reprezintă contribuția acestor noduri la starea de echilibru a rețelei.
 
 Parametrul $\mathbf{d}$ reprezintă cosumul pentru noduri ($L/s$) și reprezintă un factor de incertitudine pentru întregul model. În cadrul unei simulări acesta poate fi estimat sau ales empiric, dar nu poate fi cunoscut cu precizie în fiecare moment. Problema aflării vectorului de consum a nodurilor intră în categoria problemelor legate de serii de timp și a estimării valorilor viitoare. Simulatoarele software transpun în general o variație a parametrilor de rețea (emitter-demand) în modificarea acestui parametru d.
 % d este în general necunoscut, și se alege empiric, fiecare variație a demand-ului și a emitter-ului
@@ -75,13 +75,13 @@ Dezvoltat la începutul anilor 90' de către USEPA (United States Environmental 
 \label{fig:epanet_simulator_win}
 \end{figure}
 
-În urma execuției simulării EPANET va stoca toate datele în memorie și va putea reliza grafice și alte interogări complexe.
+În urma rulării unei simulări, EPANET va stoca toate datele în memorie și va putea reliza grafice și alte interogări complexe.
 
-Modalitatea în care simulatorul EPANET reușește să obțină datele de simulare este prin implementarea eficientă a ecuațiilor  Hazen-Williams \eqref{Hazen-Williams} Darcy-Weisbach și Chezy-Manning, la fiecare perioadă de eșantionare algoritmul bazat de metoda gradientului rezolvă ecuațiile matriceale neliniare.
+Modalitatea în care simulatorul EPANET reușește să obțină datele de simulare este prin implementarea eficientă a ecuațiilor  Hazen-Williams \eqref{Hazen-Williams} Darcy-Weisbach și Chezy-Manning \cite{rossman2000epanet} \cite{rossman1999epanet}, la fiecare perioadă de eșantionare algoritmul bazat pe metoda gradientului rezolvă ecuațiile matriceale neliniare.
 
 Pe lângă posibilitatea de a simula în cadrul unui program de sine stătător toate scenariile dorite, USEPA pune la dispoziție și un API (Application Programming Interface) pentru a putea realiza programatic simulările și modificările aferente fiecărui scenariu. Folosind în acest fel interfața pusă la dispoziție scrisă în limbajul C și oferită sub forma unei biblioteci dinamice (în Windows fișier .dll, în Linux fișier .so) programatorul are posibilitatea de a realiza propriul software specializat pentru simularea rețelelor de apă. 
 
-Particularizările programatice includ Demand-ul ( debitul de ieșire din nod către utilizatori L/s) fiecărui nod la orice moment de timp, proporționalitatea Demand-ului pentru a putea emula modul în care rețeaua este folosită de utilizatori de-a unei zile de lucru și unul din aspectele importante pe care EPANET le pune la dispoziție programatorilor este posiblitatea de a simula o scurgere în rețea emulată prin intermediul unui Emitter. Emitterul din biblioteca epanet este modelat ca un orificiu (perforație) prin care se poate scurge apa, fie din motive de a elibera presiunea sau din cauza unui defect. Ecuația care guvernează scurgerea prin acest orificu este:
+Particularizările programatice includ \emph{Demand}-ul ( debitul de ieșire din nod către utilizatori L/s) fiecărui nod la orice moment de timp, proporționalitatea Demand-ului pentru a putea emula modul în care rețeaua este folosită de utilizatori de-a unei zile de lucru și unul din aspectele importante pe care EPANET le pune la dispoziție programatorilor este posiblitatea de a simula o scurgere în rețea emulată prin intermediul unui \emph{Emitter}. \emph{Emitter}-ul din biblioteca EPANET este modelat ca un orificiu (perforație) prin care se poate scurge apa, fie din motive de a elibera presiunea sau din cauza unui defect. Ecuația care guvernează scurgerea prin acest orificu este:
 
 \begin{equation}
 \label{eq:emitter}
@@ -96,7 +96,7 @@ unde:
     \item $\gamma$ reprzintă exponentul de presiune
 \end{itemize}
 
-Astfel apariția unui defect într-un anumit nod determină apriția unei relații liniare în funcție de presiunea din nod. Coeficientul $\gamma$ definde de tipul de joncțiune și de dimensiunea orificiului prin care se va scurge apa, pentru orificii relativ mici acesta ia valori de aproximativ 0.5 ;\cite{rossman2000epanet}.
+Astfel apariția unui defect într-un anumit nod determină apariția unei relații liniare în funcție de presiunea din nod. Coeficientul $\gamma$ depinde de tipul de joncțiune și de dimensiunea orificiului prin care se va scurge apa, pentru orificii relativ mici acesta ia valori de aproximativ 0.5 \cite{rossman2000epanet}.
 
 \subsection{Schema bibliotecii ANSI C - EPANET}
 
@@ -105,7 +105,7 @@ API-ul pus la dispoziție se bazează pe funcții C scrise  într-o manieră mod
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.75\textwidth]{pics/c2_pics/epanet_dataflow.pdf}
-\caption{Fluxul de date în biblioteca EPANET}
+\caption{Fluxul de date în biblioteca EPANET \cite{rossman1999epanet}}
 \label{fig:EPANET_dataflow}
 \end{figure}
 
@@ -150,14 +150,14 @@ Componente  & Simulare  & Calitate  & Jurnalizare \\
 \end{table}
 
 
-Cele mai importante directive au fost trecute în tabelul \ref{tabel:INP_Structure} în culoarea albastru. Urmând ca fiecare să fie explicată mai în detaliu.
+Cele mai importante directive au fost trecute în tabelul \ref{tabel:INP_Structure} în culoarea albastru. În ceea ce urmează fiecare dintre acestea este explicat în detaliu.
 
 \paragraph{[JUNCTIONS]} \mbox{} \\
 Reprezintă structurile care definesc obiectele de tip nod din rețea, acestea vor avea ca atribute setate:
 \begin{itemize}
     \item ID - indicele nodului
     \item Elevation - înălțimea nodului (m)
-    \item Base demand - debitul inițial către utilizatori (s-a folosit termenul demand pentru a desemna cerința de apă din rețea)
+    \item Base demand - debitul inițial către utilizatori (s-a folosit termenul demand pentru a desemna cerința nominală de apă din rețea)
     \item Demand pattern ID - pentru fiecare nod se poate fixa un anumit profil de utilizare prin legarea acestuia cu un anumit obiect PATTERN
 \end{itemize}
 
@@ -196,7 +196,7 @@ Structură care definește gradul de utilizare pentru fiecare nod din rețea. At
 \section{Integrarea EPANET cu Python}
 Pentru a ușura mecanismul de procesare și interpretare am decis să folosesc funcțiile de bibliotecă EPANET adaptate din C la limbajul Python de proiectul open-source \cite{EpanetPython}. Motivele pentru care am ales limbajul Python sunt rapiditatea dezvoltării aplicației, robustețea soluției și ușurința tratării erorilor. Python este un limbaj interpretat - deci tipurile variabilelor sunt decise dinamic în momentul rulării aplicației în schimb acesta nu permite conversia implicită a variabilelor la run-time, eliminând astfel foarte multe erori greu de depistat.
 
-Prin utilizarea unei clase de adaptare, \ref{lst:enwrap}, la API-ul de Python pus la dispoziție de \cite{EpanetPython} doresc să realizez o interfață mai ușoară pentru definirea, rularea simulărilor dar și pentru savlarea datelor într-un format care permite operabilitatea între mai multe programe, de exemplu Python-Matlab. Structura clasei de adaptare numită în engleză Wrapper (i.e. ambalaj al bibliotecii de funcții scrise în C) se bazează pe instanțierea unui obiect prin care se pot apela diferite funcții din biblioteca dinamică astfel încât să se obțină datele necesare.
+Prin utilizarea unei clase de adaptare, \ref{lst:enwrap}, la API-ul de Python pus la dispoziție de \cite{EpanetPython} am realizat o interfață mai simplistă pentru definirea, rularea simulărilor dar și pentru salvarea datelor într-un format care permite operabilitatea între mai multe programe, de exemplu Python-Matlab. Structura clasei de adaptare numită în engleză Wrapper (i.e. "ambalaj" al bibliotecii de funcții scrise în C) se bazează pe instanțierea unui obiect prin care se pot apela diferite funcții din biblioteca dinamică astfel încât să se obțină datele necesare.
 Metoda clasei prin care se face interogarea rețelei este:
 
 \lstinputlisting[language=Python,caption={Funcția de query},label={lst:queryfunc},firstline=105,lastline=105]{\code/ENWrapper.py}
@@ -215,24 +215,24 @@ Unde câmpurile reprezintă:
         \item EN\_VELOCITY - întoarcerea valorilor vitezei apei prin fiecare conductă
     \end{itemize}
 \end{itemize}
-La apelarea funcției query\_network se va returna de asemenea un dicționar, care poate fi convertit la format-ul JSON, pentru a putea fi folosit în alte procese de simulare și validare, spre exemplu într-un mediu de dezvoltare Matlab/Octave. Structura fișierului de ieșire este:
+La apelarea funcției query\_network se va returna de asemenea un dicționar, care poate fi convertit în format-ul JSON, pentru a putea fi folosit în alte procese de simulare și validare, spre exemplu într-un mediu de dezvoltare Matlab/Octave. Structura fișierului de ieșire este:
 
 
 
 \lstinputlisting[caption={Structură JSON ieșire},label={lst:outputJSON},firstline=122,lastline=132]{\code/ENWrapper.py}
-Câmpul NODE\_VALUES reprezintă un vector JSON-uri, fiecare element al acestui vector fiind în fapt rezultatul numeric al unei simulări pentru câmpurile specificate la fișierul de intrare \ref{lst:inputJSON}.
+Câmpul NODE\_VALUES reprezintă un vector JSON-uri, fiecare element al acestui vector fiind în fapt rezultatul numeric al unei simulări pentru câmpurile specificate în fișierul de intrare \ref{lst:inputJSON}.
 
 Un pas important în dezvoltarea Wrapper-ului peste EPANET a reprezentat tratarea erorilor returnate de funcțiile de C. În momentul apelării unei funcții de C, EPANET returnează o pereche (a, b) unde a reprezintă valoarea efectivă interogată iar b reprezintă codul erorii. Tratarea excepțiilor s-a făcut cu ajutorul funcției:
 
 \lstinputlisting[caption={Cod pentru tratarea erorilor},label={lst:errorcheck},firstline=298,lastline=312]{\code/ENWrapper.py}
 
-și prin definirea unei excepții customizate pentru clasa ENWrapper scrisă
+și prin definirea unei excepții particularizate pentru clasa ENWrapper scrisă
 
 \lstinputlisting[caption={Definirea Excepției},label={lst:enexception},firstline=333,lastline=336]{\code/ENWrapper.py}
 
 \section{Simulări pe rețeaua de apă din Hanoi}
 
-Având ca susținere fișierul pentru rețeaua de apă din Hanoi \ref{fig:hanoinetwork} și biblioteca EPANET cu codul de
+Având ca susținere fișierul pentru rețeaua de apă din Hanoi, prezentată în figura - \ref{fig:hanoinetwork},  și biblioteca EPANET cu codul de
 adaptare Python, pot realiza simulări asupra acestei rețele de apă. Inițial voi explicita profilurile de utilizare a
 rețelei de apă urmând ca mai apoi să arăt modul în care rețeaua funcționează în mod nominal (fără nici un defect).
 
@@ -244,7 +244,7 @@ Parametrii funcționali rețelei hanoi.inp sunt următorii:
     \item Perioada de simulare este de 24h
 \end{itemize}
 
-Graficul de utilizare al rețelei are o distribuție centrată în jurul orelor dimineții - acest lucru fiind corelat cu faptul că atunci este momentul în care cei mai mulți utilizatori își încep activitatea și consumă apă. Astfel rețeaua este supusă unui stres mai mare în timpul orel matinale față de exemplu de perioada nopții unde valorile multiplicității ajung la valori aproximativ de două ori mai mici.
+Graficul de utilizare al rețelei are o distribuție centrată în jurul orelor dimineții - acest lucru fiind corelat cu faptul că atunci este momentul în care cei mai mulți utilizatori își încep activitatea și consumă apă. Astfel rețeaua este supusă unui stres mai mare în timpul orelor matinale față de exemplu de perioada nopții unde valorile multiplicității ajung la valori aproximativ de două ori mai mici.
 
 \begin{figure}[H]
   \centering
@@ -253,7 +253,7 @@ Graficul de utilizare al rețelei are o distribuție centrată în jurul orelor 
   \label{fig:normalprofile}
 \end{figure}
 
-Pentru rularea unei simulări nominale fișierul JSON de intrare poate avea câmpul de emitter\_values gol, obținându-se asftel caracteristica tranzitorie a presiunii, a debitului din noduri și a vitezei fluxului de apă din conducte.
+Pentru rularea unei simulări nominale fișierul JSON de intrare poate avea câmpul  \emph{emitter\_values} gol, obținându-se astfel caracteristica tranzitorie a presiunii, a debitului din noduri și a vitezei fluxului de apă din conducte.
 
 
 \section{Prezentarea măsurilor de interes preluate din simulări}
@@ -270,8 +270,8 @@ Problema care se pune în continuare alegera unui subset din mărimile prelevate
 \caption{Profilul nominal al presiunii}
 \label{fig:ref_presssure}
 \end{figure}
-
-După cum se poate observa în \ref{fig:ref_presssure} profilul nominal al presiunii intră în tiparul profilului de cerere prezentat în \ref{fig:normalprofile}, unde în jurul orelor dimineții, când activitatea utilizatorilor este asociată unui regim dinamic al rețelei, iar orele nopții sunt caracterizate de marimi lent variabile. Astfel pe acest grafic s-au putut evidenția 3 zone importante, anume, cele două zone de regim staționar în intervalele $[5, 20] *15min$ și $[72,95]*15min$ și zona de regim dinamic în intervalul $[23,70]*15min$. Este de menționat că aceste intervale au fost selectate empiric în baza unei analize grafice asupra caracteristicilor presiune-viteză-debit.
+Curbele specifice fiecărui nod au aceleași aluri din cauza faptului că a toate nodurile folosesc același profil de utilizare.
+După cum se poate observa în figura \ref{fig:ref_presssure}, profilul nominal al presiunii intră în tiparul profilului de cerere prezentat în \ref{fig:normalprofile}, unde în jurul orelor dimineții, când activitatea utilizatorilor este asociată unui regim dinamic al rețelei, iar orele nopții sunt caracterizate de marimi lent variabile. Astfel pe acest grafic s-au putut evidenția 3 zone importante, anume, cele două zone de regim staționar în intervalele $[5, 20] \times 15min$ și $[72,95] \times 15min$ și zona de regim dinamic în intervalul $[23,70]\times 15min$. Este de menționat că aceste intervale au fost selectate empiric în baza unei analize grafice asupra caracteristicilor presiune-viteză-debit.
 
 \subsection{Alte mărimi de interes din simulatorul EPANET}
 
